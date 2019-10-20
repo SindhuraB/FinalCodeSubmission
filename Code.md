@@ -1,5 +1,6 @@
 
 public class User{
+
   Vector <Integer> numbers = new Vector();
   HashMap<String, Integer> database = new HashMap<>();
   Scanner input = new Scanner(System.in);
@@ -14,7 +15,7 @@ public class User{
   }
 
   //retrieving from database
-  private static void find (String name){
+  public static void find (String name){
     if (database.containsKey(name)) {
                System.out.println(database.get(name));
            }
