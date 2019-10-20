@@ -24,11 +24,9 @@ public class User{
     System.out.print("Enter your password");
     String password= input.next();
     if (password.containsKey(name) && password = password.get(name)){
-      System.out.print("Login successful");
+      if (database.containsKey(name))
+                 System.out.println(  System.out.print("Login successful. Your number is: " + database.get(name));
     }
-    if (database.containsKey(name)) {
-               System.out.println(database.get(name));
-           }
     else
       System.out.print("Unable to find your account");
 
