@@ -1,12 +1,27 @@
-System.out.print(Enter your name);
-Scanner input = new Scanner(System.in);
 
-String name = input.next();
+public class User{
+  Vector <Integer> numbers = new Vector();
+  HashMap<String, Integer> database = new HashMap<>();
+  Scanner input = new Scanner(System.in);
+  int count = 1;
 
-Vector <Integer> numbers = new Vector();
-int start = 0
+  //creating account in database
+    public static void create (){
+        System.out.print("Enter your name");
+        String name = input.next();
+        database.put(name, numbers.add(count));
+        count++;
+  }
 
-HashMap<String, Integer> database = new HashMap<>();
+  //retrieving from database
+  private static void find (String name){
+    if (database.containsKey(name)) {
+               System.out.println(database.get(name));
+           }
+    else
+      System.out.print("Unable to find your account");
 
-database.put(name, start+1);
-start++;
+  }
+
+
+}
