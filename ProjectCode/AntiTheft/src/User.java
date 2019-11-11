@@ -37,6 +37,8 @@ public class User {
 		
 			//JOptionPane.showMessageDialog(null, userName);
 	}
+	
+	//Partners: Varika & Labeeba
 	  
 	public void createAccount() {
 
