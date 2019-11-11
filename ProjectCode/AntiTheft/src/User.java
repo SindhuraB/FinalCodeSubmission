@@ -5,6 +5,9 @@ import java.util.*;
  *	This class create a new user profile 
  */
 
+import java.util.HashMap;
+import java.util.Scanner;
+
 public class User {
 	
 	static String userName;
@@ -17,6 +20,10 @@ public class User {
 	static String productList[];
 	static String userEmail;
 	static int numOfProdOwned;
+	static int count = 1000;
+	static Scanner input = new Scanner (System.in);
+	HashMap<String, Integer> database = new HashMap<>();
+	HashMap<String, String> password = new HashMap <>();
 	//String array
 	
 	public static void main (String[] args) {
@@ -33,24 +40,42 @@ public class User {
 			//JOptionPane.showMessageDialog(null, userName);
 	}
 	  
-	public void getUserID() {
+	public void createAccount() {
+
+		        System.out.print("Enter your name");
+
+		        String name = input.next();
+
+		        System.out.print("Enter a password");
+
+		        String password = input.next();
+
+		        //user account
+		        password.put(email, password);
+
+		        //user ID
+		        database.put(email, count);
+
+		        System.out.print("Your number is" + count);
+
+		        count++;
+		  }
+	}
+
+	
+	
+	public int getUserID() {
+		
+		if database.containsKey(email)
+			return database.get(email);
+		
 	}	
-	public void getUserEmail() {
-	}
-	public void getNumOfProdOwned() {
-	}
-	public void getProductREference() {
-	}
-
-}
-
-class Product {
 	
+	
+
 }
 
-class Login	{
-	
-}
+
 
 class UserAccount {
 	
@@ -60,6 +85,5 @@ class UserAccount {
 class VerifyUserAccount {
 	
 }
-
 
 
