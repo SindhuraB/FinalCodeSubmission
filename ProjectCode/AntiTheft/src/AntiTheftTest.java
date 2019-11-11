@@ -9,29 +9,7 @@ public class AntiTheftTest {
 	public static void main(String[] args) {
 		System.out.println("Run");
 		System.out.print("Testing eclipse");
-		// Noman Syed
-		//varika
-	}
-
-
-
-	public static void LookUp () {
-
-	  Scanner input = new Scanner(System.in);
-
-	  System.out.print("Enter your assigned user ID to track this item");
-
-	  String id= input.next();
-
-	  input.close();
-	}
-
-	private static Integer assignID () {
-		
-		Integer id;
-		
-
-	
 
 	}
+
 }
