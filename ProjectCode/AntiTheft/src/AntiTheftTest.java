@@ -41,7 +41,7 @@ public class AntiTheftTest {
 
     	int number;
 
-    	number =
+    	number = 0;
         System.out.print("Your number is" + number);
 
 
