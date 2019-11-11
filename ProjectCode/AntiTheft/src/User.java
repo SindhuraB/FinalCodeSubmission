@@ -5,8 +5,6 @@ import java.util.*;
  *	This class create a new user profile 
  */
 
-import java.util.HashMap;
-import java.util.Scanner;
 
 public class User {
 	

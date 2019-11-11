@@ -7,7 +7,7 @@ public class Login {
 
 		    String password= input.next();
 
-		    if (password.containsKey(email) && password == password.get(email)){
+		    if (password.contains(email) && password == password.get(email)){
 
 		    	System.out.print("Login successful");
 		    }
