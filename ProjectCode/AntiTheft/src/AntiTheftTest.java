@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 
 public class AntiTheftTest {
-	
+
 	  Vector <Integer> numbers = new Vector <Integer> ();
 
 	  HashMap<String, Integer> database = new HashMap<>();
@@ -20,7 +20,7 @@ public class AntiTheftTest {
 	public static void main(String[] args) {
 		System.out.println("Run");
 		System.out.print("Testing eclipse");
-	
+
 	}
 
 
@@ -34,17 +34,17 @@ public class AntiTheftTest {
 	  input.close();
 	}
 
-	
+
   //assigning account number in database
 
     public static void assignID (){
 
     	int number;
-    	
-    	number = 
+
+    	number =
         System.out.print("Your number is" + number);
 
-  
+
   }
 
 
