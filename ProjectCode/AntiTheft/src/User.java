@@ -64,7 +64,7 @@ public class User {
 
 	
 	
-	public int getUserID() {
+	public static int getUserID() {
 		
 		if database.containsKey(email)
 			return database.get(email);
