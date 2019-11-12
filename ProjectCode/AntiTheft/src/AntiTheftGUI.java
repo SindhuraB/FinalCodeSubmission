@@ -7,7 +7,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 
-public class AntiTheftGU {
+public class AntiTheftGUI {
 
 	private JFrame frame;
 	private JTextField textField;
