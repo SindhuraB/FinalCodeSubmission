@@ -7,7 +7,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 
-public class AntiTheftGUI {
+public class PersonalInfoEntry {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -38,7 +38,7 @@ public class AntiTheftGUI {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AntiTheftGUI window = new AntiTheftGUI();
+					PersonalInfoEntry window = new PersonalInfoEntry();
 					window.frame.setVisible(true);
 					window.frame.setName("Personal Information");
 				} catch (Exception e) {
@@ -51,7 +51,7 @@ public class AntiTheftGUI {
 	/**
 	 * Create the application.
 	 */
-	public AntiTheftGUI() {
+	public PersonalInfoEntry() {
 		initialize();
 	}
 
