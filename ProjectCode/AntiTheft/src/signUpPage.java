@@ -5,7 +5,8 @@ import java.awt.GridBagLayout;
 import javax.swing.JTextPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-
+// This page will be the sign up page
+// In this page users will be able to sign up and will recieve an ID for the product
 public class signUpPage {
 
 	private JFrame frame;
