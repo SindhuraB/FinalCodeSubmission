@@ -15,11 +15,12 @@ public class Login extends User {
 		    System.out.print("Enter your password");
 		    
 		    String pass= input.next();
+		    System.out.println("Printing" + pass);
 
-		    if ( pass == password.get(email) ) {
+		    if ( pass == password.get(email) )
 
 		    	System.out.print("Login successful");
-		    }
+		    
 
 		    else
 

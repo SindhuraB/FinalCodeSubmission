@@ -24,7 +24,7 @@ public class User {
 	static HashMap<String, String> password = new HashMap <>();
 	//String array
 	
-	
+	/*
 	public static void main (String[] args) {
 		
 		// User
@@ -39,10 +39,10 @@ public class User {
 			//JOptionPane.showMessageDialog(null, userName);
 	}
 	
-	
+	*/
 	//Partners: Varika & Labeeba
 	  
-	public void createAccount() {
+	static public void createAccount() {
 
 		        System.out.print("Enter your email");
 
@@ -57,7 +57,7 @@ public class User {
 		        System.out.print("Enter a password");
 
 		        userPassword = input.next();
-		        
+		 /*       
 		        boolean valid = User.valid(userPassword);
 		        
 		        while(!valid) {
@@ -67,7 +67,7 @@ public class User {
 		        	  userPassword = input.next();
 				      valid = User.valid(userPassword);
 		        }
-		        	
+		    */    	
 
 		        //user account
 		        password.put(userEmail, userPassword);

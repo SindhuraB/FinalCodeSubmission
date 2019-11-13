@@ -7,7 +7,9 @@
 public class DriverMain extends User {
 		public static void main (String[] args) {
 			
+			User.createAccount();
 			//log person in
+			System.out.println(password.get("pinnam@utdallas.edu"));
 			Login.login();
 			int id = User.getUserID();
 		//	show their items
