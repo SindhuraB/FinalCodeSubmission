@@ -5,6 +5,7 @@ import java.awt.GridBagLayout;
 import javax.swing.JTextPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.Color;
 
 public class signUpPage {
 
@@ -42,7 +43,8 @@ public class signUpPage {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 419, 300);
+		frame.getContentPane().setBackground(new Color(0, 100, 0));
+		frame.setBounds(1000, 600, 419, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
