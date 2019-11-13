@@ -75,7 +75,7 @@ public class User {
 		        //user ID
 		        database.put(userEmail, count);
 
-		        System.out.print("Your number is" + count);
+		        System.out.println("Your number is" + count);
 		        
 		        userID = count;
 
