@@ -9,7 +9,7 @@ public class DatabaseQuerying {
 			
 			//create the connection object
 			Connection con = DriverManager.getConnection(
-					"jdbc:oracle:thin:@localhost:1521:orclpdb", "TAGCOMPDBA", "minigrr1");
+					"jdbc:oracle:thin:@localhost:1521/orclpdb", "TAGCOMPDBA", "minigrr1");
 			//create the statement object 
 			Statement stmt = con.createStatement();
 			//execute query; update the '1' to variable input from GUI
