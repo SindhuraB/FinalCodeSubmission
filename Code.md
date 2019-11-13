@@ -3,7 +3,7 @@ public class User{ /*start of class
 
   Vector <Integer> numbers = new Vector();
 
-  HashMap<String, Integer> database = new HashMap<>();
+  HashMap<String, Integer> database = new HashMap<>();  //HashMap instead of array as it's more efficient 
 
   HashMap<String, String> password = new HashMap <>();
 
@@ -13,7 +13,7 @@ public class User{ /*start of class
 
   //assigning account number in database
 
-    public static void assign (){
+    public static void assign (){//Asking users for introductory credentials
 
         System.out.print("Enter your name");
 
@@ -40,7 +40,7 @@ public class User{ /*start of class
 
     String password= input.next
 
-    if (password.containsKey(name) && password = password.get(name)){
+    if (password.containsKey(name) && password = password.get(name)){//Check to see if password is correct
 
       if (database.containsKey(name))
 
@@ -49,7 +49,7 @@ public class User{ /*start of class
 
     else
 
-      System.out.print("Unable to find your account");
+      System.out.print("Unable to find your account");//Implemented in case user inputs an incorrect password.
 
   }
 
