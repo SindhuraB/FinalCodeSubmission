@@ -32,10 +32,15 @@ public class User{ //start of class
 
   int count = 1; //puts the count at 1
 
-    /**
+    
+   /**
+   
    * @param String as args		
+   
    * @return Returns the users name and assighned number
+   
    * @throws Nothing is implemented
+   
    */
   
    public static void assign (){ //start of enter name method
@@ -58,9 +63,13 @@ public class User{ //start of class
   }
 
   /**
-  * @param String as args		
+  
+  * @param String as args	
+  
   * @return values found in password, or error if not valid
+  
   * @throws Nothing is implemented
+  
   */
 
  public static void find (String name){ //start of method
