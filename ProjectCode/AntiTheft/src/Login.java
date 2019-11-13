@@ -1,9 +1,12 @@
 
 
 //Partners: Varika & Labeeba
-public class Login {
 
-	  public void login (){
+
+ 
+public class Login extends User {
+
+	  public static void login (){
 
 		    System.out.print("Enter your email");
 		    
@@ -11,9 +14,9 @@ public class Login {
 
 		    System.out.print("Enter your password");
 		    
-		    String password= input.next();
+		    String pass= input.next();
 
-		    if (password.contains(email) && password == password.get(email)){
+		    if ( pass == password.get(email) ) {
 
 		    	System.out.print("Login successful");
 		    }

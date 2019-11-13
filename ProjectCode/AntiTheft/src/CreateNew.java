@@ -1,12 +1,8 @@
 import javax.swing.JOptionPane;
 
-public class CreateNew {
+public class CreateNew extends User {
 	
-	static String lastName;
-	static String firstName;
-	static String middleName;
-	static String userAdress;
-	static String userID;
+	
 	
 	public static void main (String[] args) {
 		// User

@@ -20,8 +20,8 @@ public class User {
 	static int numOfProdOwned;
 	static int count = 1000;
 	static Scanner input = new Scanner (System.in);
-	HashMap<String, Integer> database = new HashMap<>();
-	HashMap<String, String> password = new HashMap <>();
+	static \HashMap<String, Integer> database = new HashMap<>();
+	static HashMap<String, String> password = new HashMap <>();
 	//String array
 	
 	public static void main (String[] args) {
