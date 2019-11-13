@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
+import javax.swing.JLabel;
+import java.awt.Color;
 
 public class signIn {
 
@@ -39,34 +41,33 @@ public class signIn {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 404, 287);
+		frame.getContentPane().setBackground(new Color(0, 100, 0));
+		frame.setBounds(1000, 600, 546, 366);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JButton btnLogIn = new JButton("Log In");
-		btnLogIn.setBounds(152, 172, 89, 23);
+		btnLogIn.setBounds(201, 224, 129, 23);
 		frame.getContentPane().add(btnLogIn);
 		
 		txtEnterUsernameHere = new JTextField();
 		txtEnterUsernameHere.setText("Enter Username Here");
-		txtEnterUsernameHere.setBounds(175, 76, 143, 23);
+		txtEnterUsernameHere.setBounds(233, 76, 143, 23);
 		frame.getContentPane().add(txtEnterUsernameHere);
 		txtEnterUsernameHere.setColumns(10);
 		
 		txtEnterPassword = new JTextField();
 		txtEnterPassword.setText("Enter Password");
-		txtEnterPassword.setBounds(175, 107, 143, 23);
+		txtEnterPassword.setBounds(233, 128, 143, 23);
 		frame.getContentPane().add(txtEnterPassword);
 		txtEnterPassword.setColumns(10);
 		
-		JTextPane txtpnUsername = new JTextPane();
-		txtpnUsername.setText("Username: ");
-		txtpnUsername.setBounds(69, 76, 81, 23);
-		frame.getContentPane().add(txtpnUsername);
+		JLabel getUserLabel = new JLabel("Username");
+		getUserLabel.setBounds(130, 75, 92, 26);
+		frame.getContentPane().add(getUserLabel);
 		
-		JTextPane txtpnPassword = new JTextPane();
-		txtpnPassword.setText("Password");
-		txtpnPassword.setBounds(69, 110, 81, 20);
-		frame.getContentPane().add(txtpnPassword);
+		JLabel getPasswordLabel = new JLabel("Password");
+		getPasswordLabel.setBounds(130, 127, 92, 26);
+		frame.getContentPane().add(getPasswordLabel);
 	}
 }
