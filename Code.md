@@ -2,14 +2,23 @@
 
 /**
 *Description: This branch will ask the user for a password
+
 *Date: 11-10-19
+
 *@authors Georpi Oslond Junior / Gentry Jenkins 
+
 *@version 1.0.0
+
 *@authors Varika Pinnam  / Labeeba Rana
+
 *@version 1.1.0
+
 *@authors Christopher Guerra / Gentry Jenkins 
+
 *@version 1.2.0
+
 */ 
+
 
 public class User{ //start of class
 
@@ -23,12 +32,12 @@ public class User{ //start of class
 
   int count = 1; //puts the count at 1
 
-/**
-* @param String as args		
-* @return Returns the users name and assighned number
-* @throws Nothing is implemented
-*/
-
+    /**
+   * @param String as args		
+   * @return Returns the users name and assighned number
+   * @throws Nothing is implemented
+   */
+  
    public static void assign (){ //start of enter name method
 
    System.out.print("Enter your name"); //Ask user for their name
@@ -48,11 +57,11 @@ public class User{ //start of class
    count++; //Increases the count for the next entry
   }
 
-/**
-* @param String as args		
-* @return values found in password, or error if not valid
-* @throws Nothing is implemented
-*/
+  /**
+  * @param String as args		
+  * @return values found in password, or error if not valid
+  * @throws Nothing is implemented
+  */
 
  public static void find (String name){ //start of method
 
