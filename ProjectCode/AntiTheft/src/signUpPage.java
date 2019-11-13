@@ -17,7 +17,7 @@ public class signUpPage {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void openSignUpPage() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
