@@ -1,4 +1,8 @@
 
+<<<<<<< HEAD
+=======
+public class User{ /*start of class
+>>>>>>> branch 'master' of https://github.com/SindhuraB/Anti-Theft-Project.git
 
 /**
 *Description: This branch will ask the user for a password
