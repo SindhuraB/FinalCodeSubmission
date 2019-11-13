@@ -1,3 +1,4 @@
+// This is a class for recording the personal info of the user
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
