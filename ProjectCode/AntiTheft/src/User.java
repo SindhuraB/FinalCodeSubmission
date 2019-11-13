@@ -13,16 +13,17 @@ public class User {
 	static String firstName;
 	static String middleName;
 	static String userAdress;
-	static String userID;
+	static Integer userID;
 	static String userPassword;
 	static String productList[];
 	static String userEmail;
 	static int numOfProdOwned;
 	static int count = 1000;
 	static Scanner input = new Scanner (System.in);
-	static \HashMap<String, Integer> database = new HashMap<>();
+	static HashMap<String, Integer> database = new HashMap<>();
 	static HashMap<String, String> password = new HashMap <>();
 	//String array
+	
 	
 	public static void main (String[] args) {
 		
@@ -38,38 +39,75 @@ public class User {
 			//JOptionPane.showMessageDialog(null, userName);
 	}
 	
+	
 	//Partners: Varika & Labeeba
 	  
 	public void createAccount() {
 
-		        System.out.print("Enter your name");
+		        System.out.print("Enter your email");
 
-		        String name = input.next();
+		        userEmail = input.next();
+		        
+		        while (database.containsKey(userEmail)) {
+		        	
+		        	 System.out.println("You already have an account! Please try logging in.");
+		        }
+		        	
 
 		        System.out.print("Enter a password");
 
-		        String password = input.next();
+		        userPassword = input.next();
+		        
+		        boolean valid = User.valid(userPassword);
+		        
+		        while(!valid) {
+		        	
+		        	  System.out.print("Please enter a stronger password containing at least one lowercase letter, one uppercase letter, and one number");
+
+		        	  userPassword = input.next();
+				      valid = User.valid(userPassword);
+		        }
+		        	
 
 		        //user account
-		        password.put(email, password);
+		        password.put(userEmail, userPassword);
 
 		        //user ID
-		        database.put(email, count);
+		        database.put(userEmail, count);
 
 		        System.out.print("Your number is" + count);
+		        
+		        userID = count;
 
 		        count++;
 		  }
-	}
+	
 
 	
 	
-	public static int getUserID() {
+	public static Integer getUserID() {
 		
-		if database.containsKey(email)
-			return database.get(email);
+		return userID;
 		
 	}	
+	
+	public static String getemail() {
+		
+		return userEmail;
+		
+	}	
+	
+	//validation for password - contains number, upper case, lower case, no spaces
+	public static boolean valid (String pass){
+		
+		
+	String pattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$)";
+	if (pass.matches(pattern))
+		return true;
+		
+	else
+		return false;
+	}
 	
 	
 
