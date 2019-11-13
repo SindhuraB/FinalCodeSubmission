@@ -1,15 +1,19 @@
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 
-public class signIn {
+public class signIn extends DatabaseQuerying {
 
 	private JFrame frame;
 	private JTextField txtEnterUsernameHere;
 	private JTextField txtEnterPassword;
+	private final Action Login = new SwingAction();
 
 	/**
 	 * Launch the application.
@@ -68,5 +72,15 @@ public class signIn {
 		txtpnPassword.setText("Password");
 		txtpnPassword.setBounds(69, 110, 81, 20);
 		frame.getContentPane().add(txtpnPassword);
+		
+		btnLogIn.addActionListener(this);
+	}
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "LoginAction");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+		}
 	}
 }
