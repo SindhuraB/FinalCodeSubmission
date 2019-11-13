@@ -13,8 +13,8 @@ public class CreateNew extends User {
 			firstName = input2;
 		String input3 = JOptionPane.showInputDialog("Middle Name");
 			middleName = input3;
-		String input4 = JOptionPane.showInputDialog("User Adress");
-			middleName = input4;
+		String input4 = JOptionPane.showInputDialog("User Address");
+			userAddress = input4;
 			
 		
 			

@@ -12,7 +12,7 @@ public class User {
 	static String lastName;
 	static String firstName;
 	static String middleName;
-	static String userAdress;
+	static String userAddress;
 	static Integer userID;
 	static String userPassword;
 	static String productList[];
