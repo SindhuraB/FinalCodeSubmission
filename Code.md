@@ -1,5 +1,5 @@
 
-public class User{
+public class User{ /*start of class
 
   Vector <Integer> numbers = new Vector();
 
