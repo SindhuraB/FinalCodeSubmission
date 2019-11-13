@@ -1,5 +1,5 @@
+//Import statements that allow for proper gui abilities 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
