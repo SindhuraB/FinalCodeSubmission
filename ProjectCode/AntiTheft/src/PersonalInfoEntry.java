@@ -7,8 +7,10 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 
+// class to enter personal info
 public class PersonalInfoEntry {
 
+	// private variables
 	private JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -34,7 +36,7 @@ public class PersonalInfoEntry {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) {	// main method
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -65,6 +67,7 @@ public class PersonalInfoEntry {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new MigLayout("", "[][grow][][grow][][][grow][grow][][][][][][][][][]", "[][][][][][][][][][][][]"));
 
+		// first name label
 		JLabel lblName = new JLabel("First Name");
 		frame.getContentPane().add(lblName, "cell 0 1");
 
@@ -72,6 +75,7 @@ public class PersonalInfoEntry {
 		frame.getContentPane().add(textField, "cell 1 1,growx");
 		textField.setColumns(20);
 
+		// last name label
 		JLabel lblLastName = new JLabel("Last Name");
 		frame.getContentPane().add(lblLastName, "cell 2 1,alignx trailing");
 
@@ -79,6 +83,7 @@ public class PersonalInfoEntry {
 		frame.getContentPane().add(textField_1, "cell 3 1,growx");
 		textField_1.setColumns(20);
 
+		// Mi label
 		lblMi = new JLabel("MI");
 		frame.getContentPane().add(lblMi, "cell 4 1,alignx trailing");
 
@@ -86,6 +91,7 @@ public class PersonalInfoEntry {
 		frame.getContentPane().add(textField_2, "cell 5 1,alignx left");
 		textField_2.setColumns(1);
 
+		// phone label
 		lblPhone = new JLabel("Phone");
 		frame.getContentPane().add(lblPhone, "cell 0 3,alignx trailing");
 
@@ -93,6 +99,7 @@ public class PersonalInfoEntry {
 		frame.getContentPane().add(textField_3, "cell 1 3,growx");
 		textField_3.setColumns(10);
 
+		// extension label
 		lblExtension = new JLabel("Extension");
 		frame.getContentPane().add(lblExtension, "cell 2 3,alignx trailing");
 
@@ -100,6 +107,7 @@ public class PersonalInfoEntry {
 		frame.getContentPane().add(textField_4, "cell 3 3,alignx left");
 		textField_4.setColumns(3);
 
+		// email label
 		lblEmail = new JLabel("Email");
 		frame.getContentPane().add(lblEmail, "cell 0 5,alignx trailing");
 
@@ -107,6 +115,7 @@ public class PersonalInfoEntry {
 		frame.getContentPane().add(textField_9, "cell 1 5,growx");
 		textField_9.setColumns(20);
 
+		// street label
 		lblAddress = new JLabel("Street");
 		frame.getContentPane().add(lblAddress, "cell 0 7,alignx trailing");
 
@@ -114,6 +123,7 @@ public class PersonalInfoEntry {
 		frame.getContentPane().add(textField_5, "cell 1 7,growx");
 		textField_5.setColumns(20);
 
+		// city label
 		lblCity = new JLabel("City");
 		frame.getContentPane().add(lblCity, "cell 2 7,alignx trailing");
 
@@ -121,6 +131,7 @@ public class PersonalInfoEntry {
 		frame.getContentPane().add(textField_6, "cell 3 7,growx");
 		textField_6.setColumns(10);
 
+		// state label
 		lblState = new JLabel("State");
 		frame.getContentPane().add(lblState, "cell 4 7,alignx trailing");
 
@@ -128,6 +139,7 @@ public class PersonalInfoEntry {
 		frame.getContentPane().add(textField_7, "cell 5 7,alignx left");
 		textField_7.setColumns(2);
 
+		// zip code label
 		lblZipCode = new JLabel("Zip Code");
 		frame.getContentPane().add(lblZipCode, "cell 0 9,alignx trailing");
 
@@ -135,9 +147,11 @@ public class PersonalInfoEntry {
 		frame.getContentPane().add(textField_8, "cell 1 9,alignx left");
 		textField_8.setColumns(9);
 
+		// back button
 		btnBack = new JButton("Back");
 		frame.getContentPane().add(btnBack, "cell 0 11");
 
+		// next button
 		btnNext = new JButton("Next");
 		frame.getContentPane().add(btnNext, "cell 5 11");
 	}
