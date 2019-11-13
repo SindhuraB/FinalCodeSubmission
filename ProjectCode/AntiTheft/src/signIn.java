@@ -42,7 +42,7 @@ public class signIn {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(0, 100, 0));
-		frame.setBounds(1000, 600, 546, 366);
+		frame.setBounds(1001, 600, 546, 366);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
