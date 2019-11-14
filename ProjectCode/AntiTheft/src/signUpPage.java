@@ -6,14 +6,17 @@ import javax.swing.JTextPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 public class signUpPage {
 
 	private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTextField getNameTextbox;
+	private JTextField txtEmailAddress;
+	private JTextField txtAtLeast;
+	private JTextField txtXxxxxxxxx;
+	private JTextField txtLastName;
 
 	/**
 	 * Launch the application.
@@ -44,52 +47,62 @@ public class signUpPage {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(47, 79, 79));
-		frame.setBounds(1001, 600, 419, 300);
+		frame.setBounds(1001, 600, 482, 393);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JTextPane txtpnName = new JTextPane();
-		txtpnName.setText("Name: ");
-		txtpnName.setBounds(82, 54, 100, 20);
-		frame.getContentPane().add(txtpnName);
+		getNameTextbox = new JTextField();
+		getNameTextbox.setText("Noman");
+		getNameTextbox.setBounds(214, 24, 158, 20);
+		frame.getContentPane().add(getNameTextbox);
+		getNameTextbox.setColumns(10);
 		
-		JTextPane txtpnEmailId = new JTextPane();
-		txtpnEmailId.setText("Email ID: ");
-		txtpnEmailId.setBounds(82, 85, 100, 20);
-		frame.getContentPane().add(txtpnEmailId);
+		txtEmailAddress = new JTextField();
+		txtEmailAddress.setText("noman@gmail.com");
+		txtEmailAddress.setBounds(214, 85, 158, 20);
+		frame.getContentPane().add(txtEmailAddress);
+		txtEmailAddress.setColumns(10);
 		
-		JTextPane txtpnPassword = new JTextPane();
-		txtpnPassword.setText("Password: ");
-		txtpnPassword.setBounds(82, 116, 100, 20);
-		frame.getContentPane().add(txtpnPassword);
+		txtAtLeast = new JTextField();
+		txtAtLeast.setText("At least 8 characters");
+		txtAtLeast.setBounds(214, 116, 158, 20);
+		frame.getContentPane().add(txtAtLeast);
+		txtAtLeast.setColumns(10);
 		
-		JTextPane txtpnPhoneNumber = new JTextPane();
-		txtpnPhoneNumber.setText("Phone Number:");
-		txtpnPhoneNumber.setBounds(82, 147, 100, 20);
-		frame.getContentPane().add(txtpnPhoneNumber);
-		
-		textField = new JTextField();
-		textField.setBounds(214, 53, 96, 20);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
-		
-		textField_1 = new JTextField();
-		textField_1.setBounds(214, 85, 96, 20);
-		frame.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
-		
-		textField_2 = new JTextField();
-		textField_2.setBounds(214, 116, 96, 20);
-		frame.getContentPane().add(textField_2);
-		textField_2.setColumns(10);
-		
-		textField_3 = new JTextField();
-		textField_3.setBounds(214, 147, 96, 20);
-		frame.getContentPane().add(textField_3);
-		textField_3.setColumns(10);
+		txtXxxxxxxxx = new JTextField();
+		txtXxxxxxxxx.setText("XXX-XXX-XXX");
+		txtXxxxxxxxx.setBounds(214, 147, 158, 20);
+		frame.getContentPane().add(txtXxxxxxxxx);
+		txtXxxxxxxxx.setColumns(10);
 		
 		JButton btnSignUp = new JButton("Sign Up");
-		btnSignUp.setBounds(157, 203, 89, 23);
+		btnSignUp.setBounds(162, 278, 126, 23);
 		frame.getContentPane().add(btnSignUp);
+		
+		JLabel lblName = new JLabel("First name");
+		lblName.setBounds(101, 21, 92, 26);
+		frame.getContentPane().add(lblName);
+		
+		JLabel lblEmail = new JLabel("Email");
+		lblEmail.setBounds(101, 82, 92, 26);
+		frame.getContentPane().add(lblEmail);
+		
+		JLabel lblPassword = new JLabel("Password");
+		lblPassword.setBounds(101, 113, 92, 26);
+		frame.getContentPane().add(lblPassword);
+		
+		JLabel lblPhone = new JLabel("Phone");
+		lblPhone.setBounds(101, 144, 92, 26);
+		frame.getContentPane().add(lblPhone);
+		
+		JLabel lblLastName = new JLabel("Last name");
+		lblLastName.setBounds(101, 51, 92, 26);
+		frame.getContentPane().add(lblLastName);
+		
+		txtLastName = new JTextField();
+		txtLastName.setText("Syed");
+		txtLastName.setColumns(10);
+		txtLastName.setBounds(214, 57, 158, 20);
+		frame.getContentPane().add(txtLastName);
 	}
 }
