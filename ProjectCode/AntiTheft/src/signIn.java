@@ -6,12 +6,15 @@ import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.JLabel;
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class signIn {
 
 	private JFrame frame;
-	private JTextField txtEnterUsernameHere;
-	private JTextField txtEnterPassword;
+	private JTextField usernameTextbox;
+	private JTextField passwordTextbox;
 
 	/**
 	 * Launch the application.
@@ -41,32 +44,42 @@ public class signIn {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setFont(new Font("Tahoma", Font.PLAIN, 19));
 		frame.getContentPane().setBackground(new Color(47, 79, 79));
 		frame.setBounds(1001, 600, 546, 366);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JButton btnLogIn = new JButton("Log In");
-		btnLogIn.setBounds(201, 224, 129, 23);
-		frame.getContentPane().add(btnLogIn);
+		JButton loginButton = new JButton("Log In");
+		loginButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		loginButton.setBounds(201, 224, 129, 23);
+		frame.getContentPane().add(loginButton);
 		
-		txtEnterUsernameHere = new JTextField();
-		txtEnterUsernameHere.setText("Enter Username Here");
-		txtEnterUsernameHere.setBounds(233, 76, 143, 23);
-		frame.getContentPane().add(txtEnterUsernameHere);
-		txtEnterUsernameHere.setColumns(10);
+		usernameTextbox = new JTextField();
+		usernameTextbox.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		usernameTextbox.setText("Enter Username ");
+		usernameTextbox.setBounds(233, 76, 143, 23);
+		frame.getContentPane().add(usernameTextbox);
+		usernameTextbox.setColumns(10);
 		
-		txtEnterPassword = new JTextField();
-		txtEnterPassword.setText("Enter Password");
-		txtEnterPassword.setBounds(233, 128, 143, 23);
-		frame.getContentPane().add(txtEnterPassword);
-		txtEnterPassword.setColumns(10);
+		passwordTextbox = new JTextField();
+		passwordTextbox.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		passwordTextbox.setText("Enter Password");
+		passwordTextbox.setBounds(233, 128, 143, 23);
+		frame.getContentPane().add(passwordTextbox);
+		passwordTextbox.setColumns(10);
 		
 		JLabel getUserLabel = new JLabel("Username");
+		getUserLabel.setForeground(new Color(255, 255, 255));
+		getUserLabel.setBackground(new Color(255, 255, 255));
 		getUserLabel.setBounds(130, 75, 92, 26);
 		frame.getContentPane().add(getUserLabel);
 		
 		JLabel getPasswordLabel = new JLabel("Password");
+		getPasswordLabel.setForeground(new Color(255, 255, 255));
 		getPasswordLabel.setBounds(130, 127, 92, 26);
 		frame.getContentPane().add(getPasswordLabel);
 	}
