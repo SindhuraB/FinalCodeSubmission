@@ -7,14 +7,24 @@
 public class DriverMain extends User {
 		public static void main (String[] args) {
 			
-			User.createAccount();
+			
+			
+			//create new user for each person
+			User one = new User();
+			
+			
+			
+			//making an account
+			one.createAccount();
+			
 			//log person in
-			System.out.println(password.get("pinnam@utdallas.edu"));
 			Login.login();
-			int id = User.getUserID();
-		//	show their items
-			Product.DisplayItems(id);
-			System.out.println("Test");
+			
+			
+			Product.CreateProduct(one.getemail());
+			Product.DisplayItems(one.getemail());
+			
+			
 			
 			//allow them to add item
 			

@@ -4,27 +4,44 @@
 
 
  
-public class Login extends User {
+public class Login extends Product {
 
 	  public static void login (){
 
-		    System.out.print("Enter your email");
+		    System.out.print("To login, enter your email");
 		    
 		    String email = input.next();
-
-		    System.out.print("Enter your password");
 		    
-		    String pass= input.next();
-		    System.out.println("Printing" + pass);
+		    if (!database.containsKey(email)) 
+		    	System.out.println("Sorry, we were unable to find an account with that email");
+		    
+		    else 
+		    {
 
-		    if ( pass == password.get(email) )
+		    	System.out.print("Enter your password to login");
+		    
+		    	String pass= input.next();
 
-		    	System.out.print("Login successful");
+		    			if ( pass.equals(password.get(email)) ) {
+
+		    					System.out.println("Login successful");
+		    					
+		    					System.out.println("Your registered products are:");
+		    					Product.DisplayItems(email);
+		    					
+		    			}
+		    			
+		    			while (!pass.equals(password.get(email))) {
+
+		    			      System.out.print("Password is incorrect. Please try entering it again.");
+		    			      
+		    			       pass= input.next();
+		    			}
+		    	
+		    }
 		    
 
-		    else
-
-		      System.out.print("Unable to find your account");
+		   
 
 		  }
 }

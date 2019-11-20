@@ -8,23 +8,44 @@ public class Product extends User{
 	static HashMap< Integer, String > products = new HashMap<>();
 
 	 
-		public void CreateProduct (Integer id) {
+		static public void CreateProduct (String email) {
 			
-			System.out.println("Enter the name or title of the product you are registering");
+			System.out.println("To register a new product, enter your unique user ID");
 			
-			String product = input.next();
+			//N2S varika fix scanner input with full line of input for product description
+			Integer id = input.nextInt();
 			
-			products.put(id, product);
+			
+			if (database.get(email).intValue() == id.intValue())
+				{
+			
+					System.out.println("Enter a name for the product you are registering");
+			
+					String product = input.next();
+			
+					products.put(id, product);
+			
+			}
+			
+			else
+				System.out.println("Your id is incorrect. Please try again");
 			
 			
 		}
 	
 		
-		public static void DisplayItems(Integer id) {
+		public static void DisplayItems(String email) {
 			
+			System.out.println("To view your complete list of products, enter your unique user ID");
 			
-			System.out.println("test display");
-			products.get(id);
+//N2S - varika fix scanner input with full line of input for product description
+			Integer id = input.nextInt();
+			
+			if (database.get(email).intValue() == id.intValue())
+				System.out.println(products.get(id));
+			else
+				System.out.println("Your id is incorrect. Please try again");
+			
 		}
 		
 		

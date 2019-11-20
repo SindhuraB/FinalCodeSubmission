@@ -8,20 +8,19 @@ import java.util.*;
 
 public class User {
 	
-	static String userName;
-	static String lastName;
-	static String firstName;
-	static String middleName;
-	static String userAddress;
-	static Integer userID;
-	static String userPassword;
-	static String productList[];
-	static String userEmail;
-	static int numOfProdOwned;
+	String lastName;
+	String firstName;
+	String middleName;
+	String userAddress;
+	Integer userID;
+	String userPassword;
+	String productList[];
+    String userEmail;
+    int numOfProdOwned;
 	static int count = 1000;
 	static Scanner input = new Scanner (System.in);
-	static HashMap<String, Integer> database = new HashMap<>();
-	static HashMap<String, String> password = new HashMap <>();
+	 static HashMap<String, Integer> database = new HashMap<>();
+     static HashMap<String, String> password = new HashMap <>();
 	//String array
 	
 	/*
@@ -42,19 +41,20 @@ public class User {
 	*/
 	//Partners: Varika & Labeeba
 	  
-	static public void createAccount() {
+     public void createAccount() {
 
-		        System.out.print("Enter your email");
+		        System.out.print("To create an account, enter your email");
 
 		        userEmail = input.next();
 		        
-		        while (database.containsKey(userEmail)) {
+		        if (database.containsKey(userEmail)) {
 		        	
-		        	 System.out.println("You already have an account! Please try logging in.");
+		           	 System.out.println("You already have an account! Please try logging in.");
+		           	 Login.login();
 		        }
 		        	
 
-		        System.out.print("Enter a password");
+		        System.out.print("Enter a password to set it");
 
 		        userPassword = input.next();
 		 /*       
@@ -73,11 +73,11 @@ public class User {
 		        password.put(userEmail, userPassword);
 
 		        //user ID
-		        database.put(userEmail, count);
-
-		        System.out.println("Your number is" + count);
-		        
 		        userID = count;
+		        database.put(userEmail, userID);
+
+		        System.out.println("Your unique ID number is " + count);
+		        
 
 		        count++;
 		  }
@@ -85,13 +85,27 @@ public class User {
 
 	
 	
-	public static Integer getUserID() {
+	void printHash(){
+		
+		System.out.println("Printing database of emails and id");
+		for (String email : database.keySet()) {
+			   System.out.println(email + "The user ID is " + database.get(email));
+			 }
+		
+		System.out.println("Printing database of emails and passwords");
+		for (String email : password.keySet()) {
+			   System.out.println(email + "The password is" + password.get(email) );
+			 }
+		
+	}
+	
+	public  Integer getUserID() {
 		
 		return userID;
 		
 	}	
 	
-	public static String getemail() {
+	public String getemail() {
 		
 		return userEmail;
 		
@@ -123,5 +137,7 @@ class UserAccount {
 class VerifyUserAccount {
 	
 }
+
+
 
 
