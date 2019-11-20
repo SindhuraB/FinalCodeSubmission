@@ -16,7 +16,7 @@ public class DatabaseQuerying {
 			
 			//create the connection object
 			Connection con = DriverManager.getConnection(
-					"jdbc:oracle:thin:@localhost:1521/orclpdb", "TAGCOMPDBA", "minigrr1");
+					"jdbc:oracle:thin:@10.21.79.26:1521/orclpdb", "TAGCOMPDBA", "minigrr1");
 			System.out.println("Connection made to PDB");
 			return con;
 			}
@@ -65,16 +65,16 @@ public class DatabaseQuerying {
 			//create the statement object 
 			Statement stmt = con.createStatement();
 			//execute query; update the '1' to variable input from GUI
-			ResultSet rs = stmt.executeQuery("select ut.ItemDesc from USER_TAGS ut where ut.AccountID = '1'");
+			ResultSet rs = stmt.executeQuery("select ut.Brand, ut.ItemDesc from USER_TAGS ut where ut.AccountID = '1'");
 			System.out.println("Query executed");
-			ArrayList<String> itemDesc = new ArrayList<String>();
+			ArrayList<String> items = new ArrayList<String>();
 			while(rs.next()) {
 				System.out.println("Copying results");
-				itemDesc.add(rs.getString("ItemDesc"));
+				items.add(rs.getString("Brand") + ", " + rs.getString("ItemDesc"));
 			}
 			con.close();
 			System.out.println("Connection to PDB closed");
-			return itemDesc;
+			return items;
 		}
 		catch (Exception e)
 		{
