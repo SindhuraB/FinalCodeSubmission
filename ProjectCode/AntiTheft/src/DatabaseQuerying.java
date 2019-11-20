@@ -1,62 +1,85 @@
 import java.sql.*;
+import java.util.ArrayList;
 
 // Coded by: Chris Guerra and Labeeba Rana
 // This class creates a connection and queries the database
 
 public class DatabaseQuerying {
-	Connection con;
 	
-	public DatabaseQuerying() {
+	public DatabaseQuerying() {}
+	
+	public static Connection openCon ()
+	{
 		try {
-		//load the driver class
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		
-		//create the connection object
-		Connection con = DriverManager.getConnection(
-				"jdbc:oracle:thin:@localhost:1521/orclpdb", "TAGCOMPDBA", "minigrr1");
-		}
+			//load the driver class
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			//create the connection object
+			Connection con = DriverManager.getConnection(
+					"jdbc:oracle:thin:@localhost:1521/orclpdb", "TAGCOMPDBA", "minigrr1");
+			System.out.println("Connection made to PDB");
+			return con;
+			}
 		catch(Exception e) {
 			System.out.print(e);
+			return null;
 		}
 	}
 	
-	public static void CreateUser()
+	public static int getNewID()
 	{
 		try
 		{
-		int newAccountID = 0;
-		String result;
-		// Create object for connection
-		DatabaseQuerying dbq = new DatabaseQuerying();
-		//create the statement object 
-		Statement stmt = dbq.con.createStatement();
-		//execute query; Select last entered account ID number
-		ResultSet rs = stmt.executeQuery("select * from ACCOUNTS where AcID=(select max(AcID) from ACCOUNTS)");
-		result = rs.toString(); // Make rs into string that can be parsed
-		if(newAccountID != 0) // If there are existing accounts then add 1 to last entry for new account
-			newAccountID = Integer.parseInt(result) + 1;
-		dbq.con.close();
+			int newAccountID = 0; // AccountID to be created
+			// Open connection
+			Connection con = openCon();
+			//create the statement object 
+			Statement stmt = con.createStatement();
+			//execute query; Select last entered account ID number
+			ResultSet rs = stmt.executeQuery("select * from ACCOUNTS where AcID = (select max(AcID) from ACCOUNTS)");
+			rs.next(); // Get selected row
+			newAccountID = rs.getInt(1) + 1; // Update account number to next number
+			con.close(); // close connection to db
+			return newAccountID;
 		}
 		catch (Exception e)
 		{
 			System.out.print(e);
+			return -1; // Return invalid int signifying error
 		}
 	}
 	
-	public static void selectProducts()
+	public static void createNewUser() 
 	{
+		
+	}
+	
+	public static ArrayList<String> selectProducts()
+	{
+		System.out.println("Method reached");
 		try
 		{
-		// Create object for connection
-		DatabaseQuerying dbq = new DatabaseQuerying();
-		//create the statement object 
-		Statement stmt = dbq.con.createStatement();
-		//execute query; update the '1' to variable input from GUI
-		ResultSet rs = stmt.executeQuery("select * from USER_TAGS where ACCOUNTID = '1'");
+			// Open connection
+			Connection con = openCon();
+			System.out.println("Connection opened");
+			//create the statement object 
+			Statement stmt = con.createStatement();
+			//execute query; update the '1' to variable input from GUI
+			ResultSet rs = stmt.executeQuery("select ut.ItemDesc from USER_TAGS ut where ut.AccountID = '1'");
+			System.out.println("Query executed");
+			ArrayList<String> itemDesc = new ArrayList<String>();
+			while(rs.next()) {
+				System.out.println("Copying results");
+				itemDesc.add(rs.getString("ItemDesc"));
+			}
+			con.close();
+			System.out.println("Connection to PDB closed");
+			return itemDesc;
 		}
 		catch (Exception e)
 		{
 			System.out.print(e);
+			return null;
 		}
 	}
 }

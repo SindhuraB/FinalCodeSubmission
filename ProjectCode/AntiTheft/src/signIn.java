@@ -8,7 +8,7 @@ import javax.swing.JTextPane;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 
-public class signIn extends DatabaseQuerying {
+public class signIn{
 
 	private JFrame frame;
 	private JTextField txtEnterUsernameHere;
@@ -72,8 +72,6 @@ public class signIn extends DatabaseQuerying {
 		txtpnPassword.setText("Password");
 		txtpnPassword.setBounds(69, 110, 81, 20);
 		frame.getContentPane().add(txtpnPassword);
-		
-		btnLogIn.addActionListener(this);
 	}
 	private class SwingAction extends AbstractAction {
 		public SwingAction() {
