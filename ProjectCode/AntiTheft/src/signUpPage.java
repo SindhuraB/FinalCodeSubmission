@@ -8,15 +8,24 @@ import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import java.awt.SystemColor;
 
 public class signUpPage {
 
 	private JFrame frame;
-	private JTextField getNameTextbox;
-	private JTextField txtEmailAddress;
-	private JTextField txtAtLeast;
-	private JTextField txtXxxxxxxxx;
-	private JTextField txtLastName;
+	private JTextField firstNameTextbox;
+	private JTextField phoneTextbox;
+	private JTextField lastNameTextbox;
+	private JTextField txtA;
+	private JTextField emailTextbox;
+	private JTextField streetAddressTexBox;
+	private JTextField cityTextbox;
+	private JTextField stateTextbox;
+	private JTextField zipCodeTextbox;
+	private JTextField extensionTextbox;
+	private JTextField usernameTextBox;
+	private JTextField passwordTextbox;
+	private JTextField textField_4;
 
 	/**
 	 * Launch the application.
@@ -51,62 +60,149 @@ public class signUpPage {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		getNameTextbox = new JTextField();
-		getNameTextbox.setText("Noman");
-		getNameTextbox.setBounds(128, 24, 186, 26);
-		frame.getContentPane().add(getNameTextbox);
-		getNameTextbox.setColumns(10);
+		firstNameTextbox = new JTextField();
+		firstNameTextbox.setText("Noman");
+		firstNameTextbox.setBounds(128, 24, 171, 20);
+		frame.getContentPane().add(firstNameTextbox);
+		firstNameTextbox.setColumns(10);
 		
-		txtEmailAddress = new JTextField();
-		txtEmailAddress.setText("noman@gmail.com");
-		txtEmailAddress.setBounds(128, 65, 186, 26);
-		frame.getContentPane().add(txtEmailAddress);
-		txtEmailAddress.setColumns(10);
+		phoneTextbox = new JTextField();
+		phoneTextbox.setText("XXX-XXX-XXX");
+		phoneTextbox.setBounds(128, 188, 171, 20);
+		frame.getContentPane().add(phoneTextbox);
+		phoneTextbox.setColumns(10);
 		
-		txtAtLeast = new JTextField();
-		txtAtLeast.setText("At least 8 characters");
-		txtAtLeast.setBounds(128, 104, 186, 20);
-		frame.getContentPane().add(txtAtLeast);
-		txtAtLeast.setColumns(10);
+		JButton signUpButton = new JButton("Sign Up");
+		signUpButton.setBounds(278, 303, 126, 23);
+		frame.getContentPane().add(signUpButton);
 		
-		txtXxxxxxxxx = new JTextField();
-		txtXxxxxxxxx.setText("XXX-XXX-XXX");
-		txtXxxxxxxxx.setBounds(214, 147, 158, 20);
-		frame.getContentPane().add(txtXxxxxxxxx);
-		txtXxxxxxxxx.setColumns(10);
+		JLabel firstNameLabel = new JLabel("First name");
+		firstNameLabel.setForeground(SystemColor.text);
+		firstNameLabel.setBounds(33, 21, 92, 29);
+		frame.getContentPane().add(firstNameLabel);
 		
-		JButton btnSignUp = new JButton("Sign Up");
-		btnSignUp.setBounds(162, 278, 126, 23);
-		frame.getContentPane().add(btnSignUp);
+		JLabel emailLabel = new JLabel("Email");
+		emailLabel.setForeground(SystemColor.text);
+		emailLabel.setBounds(33, 62, 92, 27);
+		frame.getContentPane().add(emailLabel);
 		
-		JLabel lblName = new JLabel("First name");
-		lblName.setBounds(33, 21, 92, 26);
-		frame.getContentPane().add(lblName);
+		JLabel passwordLabel = new JLabel("Password");
+		passwordLabel.setForeground(SystemColor.text);
+		passwordLabel.setBounds(33, 264, 92, 26);
+		frame.getContentPane().add(passwordLabel);
 		
-		JLabel lblEmail = new JLabel("Email");
-		lblEmail.setBounds(33, 68, 92, 27);
-		frame.getContentPane().add(lblEmail);
+		JLabel phoneLabel = new JLabel("Phone");
+		phoneLabel.setForeground(SystemColor.text);
+		phoneLabel.setBounds(33, 185, 92, 26);
+		frame.getContentPane().add(phoneLabel);
 		
-		JLabel lblPassword = new JLabel("Password");
-		lblPassword.setBounds(33, 101, 92, 26);
-		frame.getContentPane().add(lblPassword);
+		JLabel lastNameLabel = new JLabel("Last name");
+		lastNameLabel.setForeground(SystemColor.text);
+		lastNameLabel.setBounds(312, 18, 92, 29);
+		frame.getContentPane().add(lastNameLabel);
 		
-		JLabel lblPhone = new JLabel("Phone");
-		lblPhone.setBounds(43, 144, 92, 26);
-		frame.getContentPane().add(lblPhone);
+		lastNameTextbox = new JTextField();
+		lastNameTextbox.setText("Syed");
+		lastNameTextbox.setColumns(10);
+		lastNameTextbox.setBounds(408, 24, 171, 20);
+		frame.getContentPane().add(lastNameTextbox);
 		
-		JLabel lblLastName = new JLabel("Last name");
-		lblLastName.setBounds(301, 21, 92, 26);
-		frame.getContentPane().add(lblLastName);
+		txtA = new JTextField();
+		txtA.setText("A");
+		txtA.setColumns(10);
+		txtA.setBounds(613, 24, 30, 20);
+		frame.getContentPane().add(txtA);
 		
-		txtLastName = new JTextField();
-		txtLastName.setText("Syed");
-		txtLastName.setColumns(10);
-		txtLastName.setBounds(389, 24, 168, 20);
-		frame.getContentPane().add(txtLastName);
+		JLabel lblMi_1 = new JLabel("MI");
+		lblMi_1.setBounds(584, 20, 30, 29);
+		frame.getContentPane().add(lblMi_1);
 		
-		JLabel lblMi = new JLabel("MI");
-		lblMi.setBounds(596, 21, 92, 26);
-		frame.getContentPane().add(lblMi);
+		emailTextbox = new JTextField();
+		emailTextbox.setText("Noman");
+		emailTextbox.setColumns(10);
+		emailTextbox.setBounds(128, 65, 171, 20);
+		frame.getContentPane().add(emailTextbox);
+		
+		streetAddressTexBox = new JTextField();
+		streetAddressTexBox.setText("Noman");
+		streetAddressTexBox.setColumns(10);
+		streetAddressTexBox.setBounds(128, 106, 171, 20);
+		frame.getContentPane().add(streetAddressTexBox);
+		
+		JLabel streetAddressLabel = new JLabel("Street Address");
+		streetAddressLabel.setForeground(SystemColor.text);
+		streetAddressLabel.setBounds(33, 103, 92, 29);
+		frame.getContentPane().add(streetAddressLabel);
+		
+		JLabel cityLabel = new JLabel("City");
+		cityLabel.setForeground(SystemColor.text);
+		cityLabel.setBounds(312, 103, 92, 29);
+		frame.getContentPane().add(cityLabel);
+		
+		cityTextbox = new JTextField();
+		cityTextbox.setText("Richardson");
+		cityTextbox.setColumns(10);
+		cityTextbox.setBounds(408, 106, 171, 20);
+		frame.getContentPane().add(cityTextbox);
+		
+		JLabel stateLabel = new JLabel("State");
+		stateLabel.setForeground(SystemColor.text);
+		stateLabel.setBounds(33, 145, 92, 29);
+		frame.getContentPane().add(stateLabel);
+		
+		stateTextbox = new JTextField();
+		stateTextbox.setText("Texas");
+		stateTextbox.setColumns(10);
+		stateTextbox.setBounds(128, 147, 171, 20);
+		frame.getContentPane().add(stateTextbox);
+		
+		JLabel zipCodeLabel = new JLabel("Zip Code");
+		zipCodeLabel.setForeground(SystemColor.text);
+		zipCodeLabel.setBounds(312, 143, 92, 29);
+		frame.getContentPane().add(zipCodeLabel);
+		
+		zipCodeTextbox = new JTextField();
+		zipCodeTextbox.setText("75088");
+		zipCodeTextbox.setColumns(10);
+		zipCodeTextbox.setBounds(408, 147, 171, 20);
+		frame.getContentPane().add(zipCodeTextbox);
+		
+		JLabel extentionLabel = new JLabel("Extension");
+		extentionLabel.setForeground(SystemColor.text);
+		extentionLabel.setBounds(312, 185, 92, 26);
+		frame.getContentPane().add(extentionLabel);
+		
+		extensionTextbox = new JTextField();
+		extensionTextbox.setColumns(10);
+		extensionTextbox.setBounds(408, 188, 171, 20);
+		frame.getContentPane().add(extensionTextbox);
+		
+		JLabel usernameLabel = new JLabel("Username");
+		usernameLabel.setForeground(SystemColor.text);
+		usernameLabel.setBounds(33, 227, 92, 26);
+		frame.getContentPane().add(usernameLabel);
+		
+		usernameTextBox = new JTextField();
+		usernameTextBox.setText("Texas");
+		usernameTextBox.setColumns(10);
+		usernameTextBox.setBounds(128, 229, 171, 20);
+		frame.getContentPane().add(usernameTextBox);
+		
+		passwordTextbox = new JTextField();
+		passwordTextbox.setText("Texas");
+		passwordTextbox.setColumns(10);
+		passwordTextbox.setBounds(128, 267, 171, 20);
+		frame.getContentPane().add(passwordTextbox);
+		
+		JLabel confirmPasswordLabel = new JLabel("Confirm Password");
+		confirmPasswordLabel.setForeground(SystemColor.text);
+		confirmPasswordLabel.setBounds(312, 264, 92, 26);
+		frame.getContentPane().add(confirmPasswordLabel);
+		
+		textField_4 = new JTextField();
+		textField_4.setText("Texas");
+		textField_4.setColumns(10);
+		textField_4.setBounds(408, 267, 171, 20);
+		frame.getContentPane().add(textField_4);
 	}
 }
