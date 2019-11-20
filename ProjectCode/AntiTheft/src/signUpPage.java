@@ -106,7 +106,7 @@ public class signUpPage {
 		frame.getContentPane().add(txtLastName);
 		
 		JLabel lblMi = new JLabel("MI");
-		lblMi.setBounds(578, 21, 92, 26);
+		lblMi.setBounds(596, 21, 92, 26);
 		frame.getContentPane().add(lblMi);
 	}
 }
