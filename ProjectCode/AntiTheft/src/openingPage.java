@@ -50,7 +50,7 @@ public class openingPage {
 		frame.getContentPane().setLayout(null);
 		
 		JButton btnSignIn = new JButton("Sign In");
-		btnSignIn.setBackground(new Color(204, 102, 0));
+		btnSignIn.setBackground(SystemColor.inactiveCaption);
 		btnSignIn.setFont(new Font("Calibri", Font.PLAIN, 23));
 
 		//If Sign In button is clicked then take the user to sign in page
@@ -65,7 +65,13 @@ public class openingPage {
 		frame.getContentPane().add(btnSignIn);
 		
 		JButton btnSignUp = new JButton("Sign up");
-		btnSignUp.setBackground(new Color(204, 102, 0));
+		btnSignUp.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				signUpPage signUpScreen = new signUpPage();
+				signUpScreen.openSignUpPage();
+			}
+		});
+		btnSignUp.setBackground(SystemColor.inactiveCaption);
 		btnSignUp.setFont(new Font("Calibri", Font.PLAIN, 23));
 		btnSignUp.setBounds(184, 140, 138, 35);
 		frame.getContentPane().add(btnSignUp);

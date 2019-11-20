@@ -47,25 +47,25 @@ public class signUpPage {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(47, 79, 79));
-		frame.setBounds(1001, 600, 482, 393);
+		frame.setBounds(1001, 600, 701, 418);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		getNameTextbox = new JTextField();
 		getNameTextbox.setText("Noman");
-		getNameTextbox.setBounds(214, 24, 158, 20);
+		getNameTextbox.setBounds(128, 24, 186, 26);
 		frame.getContentPane().add(getNameTextbox);
 		getNameTextbox.setColumns(10);
 		
 		txtEmailAddress = new JTextField();
 		txtEmailAddress.setText("noman@gmail.com");
-		txtEmailAddress.setBounds(214, 85, 158, 20);
+		txtEmailAddress.setBounds(128, 65, 186, 26);
 		frame.getContentPane().add(txtEmailAddress);
 		txtEmailAddress.setColumns(10);
 		
 		txtAtLeast = new JTextField();
 		txtAtLeast.setText("At least 8 characters");
-		txtAtLeast.setBounds(214, 116, 158, 20);
+		txtAtLeast.setBounds(128, 104, 186, 20);
 		frame.getContentPane().add(txtAtLeast);
 		txtAtLeast.setColumns(10);
 		
@@ -80,29 +80,33 @@ public class signUpPage {
 		frame.getContentPane().add(btnSignUp);
 		
 		JLabel lblName = new JLabel("First name");
-		lblName.setBounds(101, 21, 92, 26);
+		lblName.setBounds(33, 21, 92, 26);
 		frame.getContentPane().add(lblName);
 		
 		JLabel lblEmail = new JLabel("Email");
-		lblEmail.setBounds(101, 82, 92, 26);
+		lblEmail.setBounds(33, 68, 92, 27);
 		frame.getContentPane().add(lblEmail);
 		
 		JLabel lblPassword = new JLabel("Password");
-		lblPassword.setBounds(101, 113, 92, 26);
+		lblPassword.setBounds(33, 101, 92, 26);
 		frame.getContentPane().add(lblPassword);
 		
 		JLabel lblPhone = new JLabel("Phone");
-		lblPhone.setBounds(101, 144, 92, 26);
+		lblPhone.setBounds(43, 144, 92, 26);
 		frame.getContentPane().add(lblPhone);
 		
 		JLabel lblLastName = new JLabel("Last name");
-		lblLastName.setBounds(101, 51, 92, 26);
+		lblLastName.setBounds(301, 21, 92, 26);
 		frame.getContentPane().add(lblLastName);
 		
 		txtLastName = new JTextField();
 		txtLastName.setText("Syed");
 		txtLastName.setColumns(10);
-		txtLastName.setBounds(214, 57, 158, 20);
+		txtLastName.setBounds(389, 24, 168, 20);
 		frame.getContentPane().add(txtLastName);
+		
+		JLabel lblMi = new JLabel("MI");
+		lblMi.setBounds(578, 21, 92, 26);
+		frame.getContentPane().add(lblMi);
 	}
 }
