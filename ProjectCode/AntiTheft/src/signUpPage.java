@@ -113,9 +113,10 @@ public class signUpPage {
 		txtA.setBounds(613, 24, 30, 20);
 		frame.getContentPane().add(txtA);
 		
-		JLabel lblMi_1 = new JLabel("MI");
-		lblMi_1.setBounds(584, 20, 30, 29);
-		frame.getContentPane().add(lblMi_1);
+		JLabel middleInitialLabel = new JLabel("MI");
+		middleInitialLabel.setForeground(SystemColor.text);
+		middleInitialLabel.setBounds(584, 20, 30, 29);
+		frame.getContentPane().add(middleInitialLabel);
 		
 		emailTextbox = new JTextField();
 		emailTextbox.setText("Noman");
