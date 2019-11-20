@@ -25,7 +25,7 @@ public class signUpPage {
 	private JTextField extensionTextbox;
 	private JTextField usernameTextBox;
 	private JTextField passwordTextbox;
-	private JTextField textField_4;
+	private JTextField txtEnterPassword;
 
 	/**
 	 * Launch the application.
@@ -61,7 +61,7 @@ public class signUpPage {
 		frame.getContentPane().setLayout(null);
 		
 		firstNameTextbox = new JTextField();
-		firstNameTextbox.setText("Noman");
+		firstNameTextbox.setText("Enter first name");
 		firstNameTextbox.setBounds(128, 24, 171, 20);
 		frame.getContentPane().add(firstNameTextbox);
 		firstNameTextbox.setColumns(10);
@@ -102,7 +102,7 @@ public class signUpPage {
 		frame.getContentPane().add(lastNameLabel);
 		
 		lastNameTextbox = new JTextField();
-		lastNameTextbox.setText("Syed");
+		lastNameTextbox.setText("Enter last name");
 		lastNameTextbox.setColumns(10);
 		lastNameTextbox.setBounds(408, 24, 171, 20);
 		frame.getContentPane().add(lastNameTextbox);
@@ -119,13 +119,13 @@ public class signUpPage {
 		frame.getContentPane().add(middleInitialLabel);
 		
 		emailTextbox = new JTextField();
-		emailTextbox.setText("Noman");
+		emailTextbox.setText("Enter email");
 		emailTextbox.setColumns(10);
 		emailTextbox.setBounds(128, 65, 171, 20);
 		frame.getContentPane().add(emailTextbox);
 		
 		streetAddressTexBox = new JTextField();
-		streetAddressTexBox.setText("Noman");
+		streetAddressTexBox.setText("Enter street address");
 		streetAddressTexBox.setColumns(10);
 		streetAddressTexBox.setBounds(128, 106, 171, 20);
 		frame.getContentPane().add(streetAddressTexBox);
@@ -141,7 +141,7 @@ public class signUpPage {
 		frame.getContentPane().add(cityLabel);
 		
 		cityTextbox = new JTextField();
-		cityTextbox.setText("Richardson");
+		cityTextbox.setText("Enter city");
 		cityTextbox.setColumns(10);
 		cityTextbox.setBounds(408, 106, 171, 20);
 		frame.getContentPane().add(cityTextbox);
@@ -152,7 +152,7 @@ public class signUpPage {
 		frame.getContentPane().add(stateLabel);
 		
 		stateTextbox = new JTextField();
-		stateTextbox.setText("Texas");
+		stateTextbox.setText("Enter state");
 		stateTextbox.setColumns(10);
 		stateTextbox.setBounds(128, 147, 171, 20);
 		frame.getContentPane().add(stateTextbox);
@@ -163,7 +163,7 @@ public class signUpPage {
 		frame.getContentPane().add(zipCodeLabel);
 		
 		zipCodeTextbox = new JTextField();
-		zipCodeTextbox.setText("75088");
+		zipCodeTextbox.setText("Enter zip code");
 		zipCodeTextbox.setColumns(10);
 		zipCodeTextbox.setBounds(408, 147, 171, 20);
 		frame.getContentPane().add(zipCodeTextbox);
@@ -184,13 +184,13 @@ public class signUpPage {
 		frame.getContentPane().add(usernameLabel);
 		
 		usernameTextBox = new JTextField();
-		usernameTextBox.setText("Texas");
+		usernameTextBox.setText("Enter Username");
 		usernameTextBox.setColumns(10);
 		usernameTextBox.setBounds(128, 229, 171, 20);
 		frame.getContentPane().add(usernameTextBox);
 		
 		passwordTextbox = new JTextField();
-		passwordTextbox.setText("Texas");
+		passwordTextbox.setText("Enter Password");
 		passwordTextbox.setColumns(10);
 		passwordTextbox.setBounds(128, 267, 171, 20);
 		frame.getContentPane().add(passwordTextbox);
@@ -200,10 +200,10 @@ public class signUpPage {
 		confirmPasswordLabel.setBounds(312, 264, 92, 26);
 		frame.getContentPane().add(confirmPasswordLabel);
 		
-		textField_4 = new JTextField();
-		textField_4.setText("Texas");
-		textField_4.setColumns(10);
-		textField_4.setBounds(408, 267, 171, 20);
-		frame.getContentPane().add(textField_4);
+		txtEnterPassword = new JTextField();
+		txtEnterPassword.setText("Enter Password");
+		txtEnterPassword.setColumns(10);
+		txtEnterPassword.setBounds(408, 267, 171, 20);
+		frame.getContentPane().add(txtEnterPassword);
 	}
 }
