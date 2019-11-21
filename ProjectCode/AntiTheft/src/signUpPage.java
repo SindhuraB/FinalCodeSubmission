@@ -9,6 +9,7 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.SystemColor;
+import javax.swing.JPasswordField;
 
 public class signUpPage {
 
@@ -24,8 +25,8 @@ public class signUpPage {
 	private JTextField zipCodeTextbox;
 	private JTextField extensionTextbox;
 	private JTextField usernameTextBox;
-	private JTextField passwordTextbox;
-	private JTextField txtEnterPassword;
+	private JPasswordField passwordField;
+	private JPasswordField passwordField_1;
 
 	/**
 	 * Launch the application.
@@ -61,13 +62,11 @@ public class signUpPage {
 		frame.getContentPane().setLayout(null);
 		
 		firstNameTextbox = new JTextField();
-		firstNameTextbox.setText("Enter first name");
 		firstNameTextbox.setBounds(128, 24, 171, 20);
 		frame.getContentPane().add(firstNameTextbox);
 		firstNameTextbox.setColumns(10);
 		
 		phoneTextbox = new JTextField();
-		phoneTextbox.setText("XXX-XXX-XXX");
 		phoneTextbox.setBounds(128, 188, 171, 20);
 		frame.getContentPane().add(phoneTextbox);
 		phoneTextbox.setColumns(10);
@@ -102,13 +101,11 @@ public class signUpPage {
 		frame.getContentPane().add(lastNameLabel);
 		
 		lastNameTextbox = new JTextField();
-		lastNameTextbox.setText("Enter last name");
 		lastNameTextbox.setColumns(10);
 		lastNameTextbox.setBounds(408, 24, 171, 20);
 		frame.getContentPane().add(lastNameTextbox);
 		
 		txtA = new JTextField();
-		txtA.setText("A");
 		txtA.setColumns(10);
 		txtA.setBounds(613, 24, 30, 20);
 		frame.getContentPane().add(txtA);
@@ -119,13 +116,11 @@ public class signUpPage {
 		frame.getContentPane().add(middleInitialLabel);
 		
 		emailTextbox = new JTextField();
-		emailTextbox.setText("Enter email");
 		emailTextbox.setColumns(10);
 		emailTextbox.setBounds(128, 65, 171, 20);
 		frame.getContentPane().add(emailTextbox);
 		
 		streetAddressTexBox = new JTextField();
-		streetAddressTexBox.setText("Enter street address");
 		streetAddressTexBox.setColumns(10);
 		streetAddressTexBox.setBounds(128, 106, 171, 20);
 		frame.getContentPane().add(streetAddressTexBox);
@@ -141,7 +136,6 @@ public class signUpPage {
 		frame.getContentPane().add(cityLabel);
 		
 		cityTextbox = new JTextField();
-		cityTextbox.setText("Enter city");
 		cityTextbox.setColumns(10);
 		cityTextbox.setBounds(408, 106, 171, 20);
 		frame.getContentPane().add(cityTextbox);
@@ -152,7 +146,6 @@ public class signUpPage {
 		frame.getContentPane().add(stateLabel);
 		
 		stateTextbox = new JTextField();
-		stateTextbox.setText("Enter state");
 		stateTextbox.setColumns(10);
 		stateTextbox.setBounds(128, 147, 171, 20);
 		frame.getContentPane().add(stateTextbox);
@@ -163,7 +156,6 @@ public class signUpPage {
 		frame.getContentPane().add(zipCodeLabel);
 		
 		zipCodeTextbox = new JTextField();
-		zipCodeTextbox.setText("Enter zip code");
 		zipCodeTextbox.setColumns(10);
 		zipCodeTextbox.setBounds(408, 147, 171, 20);
 		frame.getContentPane().add(zipCodeTextbox);
@@ -184,26 +176,21 @@ public class signUpPage {
 		frame.getContentPane().add(usernameLabel);
 		
 		usernameTextBox = new JTextField();
-		usernameTextBox.setText("Enter Username");
 		usernameTextBox.setColumns(10);
 		usernameTextBox.setBounds(128, 229, 171, 20);
 		frame.getContentPane().add(usernameTextBox);
-		
-		passwordTextbox = new JTextField();
-		passwordTextbox.setText("Enter Password");
-		passwordTextbox.setColumns(10);
-		passwordTextbox.setBounds(128, 267, 171, 20);
-		frame.getContentPane().add(passwordTextbox);
 		
 		JLabel confirmPasswordLabel = new JLabel("Confirm Password");
 		confirmPasswordLabel.setForeground(SystemColor.text);
 		confirmPasswordLabel.setBounds(312, 264, 92, 26);
 		frame.getContentPane().add(confirmPasswordLabel);
 		
-		txtEnterPassword = new JTextField();
-		txtEnterPassword.setText("Enter Password");
-		txtEnterPassword.setColumns(10);
-		txtEnterPassword.setBounds(408, 267, 171, 20);
-		frame.getContentPane().add(txtEnterPassword);
+		passwordField = new JPasswordField();
+		passwordField.setBounds(128, 267, 171, 20);
+		frame.getContentPane().add(passwordField);
+		
+		passwordField_1 = new JPasswordField();
+		passwordField_1.setBounds(408, 267, 171, 20);
+		frame.getContentPane().add(passwordField_1);
 	}
 }
