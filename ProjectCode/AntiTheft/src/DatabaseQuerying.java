@@ -16,7 +16,7 @@ public class DatabaseQuerying {
 			
 			//create the connection object
 			Connection con = DriverManager.getConnection(
-					"jdbc:oracle:thin:@10.21.79.26:1521/orclpdb", "TAGCOMPDBA", "minigrr1");
+					"jdbc:oracle:thin:@10.21.47.176:1521/orclpdb", "TAGCOMPDBA", "minigrr1");
 			System.out.println("Connection made to PDB");
 			return con;
 			}
