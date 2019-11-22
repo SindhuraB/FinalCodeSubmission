@@ -16,7 +16,7 @@ public class DatabaseQuerying {
 			
 			//create the connection object
 			Connection con = DriverManager.getConnection(
-					"jdbc:oracle:thin:@10.21.47.176:1521/orclpdb", "TAGCOMPDBA", "minigrr1");
+					"jdbc:oracle:thin:@192.168.15.83:1521/orclpdb", "TAGCOMPDBA", "minigrr1");
 			System.out.println("Connection made to PDB");
 			return con;
 			}
@@ -33,7 +33,7 @@ public class DatabaseQuerying {
 			int newAccountID = 0; // AccountID to be created
 			// Open connection
 			Connection con = openCon();
-			//create the statement object 
+			//create the statement object
 			Statement stmt = con.createStatement();
 			//execute query; Select last entered account ID number
 			ResultSet rs = stmt.executeQuery("select * from ACCOUNTS where AcID = (select max(AcID) from ACCOUNTS)");
@@ -49,9 +49,25 @@ public class DatabaseQuerying {
 		}
 	}
 	
-	public static void createNewUser() 
+	public static int createNewUser(String email, String pass) 
 	{
-		
+		try
+		{
+			String newID = Integer.toString(getNewID());
+			// Open connection
+			Connection con = openCon();
+			//create the statement object
+			Statement stmt = con.createStatement();
+			//execute query; Select last entered account ID number
+			int rows = stmt.executeUpdate("insert into ACCOUNT (AcID, Email, Password) "
+					+ "values ('" + newID + "', '" + email + "', '" + pass + "')");
+			return rows;
+		}
+		catch (Exception e)
+		{
+			System.out.print(e);
+			return -1;
+		}
 	}
 	
 	public static ArrayList<String> selectProducts()
@@ -62,7 +78,7 @@ public class DatabaseQuerying {
 			// Open connection
 			Connection con = openCon();
 			System.out.println("Connection opened");
-			//create the statement object 
+			//create the statement object
 			Statement stmt = con.createStatement();
 			//execute query; update the '1' to variable input from GUI
 			ResultSet rs = stmt.executeQuery("select ut.Brand, ut.ItemDesc from USER_TAGS ut where ut.AccountID = '1'");
