@@ -5,6 +5,8 @@ import java.util.ArrayList;
 // This class creates a connection and queries the database
 
 public class DatabaseQuerying {
+	static int accRowsChanged;
+	static int userRowsChanged;
 	
 	public DatabaseQuerying() {}
 	
@@ -49,7 +51,7 @@ public class DatabaseQuerying {
 		}
 	}
 	
-	public static int createNewUser(String email, String pass) 
+	public static void createNewUser(String email, String pass) 
 	{
 		try
 		{
@@ -59,14 +61,16 @@ public class DatabaseQuerying {
 			//create the statement object
 			Statement stmt = con.createStatement();
 			//execute query; Select last entered account ID number
-			int rows = stmt.executeUpdate("insert into ACCOUNT (AcID, Email, Password) "
+			accRowsChanged = stmt.executeUpdate("insert into ACCOUNT (AcID, Email, Password) "
 					+ "values ('" + newID + "', '" + email + "', '" + pass + "')");
-			return rows;
+			userRowsChanged = stmt.executeUpdate("insert into TAGUSER (AcID, Email, Password) "
+					+ "values ('" + newID + "', '" + email + "', '" + pass + "')");
 		}
 		catch (Exception e)
 		{
 			System.out.print(e);
-			return -1;
+			accRowsChanged = -1;
+			userRowsChanged = -1;
 		}
 	}
 	
