@@ -9,5 +9,6 @@
 	<classpathentry kind="lib" path="C:/Repositories/Anti-Theft-Project/Anti-Theft-Project/Database Drivers/ucp.jar"/>
 	<classpathentry kind="lib" path="/Users/labeebarana/Desktop/drivers/ojdbc8.jar"/>
 	<classpathentry kind="lib" path="/Users/labeebarana/Desktop/drivers/ucp.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
