@@ -7,5 +7,7 @@
 	<classpathentry kind="lib" path="jgoodies-common-1.8.0.jar" sourcepath="jgoodies-common-1.8.0-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Repositories/Anti-Theft-Project/Anti-Theft-Project/Database Drivers/ojdbc8.jar"/>
 	<classpathentry kind="lib" path="C:/Repositories/Anti-Theft-Project/Anti-Theft-Project/Database Drivers/ucp.jar"/>
+	<classpathentry kind="lib" path="/Users/labeebarana/Desktop/drivers/ojdbc8.jar"/>
+	<classpathentry kind="lib" path="/Users/labeebarana/Desktop/drivers/ucp.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
