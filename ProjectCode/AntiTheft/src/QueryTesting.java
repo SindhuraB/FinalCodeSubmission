@@ -12,6 +12,8 @@ public class QueryTesting extends DatabaseQuerying{
 		
 		int newAccNum = queryMaker.getNewID();
 		System.out.println(newAccNum);
+		
+		queryMaker.createNewUser("cool@cool.com", "cool123", "Jeff", "J", "Jeffery", 
+				"123 Cool St.", "Plano", "TX", 75080, 123456789, 1, newAccNum);
 	}
-
 }

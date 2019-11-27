@@ -16,9 +16,12 @@ public class DatabaseQuerying {
 			//load the driver class
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
+			String url = "jdbc:oracle:thin:@192.168.1.24:1521/orclpdb";
+			String user = "TAGCOMPDBA";
+			String pass = "minigrr1";
+			
 			//create the connection object
-			Connection con = DriverManager.getConnection(
-					"jdbc:oracle:thin:@192.168.15.83:1521/orclpdb", "TAGCOMPDBA", "minigrr1");
+			Connection con = DriverManager.getConnection(url, user, pass);
 			System.out.println("Connection made to PDB");
 			return con;
 			}
@@ -51,19 +54,22 @@ public class DatabaseQuerying {
 		}
 	}
 	
-	public static void createNewUser(String email, String pass) 
+	public static void createNewUser(String email, String pass, String fName, String mInit, String lName, String street,
+			String city, String state, int zipCode, int phone, int extension, int newID) 
 	{
 		try
 		{
-			String newID = Integer.toString(getNewID());
 			// Open connection
 			Connection con = openCon();
 			//create the statement object
 			Statement stmt = con.createStatement();
-			//execute query; Select last entered account ID number
+			//execute insert statement; Create TAGUSER entry
+			String columns = "Fname, Minit, Lname, Streetname, City, State, ZipCode, Phone, Extension, AccountID";
+			userRowsChanged = stmt.executeUpdate("insert into TAGUSER ("+ columns + ") "
+					+ "values ('" + fName + "', '" + mInit + "', '" + lName + "', '" + street + "', '" + city
+					+ "', '" + state + "', '" + zipCode + "', '" + phone + "', '" + extension + "', '" + newID + "')");
+			//execute insert statement; Create ACCOUNT entry
 			accRowsChanged = stmt.executeUpdate("insert into ACCOUNT (AcID, Email, Password) "
-					+ "values ('" + newID + "', '" + email + "', '" + pass + "')");
-			userRowsChanged = stmt.executeUpdate("insert into TAGUSER (AcID, Email, Password) "
 					+ "values ('" + newID + "', '" + email + "', '" + pass + "')");
 		}
 		catch (Exception e)
@@ -81,19 +87,15 @@ public class DatabaseQuerying {
 		{
 			// Open connection
 			Connection con = openCon();
-			System.out.println("Connection opened");
 			//create the statement object
 			Statement stmt = con.createStatement();
 			//execute query; update the '1' to variable input from GUI
 			ResultSet rs = stmt.executeQuery("select ut.Brand, ut.ItemDesc from USER_TAGS ut where ut.AccountID = '1'");
-			System.out.println("Query executed");
 			ArrayList<String> items = new ArrayList<String>();
 			while(rs.next()) {
-				System.out.println("Copying results");
 				items.add(rs.getString("Brand") + ", " + rs.getString("ItemDesc"));
 			}
 			con.close();
-			System.out.println("Connection to PDB closed");
 			return items;
 		}
 		catch (Exception e)
