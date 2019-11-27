@@ -22,8 +22,6 @@ import javax.swing.*;
 public class signIn {
 
 	private JFrame frame;
-	private JTextField usernameTextbox;
-	private JPasswordField passwordTextbox;
 
 	/**
 	 * Launch the application.
@@ -40,14 +38,16 @@ public class signIn {
 			}
 		});
 	}
-	Connection connection=null;
+	//Connection connection=null; //Needs to be replaced by the connection class name
+	
 	/**
 	 * Create the application.
 	 */
 	
 	public signIn() {
 		initialize();
-		connection=dbConnection.dbConnector();
+		//connection=sqliteConnection.dbConnector(); //needs to be replaced by the connection class name
+		
 		
 	}
 
@@ -63,49 +63,62 @@ public class signIn {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		JTextArea passwordText = new JTextArea();
+		passwordText.setBounds(360, 287, 194, 32);
+		frame.getContentPane().add(passwordText);
 		
-		usernameTextbox = new JTextField();
-		usernameTextbox.setFont(new Font("Tahoma", Font.PLAIN, 21));
-		usernameTextbox.setBounds(450, 150, 189, 37);
-		usernameTextbox.setColumns(10);
-		frame.getContentPane().add(usernameTextbox);
+		JTextArea usernameText = new JTextArea();
+		usernameText.setBounds(360, 196, 194, 32);
+		frame.getContentPane().add(usernameText);
 		
 		JLabel usernameLabel = new JLabel("Username");		
 		usernameLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		usernameLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
 		usernameLabel.setForeground(new Color(255, 255, 255));
 		usernameLabel.setBackground(new Color(255, 255, 255));
-		usernameLabel.setBounds(289, 150, 158, 37);
+		usernameLabel.setBounds(360, 131, 171, 37);
 		frame.getContentPane().add(usernameLabel);
-		
-		passwordTextbox = new JPasswordField();
-		passwordTextbox.setFont(new Font("Tahoma", Font.PLAIN, 21));
-		passwordTextbox.setBounds(450, 225, 189, 32);
-		frame.getContentPane().add(passwordTextbox);
 		
 		JLabel passwordLabel = new JLabel("Password");		
 		passwordLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		passwordLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
 		passwordLabel.setForeground(new Color(255, 255, 255));
-		passwordLabel.setBounds(289, 225, 158, 37);
+		passwordLabel.setBounds(360, 239, 180, 37);
 		frame.getContentPane().add(passwordLabel);	
 		
 		JLabel loginLabel = new JLabel("Log In");
 		loginLabel.setFont(new Font("Impact", Font.PLAIN, 41));
 		loginLabel.setForeground(SystemColor.text);
 		loginLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		loginLabel.setBounds(350, 0, 158, 56);
+		loginLabel.setBounds(342, 11, 189, 56);
 		frame.getContentPane().add(loginLabel);
 		
 		JButton backButton = new JButton("Back");		
-		backButton.setFont(new Font("Tahoma", Font.BOLD, 25));		
-		backButton.setBounds(178, 325, 116, 43);
+		backButton.setFont(new Font("Tahoma", Font.BOLD, 20));		
+		backButton.setBounds(408, 438, 100, 32);
 		frame.getContentPane().add(backButton);
 		
-		JButton loginButton = new JButton("Log In");		
-		loginButton.setFont(new Font("Tahoma", Font.BOLD, 25));
-		loginButton.setBounds(600, 325, 116, 43);
+		JButton loginButton = new JButton("log in");		
+		loginButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					String query="select * from CHRIS' DATABASE where username=? and password=?"; //checks if value in database is the same, replace CHRIS' DATABASE with name of database
+					PreparedStatement pst=connection.prepareStatement(query);//Conection needs to be replaced with name of connection method
+					pst.setString(0,passwordText.getText());
+					pst.setString(1,usernameText.getText());
+					
+					ResultSet rs=pst.executeQuery();
+					
+					
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, e);
+				}}
+		});
+		loginButton.setFont(new Font("Tahoma", Font.BOLD, 20));
+		loginButton.setBounds(408, 368, 100, 32);
 		frame.getContentPane().add(loginButton);
+		
+	
 		
 		
 	
