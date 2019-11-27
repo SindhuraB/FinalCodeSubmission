@@ -11,19 +11,22 @@ public class Product extends User{
 		static public void CreateProduct (String email) {
 			
 			System.out.println("To register a new product, enter your unique user ID");
-			
-			//N2S varika fix scanner input with full line of input for product description
+		
 			Integer id = input.nextInt();
 			
 			
 			if (database.get(email).intValue() == id.intValue())
 				{
 			
-					System.out.println("Enter a name for the product you are registering");
+					input.nextLine();
+					System.out.println("Enter the brand for the product you are registering");
 			
-					String product = input.next();
+					String brand = input.nextLine();
+					
+					System.out.println("Enter a short description for the product you are registering");
+					String descrip = input.nextLine();
 			
-					products.put(id, product);
+					products.put(id, (brand + " - " + descrip));
 			
 			}
 			
@@ -37,8 +40,7 @@ public class Product extends User{
 		public static void DisplayItems(String email) {
 			
 			System.out.println("To view your complete list of products, enter your unique user ID");
-			
-//N2S - varika fix scanner input with full line of input for product description
+
 			Integer id = input.nextInt();
 			
 			if (database.get(email).intValue() == id.intValue())

@@ -1,4 +1,5 @@
 import javax.swing.JOptionPane;
+
 import java.util.*;
 
 /*
@@ -10,8 +11,12 @@ public class User {
 	
 	String lastName;
 	String firstName;
-	String middleName;
-	String userAddress;
+	Character middle;
+	String street;
+	String city;
+	String state;
+	Integer zip;
+	Integer phone;
 	Integer userID;
 	String userPassword;
 	String productList[];
@@ -36,14 +41,28 @@ public class User {
 		JOptionPane.showMessageDialog(null, "Welcome");
 		
 			//JOptionPane.showMessageDialog(null, userName);
+			 * 
+			 * 	System.out.println("");		
+		String input1 = JOptionPane.showInputDialog("Last Name"); 
+			lastName = input1;
+		String input2 = JOptionPane.showInputDialog("First Name");
+			firstName = input2;
+		String input3 = JOptionPane.showInputDialog("Middle Name");
+			middleName = input3;
+		String input4 = JOptionPane.showInputDialog("User Address");
+			userAddress = input4;
+			
+		
 	}
 	
 	*/
 	//Partners: Varika & Labeeba
 	  
      public void createAccount() {
+    	 
 
-		        System.out.print("To create an account, enter your email");
+
+		        System.out.println("To create an account, enter your email");
 
 		        userEmail = input.next();
 		        
@@ -53,10 +72,72 @@ public class User {
 		           	 Login.login();
 		        }
 		        	
-
-		        System.out.print("Enter a password to set it");
+		        
+		        System.out.println ("Please enter your first name");
+		        
+		        firstName = input.next();
+		        
+ 
+		        System.out.println ("Please enter your last name");
+		        
+		        lastName = input.next();
+		        
+		      
+		        System.out.println("Please enter your middle initial or the number 0 if you do not have one");
+		        
+		        middle = input.next().charAt(0);
+		        
+		        while (!(Character.isLetter(middle) || middle == '0')){
+		        	System.out.println("Invalid. Please try again by entering your middle initial or 0 if you don't have one");
+		        	middle = input.next().charAt(0);
+		        }
+		        
+		       input.nextLine();
+		        System.out.println("Street Address");
+		        
+		        street = input.nextLine();
+		        
+		        System.out.println("City");
+		        
+		       
+		        
+		        city = input.next();
+		        
+		        System.out.println("State");
+		        
+		        state = input.next();
+		      
+		        System.out.println("Zip");
+		        
+		        
+		        try {
+		        	zip = input.nextInt();
+		        }
+		        catch (Exception e) {
+		        	System.out.println("Please enter your zip code using only digits");
+		        	input.nextLine();
+		        	zip = input.nextInt();
+		        }
+		        
+		        
+		        System.out.println("Phone Number");
+		        
+		        try {
+		        	phone = input.nextInt();
+		        }
+		        catch (Exception e) {
+		        	System.out.println("Please enter your number using only digits");
+		        	input.nextLine();
+		        	phone = input.nextInt();
+		        }
+		          
+		          
+		        
+		        System.out.print("Enter a password for your account");
 
 		        userPassword = input.next();
+		        
+		        
 		 /*       
 		        boolean valid = User.valid(userPassword);
 		        
@@ -105,11 +186,26 @@ public class User {
 		
 	}	
 	
+
+	public  String getname() {
+		
+		if (middle == '0')
+			return firstName + " " + lastName;
+		else
+			return firstName + " " + middle + ". " + lastName;
+		
+	}	
+	
 	public String getemail() {
 		
 		return userEmail;
 		
 	}	
+	
+	public String getAddress() {
+		
+		return street + " " + city + ", " + state + " " + zip.toString();
+	}
 	
 	//validation for password - contains number, upper case, lower case, no spaces
 	public static boolean valid (String pass){
@@ -128,15 +224,6 @@ public class User {
 }
 
 
-
-class UserAccount {
-	
-	
-}
-
-class VerifyUserAccount {
-	
-}
 
 
 

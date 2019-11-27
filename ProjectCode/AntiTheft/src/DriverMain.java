@@ -16,6 +16,9 @@ public class DriverMain extends User {
 			
 			//making an account
 			one.createAccount();
+			//test displaying account info
+			one.getname();
+			one.getAddress();
 			
 			//log person in
 			Login.login();

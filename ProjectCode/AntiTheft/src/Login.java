@@ -25,9 +25,7 @@ public class Login extends Product {
 		    			if ( pass.equals(password.get(email)) ) {
 
 		    					System.out.println("Login successful");
-		    					
-		    					System.out.println("Your registered products are:");
-		    					Product.DisplayItems(email);
+		    			
 		    					
 		    			}
 		    			
