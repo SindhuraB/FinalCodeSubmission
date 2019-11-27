@@ -32,7 +32,7 @@ public class signUpPage {
 	/**
 	 * Launch the application.
 	 */
-	public static void openSignUpPage() {
+	public void openSignUpPage() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
