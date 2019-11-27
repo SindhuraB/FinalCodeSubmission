@@ -54,7 +54,9 @@ public class openingPage {
 		JButton btnSignIn = new JButton("Sign In");
 		btnSignIn.setBackground(SystemColor.window);
 		btnSignIn.setFont(new Font("Calibri", Font.PLAIN, 28));
-
+		btnSignIn.setBounds(385, 150, 139, 48);
+		frame.getContentPane().add(btnSignIn);
+		
 		//If Sign In button is clicked then take the user to sign in page
 		btnSignIn.addMouseListener(new MouseAdapter() {
 			@Override
@@ -63,20 +65,21 @@ public class openingPage {
 				signInScreen.openSignInPage();
 			}
 		});
-		btnSignIn.setBounds(385, 150, 139, 48);
-		frame.getContentPane().add(btnSignIn);
 		
 		JButton btnSignUp = new JButton("Sign up");
+		btnSignUp.setBackground(SystemColor.window);
+		btnSignUp.setFont(new Font("Calibri", Font.PLAIN, 28));
+		btnSignUp.setBounds(385, 221, 139, 48);
+		frame.getContentPane().add(btnSignUp);
+		
+		//If Sign Up button is clicked then take the user to sign in page
 		btnSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				signUpPage signUpScreen = new signUpPage();
 				signUpScreen.openSignUpPage();
 			}
 		});
-		btnSignUp.setBackground(SystemColor.window);
-		btnSignUp.setFont(new Font("Calibri", Font.PLAIN, 28));
-		btnSignUp.setBounds(385, 221, 139, 48);
-		frame.getContentPane().add(btnSignUp);
+		
 		
 		JLabel welcomeLabel = new JLabel("Welcome");
 		welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
