@@ -1,5 +1,5 @@
 import java.awt.EventQueue;
-
+import javax.swing.*;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -16,6 +16,8 @@ import java.awt.SystemColor;
 import javax.swing.JPasswordField;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.*;
+import javax.swing.*;
 
 public class signIn {
 
@@ -38,12 +40,15 @@ public class signIn {
 			}
 		});
 	}
-
+	Connection connection=null;
 	/**
 	 * Create the application.
 	 */
+	
 	public signIn() {
 		initialize();
+		connection=dbConnection.dbConnector();
+		
 	}
 
 	/**
