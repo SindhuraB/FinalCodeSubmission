@@ -83,13 +83,8 @@ public class signIn {
 		passwordLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
 		passwordLabel.setForeground(new Color(255, 255, 255));
 		passwordLabel.setBounds(289, 225, 158, 37);
-		frame.getContentPane().add(passwordLabel);
+		frame.getContentPane().add(passwordLabel);	
 		
-		JButton backButton = new JButton("Back");		
-		backButton.setFont(new Font("Tahoma", Font.BOLD, 25));		
-		backButton.setBounds(178, 325, 116, 43);
-		frame.getContentPane().add(backButton);
-	
 		JLabel loginLabel = new JLabel("Log In");
 		loginLabel.setFont(new Font("Impact", Font.PLAIN, 41));
 		loginLabel.setForeground(SystemColor.text);
@@ -97,7 +92,10 @@ public class signIn {
 		loginLabel.setBounds(350, 0, 158, 56);
 		frame.getContentPane().add(loginLabel);
 		
-		
+		JButton backButton = new JButton("Back");		
+		backButton.setFont(new Font("Tahoma", Font.BOLD, 25));		
+		backButton.setBounds(178, 325, 116, 43);
+		frame.getContentPane().add(backButton);
 		
 		JButton loginButton = new JButton("Log In");		
 		loginButton.setFont(new Font("Tahoma", Font.BOLD, 25));
