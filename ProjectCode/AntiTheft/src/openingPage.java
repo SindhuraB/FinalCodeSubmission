@@ -51,6 +51,8 @@ public class openingPage {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		
+		//Creates the SignIn button
 		JButton btnSignIn = new JButton("Sign In");
 		btnSignIn.setBackground(SystemColor.window);
 		btnSignIn.setFont(new Font("Calibri", Font.PLAIN, 28));
@@ -66,6 +68,7 @@ public class openingPage {
 			}
 		});
 		
+		//Creates the SignUp button
 		JButton btnSignUp = new JButton("Sign up");
 		btnSignUp.setBackground(SystemColor.window);
 		btnSignUp.setFont(new Font("Calibri", Font.PLAIN, 28));
@@ -80,7 +83,7 @@ public class openingPage {
 			}
 		});
 		
-		
+		//Creates the Welcome Sign
 		JLabel welcomeLabel = new JLabel("Welcome");
 		welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		welcomeLabel.setFont(new Font("Impact", Font.PLAIN, 35));
