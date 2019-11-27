@@ -9,39 +9,39 @@ public class QueryServer {
 	private Socket socket = null;
 	private ServerSocket server = null;
 	private DataInputStream input = null;
-	
-	public static Connection openCon ()
+	private ObjectOutputStream output = null;
+	private Connection con;
+
+	public QueryServer(int port) throws IOException
 	{
-		try {
+		try 
+		{
 			//load the driver class
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			
+			// Create connection url
 			String url = "jdbc:oracle:thin:@localhost:1521/orclpdb";
 			String user = "TAGCOMPDBA";
 			String pass = "minigrr1";
 			
 			//create the connection object
-			Connection con = DriverManager.getConnection(url, user, pass);
+			con = DriverManager.getConnection(url, user, pass);
 			System.out.println("Connection made to PDB");
-			return con;
-			}
-		catch(Exception e) {
-			System.out.print(e);
-			return null;
 		}
-	}
-
-	public QueryServer(int port) throws IOException
-	{
-		try
+		catch(Exception e)
 		{
-			server = new ServerSocket(1521);
+			System.out.print(e);
+		}
+		try
+		{	
+			server = new ServerSocket(port);
 			System.out.println("Server started");
-			server.setSoTimeout(10000);
+			server.setSoTimeout(100000);
 			System.out.println("Waiting for client connection...");
 			
 			socket = server.accept();
 			System.out.println("Client connection accepted");
+			System.out.println("Closing connection");
+			
 			// Take input from client socket
 			input = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
 			String sql = "";
@@ -52,23 +52,26 @@ public class QueryServer {
 				try
 				{
 					sql = input.readUTF();
-					try
-					{
-					// Open connection
-					Connection con = openCon();
-					//create the statement object
-					Statement stmt = con.createStatement();
-					ResultSet rs = stmt.executeQuery(sql);
-					con.close();
-					}
-					catch(Exception e)
-					{
-						System.out.println();
-					}
+					System.out.println("Querying:");
+					System.out.println(sql);
 				}
 				catch(IOException i)
 				{
 					System.out.println(i);
+				}
+				try
+				{
+					//create the statement object
+					Statement stmt = con.createStatement();
+					ResultSet rs = stmt.executeQuery(sql);
+					System.out.println("Query Executed");
+					output.writeObject(rs);
+					System.out.println("Sending results");
+					con.close();
+				}
+				catch(Exception e)
+				{
+					System.out.println();
 				}
 				
 			}
@@ -84,7 +87,7 @@ public class QueryServer {
 		}
 	}
 	
-	public void main(String[] args) 
+	public static void main(String[] args) 
 	{
 		try 
 		{

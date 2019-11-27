@@ -1,21 +1,35 @@
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class QueryTesting extends DatabaseQuerying{
 
 	public static void main(String[] args) {
-		// Create DatabaseQuerying Object
+		// Create database querying object
 		DatabaseQuerying queryMaker = new DatabaseQuerying();
+		queryMaker.requestID = -1;
+		ResultSet rs = queryMaker.rs;
+		System.out.println("Connection ended by: " + queryMaker.sql);
+		
 		/*
+		int newAccNum = -1;
+		try 
+		{
+			newAccNum = rs.getInt("AcID");
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		System.out.println(newAccNum);
+			
 		// Iterate through item descriptions
 		ArrayList<String> itemDesc = queryMaker.selectProducts(1);
 		for(int i = 0; i < itemDesc.size(); i++)
 			System.out.println(itemDesc.get(i));
-		*/
-		int newAccNum = queryMaker.getNewID();
-		System.out.println(newAccNum);
-		/*
+		// Call method to create new user
 		queryMaker.createNewUser("cool@cool.com", "cool123", "Jeff", "J", "Jeffery", 
 				"123 Cool St.", "Plano", "TX", 75080, 123456789, 1);
-				*/
+		*/
 	}
 }

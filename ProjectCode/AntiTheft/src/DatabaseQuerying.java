@@ -6,24 +6,96 @@ import java.io.*;
 // Coded by: Chris Guerra and Labeeba Rana
 // This class creates a connection and queries the database
 
-public class DatabaseQuerying {
+public class DatabaseQuerying{
 	// Initialize client socket and input/output streams
 	private Socket socket = null;
-	private DataInputStream input = null;
+	private ObjectInputStream input = null;
 	private DataOutputStream output = null;
 	
-	static int accRowsChanged;
-	static int userRowsChanged;
+	int requestID = 0;
+	String sql = null;
+	ResultSet rs = null; // ResultSet to be received and parsed
+	static int accColChanged; // Number of columns changed from updating ACCOUNT table
+	static int userColChanged; // Number of columns changed from updating TAGUSER table
 	
 	public DatabaseQuerying()
 	{
 		try
 		{
+			// Connect to database server and setup input/output streams
 			socket = new Socket("192.168.1.24", 5000);
 			System.out.println("Connected");
-			
+			input = new ObjectInputStream(socket.getInputStream());
+			output = new DataOutputStream(socket.getOutputStream());
 		}
-		catch()
+		catch(UnknownHostException u)
+		{
+			System.out.println(u);
+		}
+		catch(IOException i)
+		{
+			System.out.println(i);
+		}
+		// Select last entered account ID number
+		
+		while(!sql.equals("End"))
+		{
+			if(requestID == -1)
+			{
+				sql = "End";
+				try
+				{
+					output.writeUTF(sql);
+				}
+				catch(IOException i)
+				{
+					System.out.println(i);
+				}
+			}
+			else if(requestID == 1)
+			{
+				sql = "select * from ACCOUNTS where AcID = (select max(AcID) from ACCOUNTS)";
+				try
+				{
+					// Write sql string for query to output
+					output.writeUTF(sql);
+				}
+				catch(IOException i)
+				{
+					System.out.println(i);
+				}
+				try
+				{
+					// Read in result set from input
+					rs = (ResultSet)input.readObject();
+				}
+				catch(Exception e)
+				{
+					System.out.println(e);
+					rs = null;
+				}
+			}
+		}
+		System.out.println("Closing server connection.");
+		try
+		{
+			// Close socket connection and input/output streams
+			input.close();
+			output.close();
+			socket.close();
+		}
+		catch(IOException i)
+		{
+			System.out.println(i);
+		}
+		try
+		{
+			rs.close(); // Close result set
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
 	}
 	/*
 	public static Connection openCon ()
@@ -32,7 +104,7 @@ public class DatabaseQuerying {
 			//load the driver class
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
-			String url = "jdbc:oracle:thin:@192.168.1.24:1521/orclpdb";
+			String url = "jdbc:oracle:thin:@localhost:1521/orclpdb";
 			String user = "TAGCOMPDBA";
 			String pass = "minigrr1";
 			
@@ -47,25 +119,7 @@ public class DatabaseQuerying {
 		}
 	}
 	*/
-	public int getNewID()
-	{
-		try
-		{
-			int newAccountID = 0; // AccountID to be created
-			// Select last entered account ID number
-			String sql = "select * from ACCOUNTS where AcID = (select max(AcID) from ACCOUNTS)";
-			
-			ResultSet rs = ;
-			if(rs.next())
-				newAccountID = rs.getInt(1) + 1; // Update account number to next number
-			return newAccountID;
-		}
-		catch (Exception e)
-		{
-			System.out.print(e);
-			return -1; // Return invalid int signifying error
-		}
-	}
+	
 	/*
 	public void createNewUser(String email, String pass, String fName, String mInit, String lName, String street,
 			String city, String state, int zipCode, int phone, int extension) 
@@ -85,6 +139,7 @@ public class DatabaseQuerying {
 			userRowsChanged = stmt.executeUpdate("insert into TAGUSER ("+ columns + ") "
 					+ "values ('" + fName + "', '" + mInit + "', '" + lName + "', '" + street + "', '" + city
 					+ "', '" + state + "', '" + zipCode + "', '" + phone + "', '" + extension + "', '" + newID + "')");
+			con.close();
 		}
 		catch (Exception e)
 		{

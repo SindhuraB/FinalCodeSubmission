@@ -7,7 +7,7 @@ class RowsUpdated {
 	@Test
 	void test() {
 		DatabaseQuerying dbqTest = new DatabaseQuerying();
-		int rows = dbqTest.accRowsChanged;
+		int rows = dbqTest.accColChanged;
 		assertEquals(3, rows);
 	}
 
