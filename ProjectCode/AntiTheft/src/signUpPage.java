@@ -11,6 +11,8 @@ import javax.swing.SwingConstants;
 import java.awt.SystemColor;
 import javax.swing.JPasswordField;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class signUpPage {
 
@@ -74,31 +76,40 @@ public class signUpPage {
 		phoneTextbox.setColumns(10);
 		
 		JButton signUpButton = new JButton("Sign Up");
+		signUpButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
 		signUpButton.setBounds(398, 422, 126, 23);
 		frame.getContentPane().add(signUpButton);
 		
 		JLabel firstNameLabel = new JLabel("First name");
-		firstNameLabel.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		firstNameLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		firstNameLabel.setForeground(SystemColor.text);
 		firstNameLabel.setBounds(128, 21, 114, 39);
 		frame.getContentPane().add(firstNameLabel);
 		
 		JLabel emailLabel = new JLabel("Email");
+		emailLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		emailLabel.setForeground(SystemColor.text);
-		emailLabel.setBounds(128, 96, 92, 27);
+		emailLabel.setBounds(128, 96, 59, 29);
 		frame.getContentPane().add(emailLabel);
 		
 		JLabel passwordLabel = new JLabel("Password");
+		passwordLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		passwordLabel.setForeground(SystemColor.text);
 		passwordLabel.setBounds(128, 374, 92, 26);
 		frame.getContentPane().add(passwordLabel);
 		
 		JLabel phoneLabel = new JLabel("Phone");
+		phoneLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		phoneLabel.setForeground(SystemColor.text);
 		phoneLabel.setBounds(128, 260, 92, 26);
 		frame.getContentPane().add(phoneLabel);
 		
 		JLabel lastNameLabel = new JLabel("Last name");
+		lastNameLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		lastNameLabel.setForeground(SystemColor.text);
 		lastNameLabel.setBounds(482, 22, 114, 39);
 		frame.getContentPane().add(lastNameLabel);
@@ -114,6 +125,7 @@ public class signUpPage {
 		frame.getContentPane().add(txtA);
 		
 		JLabel middleInitialLabel = new JLabel("MI");
+		middleInitialLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		middleInitialLabel.setForeground(SystemColor.text);
 		middleInitialLabel.setBounds(795, 20, 30, 29);
 		frame.getContentPane().add(middleInitialLabel);
@@ -129,11 +141,13 @@ public class signUpPage {
 		frame.getContentPane().add(streetAddressTexBox);
 		
 		JLabel streetAddressLabel = new JLabel("Street Address");
+		streetAddressLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		streetAddressLabel.setForeground(SystemColor.text);
-		streetAddressLabel.setBounds(128, 144, 92, 29);
+		streetAddressLabel.setBounds(128, 144, 114, 29);
 		frame.getContentPane().add(streetAddressLabel);
 		
 		JLabel cityLabel = new JLabel("City");
+		cityLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		cityLabel.setForeground(SystemColor.text);
 		cityLabel.setBounds(482, 144, 92, 29);
 		frame.getContentPane().add(cityLabel);
@@ -144,6 +158,7 @@ public class signUpPage {
 		frame.getContentPane().add(cityTextbox);
 		
 		JLabel stateLabel = new JLabel("State");
+		stateLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		stateLabel.setForeground(SystemColor.text);
 		stateLabel.setBounds(128, 197, 92, 29);
 		frame.getContentPane().add(stateLabel);
@@ -154,6 +169,7 @@ public class signUpPage {
 		frame.getContentPane().add(stateTextbox);
 		
 		JLabel zipCodeLabel = new JLabel("Zip Code");
+		zipCodeLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		zipCodeLabel.setForeground(SystemColor.text);
 		zipCodeLabel.setBounds(482, 197, 92, 29);
 		frame.getContentPane().add(zipCodeLabel);
@@ -164,6 +180,7 @@ public class signUpPage {
 		frame.getContentPane().add(zipCodeTextbox);
 		
 		JLabel extentionLabel = new JLabel("Extension");
+		extentionLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		extentionLabel.setForeground(SystemColor.text);
 		extentionLabel.setBounds(482, 260, 92, 26);
 		frame.getContentPane().add(extentionLabel);
@@ -174,6 +191,7 @@ public class signUpPage {
 		frame.getContentPane().add(extensionTextbox);
 		
 		JLabel usernameLabel = new JLabel("Username");
+		usernameLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		usernameLabel.setForeground(SystemColor.text);
 		usernameLabel.setBounds(128, 324, 92, 26);
 		frame.getContentPane().add(usernameLabel);
@@ -184,8 +202,9 @@ public class signUpPage {
 		frame.getContentPane().add(usernameTextBox);
 		
 		JLabel confirmPasswordLabel = new JLabel("Re-type Password");
+		confirmPasswordLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		confirmPasswordLabel.setForeground(SystemColor.text);
-		confirmPasswordLabel.setBounds(442, 374, 154, 26);
+		confirmPasswordLabel.setBounds(482, 374, 114, 26);
 		frame.getContentPane().add(confirmPasswordLabel);
 		
 		passwordField = new JPasswordField();

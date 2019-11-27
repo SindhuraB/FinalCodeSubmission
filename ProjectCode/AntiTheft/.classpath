@@ -1,9 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="jgoodies-forms-1.8.0.jar" sourcepath="jgoodies-forms-1.8.0-sources.jar"/>
 	<classpathentry kind="lib" path="miglayout15-swing.jar" sourcepath="miglayout-src.zip"/>
 	<classpathentry kind="lib" path="jgoodies-common-1.8.0.jar" sourcepath="jgoodies-common-1.8.0-sources.jar"/>
+	<classpathentry kind="lib" path="src/artifacts.jar"/>
+	<classpathentry kind="lib" path="src/content.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core_1.10.0.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core.databinding_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core.databinding.xml_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core.java_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core.java.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core.lib_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core.ui_1.10.0.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core.ui.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core.xml_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core.xml.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.doc.user_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.doc.user.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.layout.group_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.layout.group.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.os_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.os.linux_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.os.macosx_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.os.win32_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp.databinding_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp.databinding.emf_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp.databinding.xwt_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp.doc.user_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp.doc.user.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp.nebula_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp.swing2swt_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp.SWT_AWT_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp.SWT_AWT_support_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.runtime_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.runtime.lib_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing.databinding_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing.doc.user_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing.doc.user.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing.FormLayout_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing.FormLayout.lib_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing.java6_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing.jsr296_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing.MigLayout_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing.MigLayout.lib_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swt_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swt.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swt.widgets.baseline_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.xwt_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.xwt.feature_1.9.2.201906100928.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
