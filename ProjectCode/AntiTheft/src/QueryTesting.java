@@ -4,12 +4,17 @@ import java.util.ArrayList;
 
 public class QueryTesting extends DatabaseQuerying{
 
+	public QueryTesting(String requestInfo) 
+	{
+		super(requestInfo);
+	}
+
 	public static void main(String[] args) {
 		// Create database querying object
-		DatabaseQuerying queryMaker = new DatabaseQuerying();
-		queryMaker.requestID = -1;
-		ResultSet rs = queryMaker.rs;
-		System.out.println("Connection ended by: " + queryMaker.sql);
+		String request = "0";
+		DatabaseQuerying queryMaker = new DatabaseQuerying(request);
+		String results = queryMaker.result;
+		System.out.println("Connection ended " + results);
 		
 		/*
 		int newAccNum = -1;

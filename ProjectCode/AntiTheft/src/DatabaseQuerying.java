@@ -9,24 +9,62 @@ import java.io.*;
 public class DatabaseQuerying{
 	// Initialize client socket and input/output streams
 	private Socket socket = null;
-	private ObjectInputStream input = null;
+	private DataInputStream input = null;
 	private DataOutputStream output = null;
 	
-	int requestID = 0;
-	String sql = null;
-	ResultSet rs = null; // ResultSet to be received and parsed
+	String requestInfo = null;
+	String result = "";
 	static int accColChanged; // Number of columns changed from updating ACCOUNT table
 	static int userColChanged; // Number of columns changed from updating TAGUSER table
 	
-	public DatabaseQuerying()
+	public DatabaseQuerying(String requestInfo)
 	{
 		try
 		{
 			// Connect to database server and setup input/output streams
 			socket = new Socket("192.168.1.24", 5000);
 			System.out.println("Connected");
-			input = new ObjectInputStream(socket.getInputStream());
+			input = new DataInputStream(socket.getInputStream());
 			output = new DataOutputStream(socket.getOutputStream());
+			System.out.println(requestInfo);
+			/*
+			while((result = input.readUTF()) != null)
+			{
+				result = input.readUTF();
+				if(result.equals("Shutdown"))
+				{
+					break;
+				}
+				*/
+			// Send server shutdown command
+			if(requestInfo.equals("Shutdown"))
+			{
+				try
+				{
+					System.out.println("Shutting server down");
+					// Write sql string for query to output
+					output.writeUTF(requestInfo);
+				}
+				catch(IOException i)
+				{
+					System.out.println(i);
+				}
+			}
+			// Select last entered account ID number
+			else if(requestInfo.equals("0"))
+			{
+				try
+				{
+					System.out.println("Requesting new account ID");
+					// Write sql string for query to output
+					output.writeUTF(requestInfo);
+				}
+				catch(IOException i)
+				{
+					System.out.println(i);
+				}
+			}
+			result = input.readUTF();
 		}
 		catch(UnknownHostException u)
 		{
@@ -36,46 +74,7 @@ public class DatabaseQuerying{
 		{
 			System.out.println(i);
 		}
-		// Select last entered account ID number
 		
-		while(!sql.equals("End"))
-		{
-			if(requestID == -1)
-			{
-				sql = "End";
-				try
-				{
-					output.writeUTF(sql);
-				}
-				catch(IOException i)
-				{
-					System.out.println(i);
-				}
-			}
-			else if(requestID == 1)
-			{
-				sql = "select * from ACCOUNTS where AcID = (select max(AcID) from ACCOUNTS)";
-				try
-				{
-					// Write sql string for query to output
-					output.writeUTF(sql);
-				}
-				catch(IOException i)
-				{
-					System.out.println(i);
-				}
-				try
-				{
-					// Read in result set from input
-					rs = (ResultSet)input.readObject();
-				}
-				catch(Exception e)
-				{
-					System.out.println(e);
-					rs = null;
-				}
-			}
-		}
 		System.out.println("Closing server connection.");
 		try
 		{
@@ -87,14 +86,6 @@ public class DatabaseQuerying{
 		catch(IOException i)
 		{
 			System.out.println(i);
-		}
-		try
-		{
-			rs.close(); // Close result set
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
 		}
 	}
 	/*
