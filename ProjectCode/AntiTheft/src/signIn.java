@@ -64,12 +64,14 @@ public class signIn {
 		frame.getContentPane().setLayout(null);
 		
 		JTextArea passwordText = new JTextArea();
+		passwordText.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		passwordText.setForeground(Color.BLACK);
 		passwordText.setBackground(Color.WHITE);
 		passwordText.setBounds(548, 422, 194, 32);
 		frame.getContentPane().add(passwordText);
 		
 		JTextArea usernameText = new JTextArea();
+		usernameText.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		usernameText.setBounds(210, 428, 194, 32);
 		frame.getContentPane().add(usernameText);
 		
