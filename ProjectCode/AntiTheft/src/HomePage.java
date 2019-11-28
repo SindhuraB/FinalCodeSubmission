@@ -11,6 +11,8 @@
 	import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 	public class HomePage {
 
@@ -21,7 +23,7 @@ import javax.swing.JTextField;
 		/**
 		 * Launch the application.
 		 */
-		public static void main(String[] args) {
+		public void setVisible(boolean b) {
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
@@ -29,6 +31,7 @@ import javax.swing.JTextField;
 						window.frame.setVisible(true);
 					} catch (Exception e) {
 						e.printStackTrace();
+					
 					}
 				}
 			});
@@ -127,6 +130,13 @@ import javax.swing.JTextField;
 			frame.getContentPane().add(lblItemDescription_1);
 			
 			JButton btnSignOut = new JButton("Sign out");
+			btnSignOut.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					frame.dispose();
+					openingPage openingScreen=new openingPage();
+					openingScreen.setVisible(true);	
+				}
+			});
 			btnSignOut.setForeground(Color.BLACK);
 			btnSignOut.setFont(new Font("Tahoma", Font.BOLD, 15));
 			btnSignOut.setBackground(Color.WHITE);
@@ -135,6 +145,11 @@ import javax.swing.JTextField;
 			frame.setBounds(100, 100, 1056, 776);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		}
-	}
+
+	
+
+			
+		}
+	
 
 

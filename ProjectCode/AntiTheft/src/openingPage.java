@@ -20,7 +20,7 @@ public class openingPage {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public void setVisible(boolean b) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -61,11 +61,11 @@ public class openingPage {
 		frame.getContentPane().add(btnSignIn);
 		
 		//If Sign In button is clicked then take the user to sign in page
-		btnSignIn.addMouseListener(new MouseAdapter() {
-			@Override
+		btnSignIn.addMouseListener(new MouseAdapter() {		
 			public void mouseClicked(MouseEvent arg0) {
+				frame.dispose();
 				signIn signInScreen = new signIn();
-				signInScreen.openSignInPage();
+				signInScreen.setVisible(true);
 			}
 		});
 		
@@ -79,8 +79,9 @@ public class openingPage {
 		//If Sign Up button is clicked then take the user to sign in page
 		btnSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				frame.dispose();
 				signUpPage signUpScreen = new signUpPage();
-				signUpScreen.openSignUpPage();
+				signUpScreen.setVisible(true);
 			}
 		});
 		

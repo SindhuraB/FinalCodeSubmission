@@ -7,12 +7,15 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import java.awt.SystemColor;
 import javax.swing.JPasswordField;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class signUpPage {
 
@@ -39,7 +42,7 @@ public class signUpPage {
 	/**
 	 * Launch the application.
 	 */
-	public void openSignUpPage() {
+	public void setVisible(boolean b){
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -228,6 +231,13 @@ public class signUpPage {
 		frame.getContentPane().add(passwordField_2);
 		
 		button = new JButton("Back");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				openingPage openingScreen=new openingPage();
+				openingScreen.setVisible(true);	
+			}
+		});
 		button.setForeground(Color.BLACK);
 		button.setFont(new Font("Tahoma", Font.BOLD, 15));
 		button.setBackground(Color.WHITE);
@@ -240,6 +250,15 @@ public class signUpPage {
 		frame.getContentPane().add(textField);
 		
 		btnSignUp = new JButton("Sign up");
+		btnSignUp.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				HomePage homeScreen=new HomePage();
+				homeScreen.setVisible(true);
+				JOptionPane.showMessageDialog(null, "Welcome Please register any new products");
+				
+			}
+		});
 		btnSignUp.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnSignUp.setBackground(Color.WHITE);
 		btnSignUp.setBounds(874, 668, 100, 32);

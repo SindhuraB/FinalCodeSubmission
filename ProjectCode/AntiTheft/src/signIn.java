@@ -25,7 +25,7 @@ public class signIn {
 	/**
 	 * Launch the application.
 	 */
-	public void openSignInPage() {
+	public void setVisible(boolean b) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -45,7 +45,6 @@ public class signIn {
 	
 	public signIn() {
 		initialize();
-		connection="192.168.1.24"(); 
 		
 		
 	}
@@ -100,14 +99,25 @@ public class signIn {
 		JButton backButton = new JButton("Back");		
 		backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				frame.dispose();
+				openingPage openingScreen=new openingPage();
+				openingScreen.setVisible(true);	
 			}
 		});
+		
+					
+		
 		backButton.setBackground(Color.WHITE);
 		backButton.setForeground(new Color(0, 0, 0));
 		backButton.setFont(new Font("Tahoma", Font.BOLD, 15));		
 		backButton.setBounds(10, 678, 100, 32);
 		frame.getContentPane().add(backButton);
 		
+	
+			
+					
+					
 		JButton loginButton = new JButton("log in");	
 		loginButton.setBackground(Color.WHITE);
 		loginButton.setFont(new Font("Tahoma", Font.BOLD, 15));
@@ -120,7 +130,12 @@ public class signIn {
 		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {			
 			
-				try {
+				frame.dispose();
+				HomePage homeScreen=new HomePage();
+				homeScreen.setVisible(true);
+				JOptionPane.showMessageDialog(null, "Welcome Please register any new products");
+				
+			/*	try {
 					String query="select * from getUserinfo where username=? and password=?"; //checks if value in database is the same
 					PreparedStatement pst=connection.prepareStatement(query);
 					pst.setString(0,passwordText.getText());
@@ -156,7 +171,10 @@ public class signIn {
 				
 				}
 			}}
-	}}}
+	*/
+			}
+	});
+	}}
 
 		
 			
