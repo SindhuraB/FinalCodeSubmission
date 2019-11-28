@@ -12,8 +12,9 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.SystemColor;
 import javax.swing.JLabel;
+
 /**
-*Description: Opening page, decide if user is a new or registered user
+*Description: Opening page of the GUI, decide if user is a new or registered user
 * Class: Fall - SE 3354.502 
 * Assignment: Group Project
 * Title: Anti-Theft Project
@@ -21,6 +22,7 @@ import javax.swing.JLabel;
 *@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed
 *@version 2.2.0
 */ 
+
 public class openingPage {
 
 	private JFrame frame;
@@ -31,6 +33,7 @@ public class openingPage {
 	 * @return void
 	 * @throws not implemented
 	 */
+	
 	public void setVisible(boolean b) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -43,9 +46,10 @@ public class openingPage {
 			}
 		});
 	}
+	
 	/**
 	 * Create the application.
-	 * @param args as String[]
+	 * @param none
 	 * @return void
 	 * @throws not implemented
 	 */
@@ -53,23 +57,30 @@ public class openingPage {
 	public openingPage() {
 		initialize();
 	}
+	
 	/**
 	 * Initialize the contents of the frame.
-	 * @param args as String[]
+	 * @param none
 	 * @return void
 	 * @throws not implemented
 	 */
-	void initialize() {
+	
+	 void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setFont(new Font("Tahoma", Font.PLAIN, 10));
+		frame.getContentPane().setFont(new Font("Tahoma", Font.PLAIN, 11));
 		frame.setBackground(new Color(240, 240, 240));
+<<<<<<< HEAD
 		frame.getContentPane().setBackground(new Color(0, 0, 51));
 		frame.setBounds(1001, 600, 1000, 750);
+=======
+		frame.getContentPane().setBackground(new Color(47, 79, 79));
+		frame.setBounds(1000, 600, 1000, 750);
+>>>>>>> refs/remotes/origin/GUI
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		
-		//Creates the SignIn button
+		//Creates the Sign In button
 		JButton btnSignIn = new JButton("Sign In");
 		btnSignIn.setBackground(SystemColor.window);
 		btnSignIn.setFont(new Font("Tahoma", Font.BOLD, 25));

@@ -79,8 +79,13 @@ public class signIn {
 		frame.getContentPane().setForeground(Color.WHITE);
 		frame.setResizable(false);
 		frame.getContentPane().setFont(new Font("Tahoma", Font.PLAIN, 19));
+<<<<<<< HEAD
 		frame.getContentPane().setBackground(new Color(0, 0, 51));
 		frame.setBounds(1001, 600, 1000, 750);
+=======
+		frame.getContentPane().setBackground(new Color(47, 79, 79));
+		frame.setBounds(1000, 600, 1000, 750);
+>>>>>>> refs/remotes/origin/GUI
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -112,6 +117,13 @@ public class signIn {
 		frame.getContentPane().add(loginLabel);
 		
 		JButton backButton = new JButton("Back");		
+		backButton.setBackground(Color.WHITE);
+		backButton.setForeground(new Color(0, 0, 0));
+		backButton.setFont(new Font("Tahoma", Font.BOLD, 15));		
+		backButton.setBounds(22, 662, 100, 32);
+		frame.getContentPane().add(backButton);
+		
+		
 		backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -123,11 +135,15 @@ public class signIn {
 		
 					
 		
+<<<<<<< HEAD
 		backButton.setBackground(Color.WHITE);
 		backButton.setForeground(new Color(0, 0, 0));
 		backButton.setFont(new Font("Tahoma", Font.BOLD, 15));		
 		backButton.setBounds(430, 538, 81, 32);
 		frame.getContentPane().add(backButton);
+=======
+		
+>>>>>>> refs/remotes/origin/GUI
 		
 	
 			
@@ -136,7 +152,11 @@ public class signIn {
 		JButton loginButton = new JButton("Log In");	
 		loginButton.setBackground(Color.WHITE);
 		loginButton.setFont(new Font("Tahoma", Font.BOLD, 15));
+<<<<<<< HEAD
 		loginButton.setBounds(430, 483, 81, 32);
+=======
+		loginButton.setBounds(864, 662, 100, 32);
+>>>>>>> refs/remotes/origin/GUI
 		frame.getContentPane().add(loginButton);
 		
 		passwordField = new JPasswordField();
