@@ -37,7 +37,7 @@ public class signIn {
 			}
 		});
 	}
-	//Connection connection=null; 
+	Connection connection=null; 
 	
 	/**
 	 * Create the application.
@@ -45,7 +45,7 @@ public class signIn {
 	
 	public signIn() {
 		initialize();
-		//connection=192.168.1.24(); 
+		connection="192.168.1.24"(); 
 		
 		
 	}
@@ -117,7 +117,7 @@ public class signIn {
 		
 		//Checks info from user input against the database value
 		
-		/*loginButton.addActionListener(new ActionListener() {
+		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {			
 			
 				try {
@@ -127,15 +127,37 @@ public class signIn {
 					pst.setString(1,usernameText.getText());
 					
 					ResultSet rs=pst.executeQuery();
+					int count=0;
+					while(rs.next()){
+						count=count+1;
+						
+					}
+					if(count==1)
+					{
+						JOptionPane.showMessageDialog(null, "Username and password is correct");
+						frame.dispose();
+						HomePage homeScreen=new HomePage();
+						homeScreen.setVisible(true);
+					}
+					else if(count>1)
+					{
+						JOptionPane.showMessageDialog(null, "Duplicate Username and password ");
+					}
+					else
+					{
+						JOptionPane.showMessageDialog(null, "Username and password is not correct. try again");
+					}
+					rs.close();
+					pst.close();
 					
-					
-				} catch (Exception e) {
-					JOptionPane.showMessageDialog(null, e);
+				} catch (Exception e) 
 				{
-		*/
-			
-	}	
-}
+					JOptionPane.showMessageDialog(null, e);
+				
+				}
+			}}
+	}}}
+
 		
 			
 	

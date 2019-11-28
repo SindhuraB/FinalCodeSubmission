@@ -57,7 +57,7 @@ public class openingPage {
 		JButton btnSignIn = new JButton("Sign In");
 		btnSignIn.setBackground(SystemColor.window);
 		btnSignIn.setFont(new Font("Tahoma", Font.BOLD, 25));
-		btnSignIn.setBounds(594, 363, 139, 48);
+		btnSignIn.setBounds(532, 363, 139, 48);
 		frame.getContentPane().add(btnSignIn);
 		
 		//If Sign In button is clicked then take the user to sign in page
@@ -73,7 +73,7 @@ public class openingPage {
 		JButton btnSignUp = new JButton("Sign up");
 		btnSignUp.setBackground(SystemColor.window);
 		btnSignUp.setFont(new Font("Tahoma", Font.BOLD, 25));
-		btnSignUp.setBounds(285, 363, 139, 48);
+		btnSignUp.setBounds(326, 363, 139, 48);
 		frame.getContentPane().add(btnSignUp);
 		
 		//If Sign Up button is clicked then take the user to sign in page
@@ -89,7 +89,7 @@ public class openingPage {
 		welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		welcomeLabel.setFont(new Font("Impact", Font.PLAIN, 60));
 		welcomeLabel.setForeground(SystemColor.text);
-		welcomeLabel.setBounds(349, 188, 321, 89);
+		welcomeLabel.setBounds(350, 188, 321, 89);
 		frame.getContentPane().add(welcomeLabel);
 	}
 }
