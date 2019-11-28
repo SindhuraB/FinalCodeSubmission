@@ -1,9 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="Login.java|dbConnection.java|HomePage.java|Homepage.java" kind="src" path="src"/>
 	<classpathentry kind="lib" path="jgoodies-forms-1.8.0.jar" sourcepath="jgoodies-forms-1.8.0-sources.jar"/>
 	<classpathentry kind="lib" path="miglayout15-swing.jar" sourcepath="miglayout-src.zip"/>
 	<classpathentry kind="lib" path="jgoodies-common-1.8.0.jar" sourcepath="jgoodies-common-1.8.0-sources.jar"/>
+	<classpathentry kind="lib" path="src/artifacts.jar"/>
+	<classpathentry kind="lib" path="src/content.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core_1.10.0.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core.databinding_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core.databinding.xml_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core.java_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core.java.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core.lib_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core.ui_1.10.0.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core.ui.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core.xml_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.core.xml.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.doc.user_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.doc.user.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.layout.group_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.layout.group.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.os_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.os.linux_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.os.macosx_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.os.win32_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp.databinding_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp.databinding.emf_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp.databinding.xwt_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp.doc.user_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp.doc.user.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp.nebula_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp.swing2swt_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp.SWT_AWT_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.rcp.SWT_AWT_support_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.runtime_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.runtime.lib_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing.databinding_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing.doc.user_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing.doc.user.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing.FormLayout_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing.FormLayout.lib_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing.java6_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing.jsr296_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing.MigLayout_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swing.MigLayout.lib_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swt_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swt.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.swt.widgets.baseline_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.xwt_1.9.1.201906100928.jar"/>
+	<classpathentry kind="lib" path="src/org.eclipse.wb.xwt.feature_1.9.2.201906100928.jar"/>
+	<classpathentry kind="lib" path="C:/Users/thelo/Downloads/Microsoft JDBC Driver 7.4 for SQL Server/sqljdbc_7.4/enu/mssql-jdbc-7.4.1.jre8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/thelo/Downloads/Microsoft JDBC Driver 7.4 for SQL Server/sqljdbc_7.4/enu/mssql-jdbc-7.4.1.jre8-shaded.jar"/>
+	<classpathentry kind="lib" path="C:/Users/thelo/Downloads/Microsoft JDBC Driver 7.4 for SQL Server/sqljdbc_7.4/enu/mssql-jdbc-7.4.1.jre11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/thelo/Downloads/Microsoft JDBC Driver 7.4 for SQL Server/sqljdbc_7.4/enu/mssql-jdbc-7.4.1.jre11-shaded.jar"/>
+	<classpathentry kind="lib" path="C:/Users/thelo/Downloads/Microsoft JDBC Driver 7.4 for SQL Server/sqljdbc_7.4/enu/mssql-jdbc-7.4.1.jre12.jar"/>
+	<classpathentry kind="lib" path="C:/Users/thelo/Downloads/Microsoft JDBC Driver 7.4 for SQL Server/sqljdbc_7.4/enu/mssql-jdbc-7.4.1.jre12-shaded.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/sqlite-jdbc-3.27.2.1 (1).jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.14.2.1.jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.14.2.jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.15.1.jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.16.1.jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.18.0.jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.19.3 (1).jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.20.0 (1).jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.20.1.jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.21.0.jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.23.1.jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.27.2.jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.7.15-SNAPSHOT-javadoc.jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.7.15-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.7.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.7.2.jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.8.10.1.jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.8.10.2.jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.8.11.1.jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.8.11.2.jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.8.11.jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.8.5-pre1.jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.8.6.jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc-3.8.7.jar"/>
+	<classpathentry kind="lib" path="src/sqlite-jdbc4-3.8.2-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
