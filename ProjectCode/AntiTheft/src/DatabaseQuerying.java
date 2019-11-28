@@ -1,4 +1,3 @@
-import java.sql.*;
 import java.util.ArrayList;
 import java.net.*;
 import java.io.*;
@@ -12,13 +11,12 @@ public class DatabaseQuerying{
 	private DataInputStream input = null;
 	private DataOutputStream output = null;
 	
-	String requestInfo = null;
-	String result = "";
 	static int accColChanged; // Number of columns changed from updating ACCOUNT table
 	static int userColChanged; // Number of columns changed from updating TAGUSER table
 	
-	public DatabaseQuerying(String requestInfo)
+	public String run(String requestInfo)
 	{
+		String result = "";
 		try
 		{
 			// Connect to database server and setup input/output streams
@@ -26,16 +24,8 @@ public class DatabaseQuerying{
 			System.out.println("Connected");
 			input = new DataInputStream(socket.getInputStream());
 			output = new DataOutputStream(socket.getOutputStream());
-			System.out.println(requestInfo);
-			/*
-			while((result = input.readUTF()) != null)
-			{
-				result = input.readUTF();
-				if(result.equals("Shutdown"))
-				{
-					break;
-				}
-				*/
+			System.out.println("Sending request: " + requestInfo);
+			
 			// Send server shutdown command
 			if(requestInfo.equals("Shutdown"))
 			{
@@ -87,6 +77,7 @@ public class DatabaseQuerying{
 		{
 			System.out.println(i);
 		}
+		return result;
 	}
 	/*
 	public static Connection openCon ()

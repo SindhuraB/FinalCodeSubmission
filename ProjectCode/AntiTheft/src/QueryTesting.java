@@ -1,19 +1,15 @@
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class QueryTesting extends DatabaseQuerying{
 
-	public QueryTesting(String requestInfo) 
-	{
-		super(requestInfo);
-	}
-
 	public static void main(String[] args) {
 		// Create database querying object
 		String request = "0";
-		DatabaseQuerying queryMaker = new DatabaseQuerying(request);
-		String results = queryMaker.result;
+		DatabaseQuerying queryMaker = new DatabaseQuerying();
+		String results = queryMaker.run(request);
+		System.out.println("New ID " + results);
+		request = "Shutdown";
+		results = queryMaker.run(request);
 		System.out.println("Connection ended " + results);
 		
 		/*

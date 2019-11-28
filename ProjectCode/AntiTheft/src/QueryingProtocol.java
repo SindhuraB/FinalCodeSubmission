@@ -45,56 +45,67 @@ public class QueryingProtocol {
 		System.out.println(sql);
 		Connection con = dbCon();
 		String resultString = "";
-		if(state == waiting) 
+		
+		if(sql.equals("Shutdown"))
 		{
-			resultString = "Need Input";
-			state = 1;
+			resultString = "Shutdown";
+			state = waiting;
 		}
-		else if(state == query)
+		else if(sql.equals(newNumSQL))
 		{
-			if(sql.equals("Shutdown"))
+			try
 			{
-				resultString = "Shutdown";
-				state = waiting;
-			}
-			else if(sql.equals(newNumSQL))
-			{
-				try
+				sql = "select * from ACCOUNTS where AcID = (select max(AcID) from ACCOUNTS)";
+				//create the statement object
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery(sql);
+				System.out.println("Query Executed");
+				if(rs.next())
 				{
-					sql = "select * from ACCOUNTS where AcID = (select max(AcID) from ACCOUNTS)";
-					//create the statement object
-					Statement stmt = con.createStatement();
-					ResultSet rs = stmt.executeQuery(sql);
-					System.out.println("Query Executed");
-					if(rs.next())
-					{
-						resultString = rs.getString("AcID");
-						System.out.println("Row results: " + resultString);
-					}
-					con.close();
+					resultString = rs.getString("AcID");
+					System.out.println("Row results: " + resultString);
 				}
-				catch(Exception e)
+				con.close();
+			}
+			catch(Exception e)
+			{
+				System.out.println();
+			}
+			state = waiting;
+			sql = "";
+		}
+		else if(sql.equals(productsSQL))
+		{
+			
+		}
+		else if(sql.equals(userInfoSQL))
+		{
+			
+		}
+		else if(sql.equals(accInfoSQL))
+		{
+			
+		}
+		else if(sql.equals(createUserSQL))
+		{
+			// Get new ID for account creation
+			try
+			{
+				sql = "select * from ACCOUNTS where AcID = (select max(AcID) from ACCOUNTS)";
+				//create the statement object
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery(sql);
+				System.out.println("Query Executed");
+				if(rs.next())
 				{
-					System.out.println();
+					resultString = rs.getString("AcID");
+					System.out.println("Row results: " + resultString);
 				}
-				state = waiting;
-				sql = "";
+				con.close();
 			}
-			else if(sql.equals(productsSQL))
+			catch(Exception e)
 			{
-				
-			}
-			else if(sql.equals(userInfoSQL))
-			{
-				
-			}
-			else if(sql.equals(accInfoSQL))
-			{
-				
-			}
-			else if(sql.equals(createUserSQL))
-			{
-				
+				System.out.println();
 			}
 		}
 		System.out.println("Returning results");
