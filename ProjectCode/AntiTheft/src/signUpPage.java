@@ -84,6 +84,7 @@ public class signUpPage {
 		frame.getContentPane().add(firstNameLabel);
 		
 		JLabel emailLabel = new JLabel("Email");
+		emailLabel.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		emailLabel.setForeground(SystemColor.text);
 		emailLabel.setBounds(128, 96, 92, 27);
 		frame.getContentPane().add(emailLabel);
@@ -129,6 +130,7 @@ public class signUpPage {
 		frame.getContentPane().add(streetAddressTexBox);
 		
 		JLabel streetAddressLabel = new JLabel("Street Address");
+		streetAddressLabel.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		streetAddressLabel.setForeground(SystemColor.text);
 		streetAddressLabel.setBounds(128, 144, 92, 29);
 		frame.getContentPane().add(streetAddressLabel);
@@ -180,7 +182,7 @@ public class signUpPage {
 		
 		usernameTextBox = new JTextField();
 		usernameTextBox.setColumns(10);
-		usernameTextBox.setBounds(250, 310, 171, 32);
+		usernameTextBox.setBounds(250, 321, 171, 32);
 		frame.getContentPane().add(usernameTextBox);
 		
 		JLabel confirmPasswordLabel = new JLabel("Re-type Password");
