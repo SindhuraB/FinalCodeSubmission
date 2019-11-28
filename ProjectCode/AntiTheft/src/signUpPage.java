@@ -89,7 +89,7 @@ public class signUpPage {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(47, 79, 79));
-		frame.setBounds(1001, 600, 1000, 750);
+		frame.setBounds(1000, 600, 1000, 750);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		

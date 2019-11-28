@@ -79,7 +79,7 @@ public class signIn {
 		frame.setResizable(false);
 		frame.getContentPane().setFont(new Font("Tahoma", Font.PLAIN, 19));
 		frame.getContentPane().setBackground(new Color(47, 79, 79));
-		frame.setBounds(1001, 600, 1000, 750);
+		frame.setBounds(1000, 600, 1000, 750);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -118,6 +118,13 @@ public class signIn {
 		frame.getContentPane().add(loginLabel);
 		
 		JButton backButton = new JButton("Back");		
+		backButton.setBackground(Color.WHITE);
+		backButton.setForeground(new Color(0, 0, 0));
+		backButton.setFont(new Font("Tahoma", Font.BOLD, 15));		
+		backButton.setBounds(22, 662, 100, 32);
+		frame.getContentPane().add(backButton);
+		
+		
 		backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -129,11 +136,7 @@ public class signIn {
 		
 					
 		
-		backButton.setBackground(Color.WHITE);
-		backButton.setForeground(new Color(0, 0, 0));
-		backButton.setFont(new Font("Tahoma", Font.BOLD, 15));		
-		backButton.setBounds(10, 678, 100, 32);
-		frame.getContentPane().add(backButton);
+		
 		
 	
 			
@@ -142,7 +145,7 @@ public class signIn {
 		JButton loginButton = new JButton("log in");	
 		loginButton.setBackground(Color.WHITE);
 		loginButton.setFont(new Font("Tahoma", Font.BOLD, 15));
-		loginButton.setBounds(884, 678, 100, 32);
+		loginButton.setBounds(864, 662, 100, 32);
 		frame.getContentPane().add(loginButton);
 		
 		
