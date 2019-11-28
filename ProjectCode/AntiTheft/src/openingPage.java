@@ -26,7 +26,10 @@ public class openingPage {
 	private JFrame frame;
 
 	/**
-	 * Launch the application.
+	 * Launches the application.
+	 * @param args as String[]
+	 * @return void
+	 * @throws not implemented
 	 */
 	public void setVisible(boolean b) {
 		EventQueue.invokeLater(new Runnable() {
@@ -40,18 +43,23 @@ public class openingPage {
 			}
 		});
 	}
-
 	/**
 	 * Create the application.
+	 * @param args as String[]
+	 * @return void
+	 * @throws not implemented
 	 */
+	
 	public openingPage() {
 		initialize();
 	}
-
 	/**
 	 * Initialize the contents of the frame.
+	 * @param args as String[]
+	 * @return void
+	 * @throws not implemented
 	 */
-	private void initialize() {
+	void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setFont(new Font("Tahoma", Font.PLAIN, 10));
 		frame.setBackground(new Color(240, 240, 240));

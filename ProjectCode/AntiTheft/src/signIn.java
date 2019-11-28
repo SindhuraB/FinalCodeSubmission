@@ -31,7 +31,10 @@ public class signIn {
 	private JFrame frame;
 
 	/**
-	 * Launch the application.
+	 * Launches the application.
+	 * @param args as String[]
+	 * @return void
+	 * @throws not implemented
 	 */
 	public void setVisible(boolean b) {
 		EventQueue.invokeLater(new Runnable() {
@@ -45,8 +48,13 @@ public class signIn {
 			}
 		});
 	}
-	Connection connection=null; 
-	
+
+	/**
+	 * Launches the application.
+	 * @param args as String[]
+	 * @return void
+	 * @throws not implemented
+	 */
 	/**
 	 * Create the application.
 	 */
@@ -56,7 +64,12 @@ public class signIn {
 		
 		
 	}
-
+	/**
+	 * Launches the application.
+	 * @param args as String[]
+	 * @return void
+	 * @throws not implemented
+	 */
 	/**
 	 * Initialize the contents of the frame.
 	 */

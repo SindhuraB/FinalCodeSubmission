@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 /**
-*Description: This program will displays a string, Hello Wolrd, without any user interaction.
+*Description: The home page of the GUI. input or look up products
 * Class: Fall - SE 3354.502 
 * Assignment: Group Project
 * Title: Anti-Theft Project
@@ -28,7 +28,10 @@ import java.awt.event.ActionEvent;
 		private JTextField textField_1;
 
 		/**
-		 * Launch the application.
+		 * Launches the application.
+		 * @param args as String[]
+		 * @return void
+		 * @throws not implemented
 		 */
 		public void setVisible(boolean b) {
 			EventQueue.invokeLater(new Runnable() {
@@ -43,17 +46,23 @@ import java.awt.event.ActionEvent;
 				}
 			});
 		}
-
 		/**
-		 * Create the application.
+		 *  Create the application.
+		 * @param args as String[]
+		 * @return void
+		 * @throws not implemented
 		 */
+	
 		public HomePage() {
 			initialize();
 		}
-
 		/**
 		 * Initialize the contents of the frame.
+		 * @param args as String[]
+		 * @return void
+		 * @throws not implemented
 		 */
+		
 		private void initialize() {
 			frame = new JFrame();
 			frame.getContentPane().setBackground(new Color(47, 79, 79));

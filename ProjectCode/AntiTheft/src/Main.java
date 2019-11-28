@@ -1,6 +1,6 @@
 
 /**
-*Description: The start of the GUI package, opens opening page 
+*Description: The start of the GUI package, opens the opening page 
 * Class: Fall - SE 3354.502 
 * Assignment: Group Project
 * Title: Anti-Theft Project
@@ -13,7 +13,7 @@
 public class  Main{
 	
 /**
- * Entry point of application.
+ * Launches the application.
  * @param args as String[]
  * @return void
  * @throws not implemented
