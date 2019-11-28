@@ -133,7 +133,7 @@ public class signIn {
 				frame.dispose();
 				HomePage homeScreen=new HomePage();
 				homeScreen.setVisible(true);
-				JOptionPane.showMessageDialog(null, "Welcome Please register any new products");
+			
 				
 			/*	try {
 					String query="select * from getUserinfo where username=? and password=?"; //checks if value in database is the same
