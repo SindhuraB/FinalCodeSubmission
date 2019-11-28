@@ -12,7 +12,15 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.SystemColor;
 import javax.swing.JLabel;
-
+/**
+*Description: Opening page, decide if user is a new or registered user
+* Class: Fall - SE 3354.502 
+* Assignment: Group Project
+* Title: Anti-Theft Project
+* Date: 11/28/2019
+*@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed
+*@version 2.2.0
+*/ 
 public class openingPage {
 
 	private JFrame frame;

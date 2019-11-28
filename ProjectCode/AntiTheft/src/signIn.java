@@ -17,7 +17,15 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.*;
 import javax.swing.*;
-
+/**
+*Description: The sign in GUI page for registered users 
+* Class: Fall - SE 3354.502 
+* Assignment: Group Project
+* Title: Anti-Theft Project
+* Date: 11/28/2019
+*@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed
+*@version 2.2.0
+*/ 
 public class signIn {
 
 	private JFrame frame;

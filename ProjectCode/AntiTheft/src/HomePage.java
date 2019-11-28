@@ -12,7 +12,15 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+/**
+*Description: This program will displays a string, Hello Wolrd, without any user interaction.
+* Class: Fall - SE 3354.502 
+* Assignment: Group Project
+* Title: Anti-Theft Project
+* Date: 11/28/2019
+*@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed
+*@version 2.2.0
+*/ 
 	public class HomePage {
 
 		private JFrame frame;
