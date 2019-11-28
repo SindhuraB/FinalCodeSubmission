@@ -47,7 +47,7 @@ public class openingPage {
 		frame = new JFrame();
 		frame.setBackground(new Color(240, 240, 240));
 		frame.getContentPane().setBackground(new Color(47, 79, 79));
-		frame.setBounds(1001, 600, 913, 548);
+		frame.setBounds(1001, 600, 1000, 750);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -56,7 +56,7 @@ public class openingPage {
 		JButton btnSignIn = new JButton("Sign In");
 		btnSignIn.setBackground(SystemColor.window);
 		btnSignIn.setFont(new Font("Calibri", Font.PLAIN, 28));
-		btnSignIn.setBounds(385, 150, 139, 48);
+		btnSignIn.setBounds(594, 363, 139, 48);
 		frame.getContentPane().add(btnSignIn);
 		
 		//If Sign In button is clicked then take the user to sign in page
@@ -72,7 +72,7 @@ public class openingPage {
 		JButton btnSignUp = new JButton("Sign up");
 		btnSignUp.setBackground(SystemColor.window);
 		btnSignUp.setFont(new Font("Calibri", Font.PLAIN, 28));
-		btnSignUp.setBounds(385, 221, 139, 48);
+		btnSignUp.setBounds(285, 363, 139, 48);
 		frame.getContentPane().add(btnSignUp);
 		
 		//If Sign Up button is clicked then take the user to sign in page
@@ -84,11 +84,11 @@ public class openingPage {
 		});
 		
 		//Creates the Welcome Sign
-		JLabel welcomeLabel = new JLabel("Welcome");
+		JLabel welcomeLabel = new JLabel("Welcome ");
 		welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		welcomeLabel.setFont(new Font("Impact", Font.PLAIN, 35));
+		welcomeLabel.setFont(new Font("Impact", Font.PLAIN, 62));
 		welcomeLabel.setForeground(SystemColor.text);
-		welcomeLabel.setBounds(385, 21, 139, 48);
+		welcomeLabel.setBounds(338, 170, 321, 89);
 		frame.getContentPane().add(welcomeLabel);
 	}
 }

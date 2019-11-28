@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class PersonalInfoEntry {
 
@@ -65,7 +66,7 @@ public class PersonalInfoEntry {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(0, 102, 102));
 		frame.setResizable(false);
-		frame.setBounds(400, 400, 700, 215);
+		frame.setBounds(400, 400, 1000, 750);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -75,7 +76,7 @@ public class PersonalInfoEntry {
 		frame.getContentPane().add(lblName);
 
 		textField = new JTextField();
-		textField.setBounds(66, 12, 169, 20);
+		textField.setBounds(182, 425, 169, 20);
 		frame.getContentPane().add(textField);
 		textField.setColumns(20);
 
@@ -85,7 +86,7 @@ public class PersonalInfoEntry {
 		frame.getContentPane().add(lblLastName);
 
 		textField_1 = new JTextField();
-		textField_1.setBounds(294, 12, 169, 20);
+		textField_1.setBounds(417, 372, 169, 20);
 		frame.getContentPane().add(textField_1);
 		textField_1.setColumns(20);
 
@@ -105,7 +106,7 @@ public class PersonalInfoEntry {
 		frame.getContentPane().add(lblPhone);
 
 		textField_3 = new JTextField();
-		textField_3.setBounds(66, 41, 169, 20);
+		textField_3.setBounds(182, 484, 169, 20);
 		frame.getContentPane().add(textField_3);
 		textField_3.setColumns(10);
 
@@ -125,7 +126,7 @@ public class PersonalInfoEntry {
 		frame.getContentPane().add(lblEmail);
 
 		textField_9 = new JTextField();
-		textField_9.setBounds(66, 70, 169, 20);
+		textField_9.setBounds(167, 542, 169, 20);
 		frame.getContentPane().add(textField_9);
 		textField_9.setColumns(20);
 
@@ -135,7 +136,7 @@ public class PersonalInfoEntry {
 		frame.getContentPane().add(lblAddress);
 
 		textField_5 = new JTextField();
-		textField_5.setBounds(66, 98, 169, 20);
+		textField_5.setBounds(167, 621, 169, 20);
 		frame.getContentPane().add(textField_5);
 		textField_5.setColumns(20);
 
@@ -145,7 +146,7 @@ public class PersonalInfoEntry {
 		frame.getContentPane().add(lblCity);
 
 		textField_6 = new JTextField();
-		textField_6.setBounds(294, 98, 169, 20);
+		textField_6.setBounds(442, 467, 169, 20);
 		frame.getContentPane().add(textField_6);
 		textField_6.setColumns(10);
 
@@ -155,7 +156,7 @@ public class PersonalInfoEntry {
 		frame.getContentPane().add(lblState);
 
 		textField_7 = new JTextField();
-		textField_7.setBounds(497, 98, 24, 20);
+		textField_7.setBounds(756, 169, 24, 20);
 		frame.getContentPane().add(textField_7);
 		textField_7.setColumns(2);
 
@@ -165,29 +166,15 @@ public class PersonalInfoEntry {
 		frame.getContentPane().add(lblZipCode);
 
 		textField_8 = new JTextField();
-		textField_8.setBounds(66, 127, 87, 20);
+		textField_8.setBounds(264, 210, 87, 20);
 		frame.getContentPane().add(textField_8);
 		textField_8.setColumns(9);
-	
-		JButton btnBack = new JButton("Back");
-		btnBack.setBounds(7, 156, 55, 23);
-		frame.getContentPane().add(btnBack);
 		
-		btnBack.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-
-		JButton btnNext = new JButton("Next");
-		btnNext.setBounds(497, 156, 55, 23);
-		frame.getContentPane().add(btnNext);
-	
-		btnNext.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-		
-			}
-			
-		});
+		JButton button = new JButton("Back");
+		button.setForeground(Color.BLACK);
+		button.setFont(new Font("Tahoma", Font.BOLD, 15));
+		button.setBackground(Color.WHITE);
+		button.setBounds(7, 691, 68, 19);
+		frame.getContentPane().add(button);
 	}
-
 }

@@ -30,6 +30,7 @@ public class signUpPage {
 	private JTextField usernameTextBox;
 	private JPasswordField passwordField;
 	private JPasswordField passwordField_1;
+	private JButton button;
 
 	/**
 	 * Launch the application.
@@ -60,18 +61,18 @@ public class signUpPage {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(47, 79, 79));
-		frame.setBounds(1001, 600, 913, 548);
+		frame.setBounds(1001, 600, 1000, 750);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		firstNameTextbox = new JTextField();
 		firstNameTextbox.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		firstNameTextbox.setBounds(250, 24, 171, 32);
+		firstNameTextbox.setBounds(79, 195, 171, 32);
 		frame.getContentPane().add(firstNameTextbox);
 		firstNameTextbox.setColumns(10);
 		
 		phoneTextbox = new JTextField();
-		phoneTextbox.setBounds(250, 257, 171, 32);
+		phoneTextbox.setBounds(260, 429, 171, 32);
 		frame.getContentPane().add(phoneTextbox);
 		phoneTextbox.setColumns(10);
 		
@@ -81,138 +82,158 @@ public class signUpPage {
 			public void mouseClicked(MouseEvent e) {
 			}
 		});
-		signUpButton.setBounds(398, 422, 126, 23);
+		signUpButton.setBounds(772, 75, 126, 23);
 		frame.getContentPane().add(signUpButton);
 		
 		JLabel firstNameLabel = new JLabel("First name");
+		firstNameLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		firstNameLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		firstNameLabel.setForeground(SystemColor.text);
-		firstNameLabel.setBounds(128, 21, 114, 39);
+		firstNameLabel.setBounds(79, 238, 171, 39);
 		frame.getContentPane().add(firstNameLabel);
 		
 		JLabel emailLabel = new JLabel("Email");
-		emailLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		emailLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		emailLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		emailLabel.setForeground(SystemColor.text);
-		emailLabel.setBounds(128, 96, 59, 29);
+		emailLabel.setBounds(79, 472, 171, 39);
 		frame.getContentPane().add(emailLabel);
 		
 		JLabel passwordLabel = new JLabel("Password");
+		passwordLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		passwordLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		passwordLabel.setForeground(SystemColor.text);
-		passwordLabel.setBounds(128, 374, 92, 26);
+		passwordLabel.setBounds(260, 610, 171, 39);
 		frame.getContentPane().add(passwordLabel);
 		
 		JLabel phoneLabel = new JLabel("Phone");
+		phoneLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		phoneLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		phoneLabel.setForeground(SystemColor.text);
-		phoneLabel.setBounds(128, 260, 92, 26);
+		phoneLabel.setBounds(260, 478, 171, 39);
 		frame.getContentPane().add(phoneLabel);
 		
 		JLabel lastNameLabel = new JLabel("Last name");
+		lastNameLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lastNameLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		lastNameLabel.setForeground(SystemColor.text);
-		lastNameLabel.setBounds(482, 22, 114, 39);
+		lastNameLabel.setBounds(330, 238, 171, 39);
 		frame.getContentPane().add(lastNameLabel);
 		
 		lastNameTextbox = new JTextField();
 		lastNameTextbox.setColumns(10);
-		lastNameTextbox.setBounds(600, 24, 171, 32);
+		lastNameTextbox.setBounds(330, 195, 171, 32);
 		frame.getContentPane().add(lastNameTextbox);
 		
 		txtA = new JTextField();
 		txtA.setColumns(10);
-		txtA.setBounds(825, 24, 30, 32);
+		txtA.setBounds(278, 195, 30, 32);
 		frame.getContentPane().add(txtA);
 		
 		JLabel middleInitialLabel = new JLabel("MI");
+		middleInitialLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		middleInitialLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		middleInitialLabel.setForeground(SystemColor.text);
-		middleInitialLabel.setBounds(795, 20, 30, 29);
+		middleInitialLabel.setBounds(270, 238, 30, 39);
 		frame.getContentPane().add(middleInitialLabel);
 		
 		emailTextbox = new JTextField();
 		emailTextbox.setColumns(10);
-		emailTextbox.setBounds(600, 142, 171, 32);
+		emailTextbox.setBounds(79, 429, 171, 32);
 		frame.getContentPane().add(emailTextbox);
 		
 		streetAddressTexBox = new JTextField();
 		streetAddressTexBox.setColumns(10);
-		streetAddressTexBox.setBounds(250, 195, 171, 32);
+		streetAddressTexBox.setBounds(79, 310, 171, 32);
 		frame.getContentPane().add(streetAddressTexBox);
 		
 		JLabel streetAddressLabel = new JLabel("Street Address");
-		streetAddressLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		streetAddressLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		streetAddressLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		streetAddressLabel.setForeground(SystemColor.text);
-		streetAddressLabel.setBounds(128, 144, 114, 29);
+		streetAddressLabel.setBounds(79, 353, 171, 39);
 		frame.getContentPane().add(streetAddressLabel);
 		
 		JLabel cityLabel = new JLabel("City");
+		cityLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		cityLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		cityLabel.setForeground(SystemColor.text);
-		cityLabel.setBounds(482, 144, 92, 29);
+		cityLabel.setBounds(270, 353, 161, 39);
 		frame.getContentPane().add(cityLabel);
 		
 		cityTextbox = new JTextField();
 		cityTextbox.setColumns(10);
-		cityTextbox.setBounds(250, 93, 171, 32);
+		cityTextbox.setBounds(282, 310, 171, 32);
 		frame.getContentPane().add(cityTextbox);
 		
 		JLabel stateLabel = new JLabel("State");
+		stateLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		stateLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		stateLabel.setForeground(SystemColor.text);
-		stateLabel.setBounds(128, 197, 92, 29);
+		stateLabel.setBounds(441, 353, 171, 39);
 		frame.getContentPane().add(stateLabel);
 		
 		stateTextbox = new JTextField();
 		stateTextbox.setColumns(10);
-		stateTextbox.setBounds(250, 142, 171, 32);
+		stateTextbox.setBounds(490, 310, 171, 32);
 		frame.getContentPane().add(stateTextbox);
 		
 		JLabel zipCodeLabel = new JLabel("Zip Code");
+		zipCodeLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		zipCodeLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		zipCodeLabel.setForeground(SystemColor.text);
-		zipCodeLabel.setBounds(482, 197, 92, 29);
+		zipCodeLabel.setBounds(712, 353, 171, 39);
 		frame.getContentPane().add(zipCodeLabel);
 		
 		zipCodeTextbox = new JTextField();
 		zipCodeTextbox.setColumns(10);
-		zipCodeTextbox.setBounds(600, 195, 171, 32);
+		zipCodeTextbox.setBounds(712, 310, 171, 32);
 		frame.getContentPane().add(zipCodeTextbox);
 		
 		JLabel extentionLabel = new JLabel("Extension");
+		extentionLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		extentionLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		extentionLabel.setForeground(SystemColor.text);
-		extentionLabel.setBounds(482, 260, 92, 26);
+		extentionLabel.setBounds(712, 472, 171, 39);
 		frame.getContentPane().add(extentionLabel);
 		
 		extensionTextbox = new JTextField();
 		extensionTextbox.setColumns(10);
-		extensionTextbox.setBounds(600, 257, 171, 32);
+		extensionTextbox.setBounds(712, 429, 171, 32);
 		frame.getContentPane().add(extensionTextbox);
 		
 		JLabel usernameLabel = new JLabel("Username");
+		usernameLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		usernameLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		usernameLabel.setForeground(SystemColor.text);
-		usernameLabel.setBounds(128, 324, 92, 26);
+		usernameLabel.setBounds(712, 238, 171, 39);
 		frame.getContentPane().add(usernameLabel);
 		
 		usernameTextBox = new JTextField();
 		usernameTextBox.setColumns(10);
-		usernameTextBox.setBounds(250, 310, 171, 32);
+		usernameTextBox.setBounds(593, 200, 171, 32);
 		frame.getContentPane().add(usernameTextBox);
 		
 		JLabel confirmPasswordLabel = new JLabel("Re-type Password");
+		confirmPasswordLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		confirmPasswordLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		confirmPasswordLabel.setForeground(SystemColor.text);
-		confirmPasswordLabel.setBounds(482, 374, 114, 26);
+		confirmPasswordLabel.setBounds(622, 610, 171, 39);
 		frame.getContentPane().add(confirmPasswordLabel);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(250, 371, 171, 32);
+		passwordField.setBounds(260, 563, 171, 32);
 		frame.getContentPane().add(passwordField);
 		
 		passwordField_1 = new JPasswordField();
-		passwordField_1.setBounds(600, 371, 171, 32);
+		passwordField_1.setBounds(622, 563, 171, 32);
 		frame.getContentPane().add(passwordField_1);
+		
+		button = new JButton("Back");
+		button.setForeground(Color.BLACK);
+		button.setFont(new Font("Tahoma", Font.BOLD, 15));
+		button.setBackground(Color.WHITE);
+		button.setBounds(10, 681, 68, 19);
+		frame.getContentPane().add(button);
 	}
 }
