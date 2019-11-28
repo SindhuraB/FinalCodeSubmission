@@ -62,7 +62,6 @@ public class QueryServer implements Runnable{
     private void processQueryRequest(Socket clientSocket) throws Exception
     {
 		String outputLine;
-		
     	QueryingProtocol QP = new QueryingProtocol();
 	    
 	    outputLine = QP.processInput(sql);

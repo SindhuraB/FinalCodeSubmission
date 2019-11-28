@@ -4,7 +4,7 @@ public class QueryTesting extends DatabaseQuerying{
 
 	public static void main(String[] args) {
 		// Create database querying object
-		String request = "0";
+		String request = "5";
 		DatabaseQuerying queryMaker = new DatabaseQuerying();
 		String results = queryMaker.run(request);
 		System.out.println("New ID " + results);

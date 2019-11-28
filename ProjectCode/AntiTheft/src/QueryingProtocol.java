@@ -7,8 +7,8 @@ public class QueryingProtocol {
 
 	public static int waiting = 0;
 	public static int query = 1;
-	
-	public String newNumSQL = "0";
+
+	public String checkUserValid = "0";
 	public String productsSQL = "1";
 	public String userInfoSQL = "2";
 	public String accInfoSQL = "3";
@@ -41,8 +41,6 @@ public class QueryingProtocol {
 	}
 	public String processInput(String sql)
 	{
-		System.out.println("Querying:");
-		System.out.println(sql);
 		Connection con = dbCon();
 		String resultString = "";
 		
@@ -51,43 +49,35 @@ public class QueryingProtocol {
 			resultString = "Shutdown";
 			state = waiting;
 		}
-		else if(sql.equals(newNumSQL))
+		else if(sql.equals(checkUserValid))
 		{
-			try
-			{
-				sql = "select * from ACCOUNTS where AcID = (select max(AcID) from ACCOUNTS)";
-				//create the statement object
-				Statement stmt = con.createStatement();
-				ResultSet rs = stmt.executeQuery(sql);
-				System.out.println("Query Executed");
-				if(rs.next())
-				{
-					resultString = rs.getString("AcID");
-					System.out.println("Row results: " + resultString);
-				}
-				con.close();
-			}
-			catch(Exception e)
-			{
-				System.out.println();
-			}
-			state = waiting;
-			sql = "";
+			System.out.println("Querying:");
+			System.out.println(sql);
+			
 		}
 		else if(sql.equals(productsSQL))
 		{
+			System.out.println("Querying:");
+			System.out.println(sql);
 			
 		}
 		else if(sql.equals(userInfoSQL))
 		{
+			System.out.println("Querying:");
+			System.out.println(sql);
 			
 		}
 		else if(sql.equals(accInfoSQL))
 		{
+			System.out.println("Querying:");
+			System.out.println(sql);
 			
 		}
 		else if(sql.equals(createUserSQL))
 		{
+			System.out.println("Querying:");
+			System.out.println(sql);
+			
 			// Get new ID for account creation
 			try
 			{
@@ -105,7 +95,7 @@ public class QueryingProtocol {
 			}
 			catch(Exception e)
 			{
-				System.out.println();
+				System.out.println(e);
 			}
 		}
 		System.out.println("Returning results");

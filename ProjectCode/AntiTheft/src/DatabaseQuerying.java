@@ -41,11 +41,11 @@ public class DatabaseQuerying{
 				}
 			}
 			// Select last entered account ID number
-			else if(requestInfo.equals("0"))
+			else if(requestInfo.equals("5"))
 			{
 				try
 				{
-					System.out.println("Requesting new account ID");
+					System.out.println("Creating new User");
 					// Write sql string for query to output
 					output.writeUTF(requestInfo);
 				}
