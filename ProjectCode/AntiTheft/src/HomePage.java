@@ -1,14 +1,13 @@
 
 
-	import java.awt.EventQueue;
-
-	import javax.swing.JFrame;
-	import java.awt.Color;
-	import javax.swing.JList;
-	import javax.swing.JScrollBar;
-	import javax.swing.JLabel;
-	import java.awt.Font;
-	import javax.swing.SwingConstants;
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import java.awt.Color;
+import javax.swing.JList;
+import javax.swing.JScrollBar;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
@@ -57,6 +56,7 @@ import java.awt.event.ActionEvent;
 			frame.getContentPane().add(list);
 			
 			JScrollBar scrollBar = new JScrollBar();
+			scrollBar.setBackground(Color.LIGHT_GRAY);
 			scrollBar.setBounds(726, 145, 17, 171);
 			frame.getContentPane().add(scrollBar);
 			
@@ -117,7 +117,7 @@ import java.awt.event.ActionEvent;
 			
 			JScrollBar scrollBar_1 = new JScrollBar();
 			scrollBar_1.setForeground(new Color(153, 255, 102));
-			scrollBar_1.setBackground(Color.DARK_GRAY);
+			scrollBar_1.setBackground(Color.LIGHT_GRAY);
 			scrollBar_1.setBounds(726, 485, 17, 138);
 			frame.getContentPane().add(scrollBar_1);
 			
