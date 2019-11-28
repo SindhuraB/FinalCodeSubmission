@@ -23,7 +23,7 @@ import javax.swing.*;
 * Assignment: Group Project
 * Title: Anti-Theft Project
 * Date: 11/28/2019
-*@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed
+*@authors Gentry Jenkins / Sindhura Boppudi / Noman Syed
 *@version 2.2.0
 */ 
 public class signIn {
