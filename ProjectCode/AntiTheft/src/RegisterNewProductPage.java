@@ -11,7 +11,7 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JEditorPane;
 
-public class registerNewProductPage {
+public class RegisterNewProductPage {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -24,7 +24,7 @@ public class registerNewProductPage {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					registerNewProductPage window = new registerNewProductPage();
+					RegisterNewProductPage window = new RegisterNewProductPage();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +36,7 @@ public class registerNewProductPage {
 	/**
 	 * Create the application.
 	 */
-	public registerNewProductPage() {
+	public RegisterNewProductPage() {
 		initialize();
 	}
 
