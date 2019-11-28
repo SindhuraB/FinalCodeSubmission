@@ -29,6 +29,7 @@ import javax.swing.*;
 public class signIn {
 
 	private JFrame frame;
+	private JPasswordField passwordField;
 
 	/**
 	 * Launches the application.
@@ -78,21 +79,14 @@ public class signIn {
 		frame.getContentPane().setForeground(Color.WHITE);
 		frame.setResizable(false);
 		frame.getContentPane().setFont(new Font("Tahoma", Font.PLAIN, 19));
-		frame.getContentPane().setBackground(new Color(47, 79, 79));
+		frame.getContentPane().setBackground(new Color(0, 0, 51));
 		frame.setBounds(1001, 600, 1000, 750);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JTextArea passwordText = new JTextArea();
-		passwordText.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		passwordText.setForeground(Color.BLACK);
-		passwordText.setBackground(Color.WHITE);
-		passwordText.setBounds(548, 422, 194, 32);
-		frame.getContentPane().add(passwordText);
-		
 		JTextArea usernameText = new JTextArea();
 		usernameText.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		usernameText.setBounds(210, 428, 194, 32);
+		usernameText.setBounds(210, 373, 194, 32);
 		frame.getContentPane().add(usernameText);
 		
 		JLabel usernameLabel = new JLabel("Username");		
@@ -100,21 +94,21 @@ public class signIn {
 		usernameLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
 		usernameLabel.setForeground(new Color(255, 255, 255));
 		usernameLabel.setBackground(new Color(255, 255, 255));
-		usernameLabel.setBounds(210, 465, 194, 37);
+		usernameLabel.setBounds(210, 325, 194, 37);
 		frame.getContentPane().add(usernameLabel);
 		
 		JLabel passwordLabel = new JLabel("Password");		
 		passwordLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		passwordLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
 		passwordLabel.setForeground(new Color(255, 255, 255));
-		passwordLabel.setBounds(548, 465, 194, 37);
+		passwordLabel.setBounds(548, 325, 194, 37);
 		frame.getContentPane().add(passwordLabel);	
 		
 		JLabel loginLabel = new JLabel("Log In");
 		loginLabel.setFont(new Font("Impact", Font.PLAIN, 50));
 		loginLabel.setForeground(SystemColor.text);
 		loginLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		loginLabel.setBounds(380, 257, 189, 56);
+		loginLabel.setBounds(381, 205, 152, 62);
 		frame.getContentPane().add(loginLabel);
 		
 		JButton backButton = new JButton("Back");		
@@ -132,18 +126,22 @@ public class signIn {
 		backButton.setBackground(Color.WHITE);
 		backButton.setForeground(new Color(0, 0, 0));
 		backButton.setFont(new Font("Tahoma", Font.BOLD, 15));		
-		backButton.setBounds(10, 678, 100, 32);
+		backButton.setBounds(430, 538, 81, 32);
 		frame.getContentPane().add(backButton);
 		
 	
 			
 					
 					
-		JButton loginButton = new JButton("log in");	
+		JButton loginButton = new JButton("Log In");	
 		loginButton.setBackground(Color.WHITE);
 		loginButton.setFont(new Font("Tahoma", Font.BOLD, 15));
-		loginButton.setBounds(884, 678, 100, 32);
+		loginButton.setBounds(430, 483, 81, 32);
 		frame.getContentPane().add(loginButton);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(548, 373, 194, 32);
+		frame.getContentPane().add(passwordField);
 		
 		
 		//Checks info from user input against the database value
@@ -195,7 +193,8 @@ public class signIn {
 	*/
 			}
 	});
-	}}
+	}	
+}
 
 		
 			

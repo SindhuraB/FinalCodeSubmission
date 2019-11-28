@@ -65,7 +65,7 @@ import java.awt.event.ActionEvent;
 		
 		private void initialize() {
 			frame = new JFrame();
-			frame.getContentPane().setBackground(new Color(47, 79, 79));
+			frame.getContentPane().setBackground(new Color(0, 0, 51));
 			frame.getContentPane().setLayout(null);
 			
 			JList list = new JList();
@@ -87,14 +87,14 @@ import java.awt.event.ActionEvent;
 			lblItemDescription.setHorizontalAlignment(SwingConstants.RIGHT);
 			lblItemDescription.setForeground(Color.WHITE);
 			lblItemDescription.setFont(new Font("Tahoma", Font.BOLD, 15));
-			lblItemDescription.setBounds(597, 108, 130, 26);
+			lblItemDescription.setBounds(569, 108, 158, 26);
 			frame.getContentPane().add(lblItemDescription);
 			
 			JLabel lblProductList = new JLabel("Product List");
 			lblProductList.setHorizontalAlignment(SwingConstants.LEFT);
 			lblProductList.setForeground(Color.WHITE);
 			lblProductList.setFont(new Font("Impact", Font.PLAIN, 30));
-			lblProductList.setBounds(412, 11, 168, 43);
+			lblProductList.setBounds(432, 37, 168, 43);
 			frame.getContentPane().add(lblProductList);
 			
 			JLabel label = new JLabel("Register New Products");
@@ -112,7 +112,7 @@ import java.awt.event.ActionEvent;
 			label_1.setForeground(Color.WHITE);
 			label_1.setFont(new Font("Tahoma", Font.BOLD, 15));
 			label_1.setBackground(Color.WHITE);
-			label_1.setBounds(280, 569, 102, 17);
+			label_1.setBounds(280, 569, 130, 17);
 			frame.getContentPane().add(label_1);
 			
 			JLabel label_2 = new JLabel("Item ");
@@ -143,7 +143,7 @@ import java.awt.event.ActionEvent;
 			lblItemDescription_1.setForeground(Color.WHITE);
 			lblItemDescription_1.setFont(new Font("Tahoma", Font.BOLD, 15));
 			lblItemDescription_1.setBackground(Color.WHITE);
-			lblItemDescription_1.setBounds(569, 457, 158, 17);
+			lblItemDescription_1.setBounds(509, 457, 158, 17);
 			frame.getContentPane().add(lblItemDescription_1);
 			
 			JButton btnSignOut = new JButton("Sign out");
@@ -157,7 +157,7 @@ import java.awt.event.ActionEvent;
 			btnSignOut.setForeground(Color.BLACK);
 			btnSignOut.setFont(new Font("Tahoma", Font.BOLD, 15));
 			btnSignOut.setBackground(Color.WHITE);
-			btnSignOut.setBounds(10, 694, 100, 32);
+			btnSignOut.setBounds(477, 644, 100, 32);
 			frame.getContentPane().add(btnSignOut);
 			frame.setBounds(100, 100, 1056, 776);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
