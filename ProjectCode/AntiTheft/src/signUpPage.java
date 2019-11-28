@@ -93,12 +93,12 @@ public class signUpPage {
 		frame.getContentPane().add(firstNameLabel);
 		
 		JLabel emailLabel = new JLabel("Email");
-<<<<<<< HEAD
+
 		emailLabel.setFont(new Font("Tahoma", Font.PLAIN, 22));
-=======
+
 		emailLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		emailLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
->>>>>>> branch 'GUI' of https://github.com/SindhuraB/Anti-Theft-Project.git
+
 		emailLabel.setForeground(SystemColor.text);
 		emailLabel.setBounds(79, 472, 171, 39);
 		frame.getContentPane().add(emailLabel);
