@@ -152,12 +152,12 @@ public class signUpPage {
 		frame.getContentPane().add(streetAddressTexBox);
 		
 		JLabel streetAddressLabel = new JLabel("Street Address");
-<<<<<<< HEAD
+
 		streetAddressLabel.setFont(new Font("Tahoma", Font.PLAIN, 22));
-=======
+
 		streetAddressLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		streetAddressLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
->>>>>>> branch 'GUI' of https://github.com/SindhuraB/Anti-Theft-Project.git
+
 		streetAddressLabel.setForeground(SystemColor.text);
 		streetAddressLabel.setBounds(79, 353, 171, 39);
 		frame.getContentPane().add(streetAddressLabel);
@@ -219,11 +219,11 @@ public class signUpPage {
 		
 		usernameTextBox = new JTextField();
 		usernameTextBox.setColumns(10);
-<<<<<<< HEAD
+
 		usernameTextBox.setBounds(250, 321, 171, 32);
-=======
+
 		usernameTextBox.setBounds(593, 200, 171, 32);
->>>>>>> branch 'GUI' of https://github.com/SindhuraB/Anti-Theft-Project.git
+
 		frame.getContentPane().add(usernameTextBox);
 		
 		JLabel confirmPasswordLabel = new JLabel("Re-type Password");
