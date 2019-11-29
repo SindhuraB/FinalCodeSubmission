@@ -1,6 +1,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 public class QueryingProtocol {
@@ -10,6 +11,7 @@ public class QueryingProtocol {
 	public char userInfoSQL = '2';
 	public char createUserSQL = '3';
 	public char getNewID = '4';
+	public char createProductSQL = '5';
 	
 	public Connection dbCon()
 	{
@@ -167,31 +169,62 @@ public class QueryingProtocol {
 		{
 			System.out.println("Querying:");
 			
-			String userUpdateSQL = "";
-			String accUpdateSQL = "";
+			String[] sqlRequests = new String[3];
+			String uniqueInfo = "";
+			int previousSubstringEnd = 0;
+			int count = 0;
+			
 			for(int i = 0; i < sql.length() - 1; i++)
 			{
 				if(sql.charAt(i) == '|')
 				{
-					userUpdateSQL = sql.substring(0, i - 1);
-					accUpdateSQL = sql.substring(i + 1, sql.length() - 1);
+					sqlRequests[count] = sql.substring(previousSubstringEnd, i);
+					previousSubstringEnd = i + 1;
+					System.out.println(sqlRequests[count]);
+					count++;
 				}
 			}
-			System.out.println(userUpdateSQL);
-			System.out.println(accUpdateSQL);
-			
-			// create user
+			// Check to make sure user info not already taken
 			try
 			{
 				//create the statement object
 				Statement stmt = con.createStatement();
-				int rsUser = stmt.executeUpdate(userUpdateSQL);
-				int rsAcc = stmt.executeUpdate(accUpdateSQL);
+				ResultSet rsOpen = stmt.executeQuery(sqlRequests[0]);
 				System.out.println("Query Executed");
-				resultString = Integer.toString(rsUser) + "|" + Integer.toString(rsAcc);
-				con.close();
+				if(rsOpen.next())
+					uniqueInfo = rsOpen.getString("AcID");
 			}
 			catch(Exception e)
+			{
+				System.out.println(e);
+			}
+			
+			if(!uniqueInfo.equals(null))
+			{
+				resultString = "Username or password is taken";
+			}
+			else
+			{
+				// create user
+				try
+				{
+					//create the statement object
+					Statement stmt = con.createStatement();
+					int rsUser = stmt.executeUpdate(sqlRequests[1]);
+					int rsAcc = stmt.executeUpdate(sqlRequests[2]);
+					System.out.println("Query Executed");
+					resultString = Integer.toString(rsUser) + "|" + Integer.toString(rsAcc);
+				}
+				catch(Exception e)
+				{
+					System.out.println(e);
+				}
+			}
+			try 
+			{
+				con.close();
+			} 
+			catch (SQLException e) 
 			{
 				System.out.println(e);
 			}
@@ -211,9 +244,30 @@ public class QueryingProtocol {
 				System.out.println("Query Executed");
 				if(rs.next())
 				{
-					resultString = rs.getString("AcID");
+					int newID = rs.getInt("AcID") + 1;
+					resultString = Integer.toString(newID);
 					System.out.println("Row results: " + resultString);
 				}
+				con.close();
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+			}
+		}
+		else if(requestCode == createProductSQL)
+		{
+			System.out.println("Querying:");
+			System.out.println(sql);
+			
+			// Create new product listing
+			try
+			{
+				//create the statement object
+				Statement stmt = con.createStatement();
+				int rsProduct = stmt.executeUpdate(sql);
+				System.out.println("Query Executed");
+				resultString = Integer.toString(rsProduct);
 				con.close();
 			}
 			catch(Exception e)

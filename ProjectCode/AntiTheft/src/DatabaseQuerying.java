@@ -20,7 +20,7 @@ public class DatabaseQuerying{
 		try
 		{
 			// Connect to database server and setup input/output streams
-			socket = new Socket("192.168.1.24", 5000);
+			socket = new Socket("192.168.1.24", 80);
 			System.out.println("Connected");
 			input = new DataInputStream(socket.getInputStream());
 			output = new DataOutputStream(socket.getOutputStream());
