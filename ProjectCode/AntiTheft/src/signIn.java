@@ -172,12 +172,24 @@ public class signIn {
 			public void actionPerformed(ActionEvent arg0) {			
 				String password;
 				password = textFieldPassword.getText();
-				JOptionPane.showMessageDialog(null,textFieldPassword.getText());
 				
-				frame.dispose();
-				HomePage homeScreen=new HomePage();
-				homeScreen.setVisible(true);
+				String user;
+				user = textFieldUser.getText();
+				String isvalid =  login(user,password);
+				
 			
+				if (isvalid != null) {
+					frame.dispose();
+					HomePage homeScreen=new HomePage();
+					homeScreen.setVisible(true);
+				}
+			else 
+			{
+				JOptionPane.showMessageDialog(null,"The information is not valid");	
+			}
+				
+				
+				
 			
 			}
 	});
