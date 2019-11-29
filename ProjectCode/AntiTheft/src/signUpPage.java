@@ -91,13 +91,13 @@ public class signUpPage {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-<<<<<<< HEAD
+
 		frame.getContentPane().setBackground(new Color(0, 0, 51));
 		frame.setBounds(1001, 600, 1000, 750);
-=======
+
 		frame.getContentPane().setBackground(new Color(47, 79, 79));
 		frame.setBounds(1000, 600, 1000, 750);
->>>>>>> refs/remotes/origin/GUI
+
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		firstNameTextbox = new JTextField();

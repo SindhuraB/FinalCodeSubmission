@@ -70,12 +70,11 @@ import java.awt.event.ActionEvent;
 		
 		private void initialize() {
 			frame = new JFrame();
-<<<<<<< HEAD
+
 			frame.getContentPane().setBackground(new Color(0, 0, 51));
-=======
 			frame.getContentPane().setFont(new Font("Tahoma", Font.PLAIN, 11));
 			frame.getContentPane().setBackground(new Color(47, 79, 79));
->>>>>>> refs/remotes/origin/GUI
+
 			frame.getContentPane().setLayout(null);
 			frame.setBounds(1000, 600, 1000, 750);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -187,7 +186,7 @@ import java.awt.event.ActionEvent;
 					openingScreen.setVisible(true);	
 				}
 			});
-<<<<<<< HEAD
+
 			btnSignOut.setForeground(Color.BLACK);
 			btnSignOut.setFont(new Font("Tahoma", Font.BOLD, 15));
 			btnSignOut.setBackground(Color.WHITE);
@@ -195,10 +194,7 @@ import java.awt.event.ActionEvent;
 			frame.getContentPane().add(btnSignOut);
 			frame.setBounds(100, 100, 1056, 776);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-=======
-			
-			
->>>>>>> refs/remotes/origin/GUI
+
 		}
 
 	
