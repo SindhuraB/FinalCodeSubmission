@@ -29,7 +29,8 @@ import javax.swing.*;
 public class signIn {
 
 	private JFrame frame;
-	private JPasswordField passwordField;
+	private JTextField textFieldPassword;
+	private JTextField textFieldUser;
 
 	/**
 	 * Launches the application.
@@ -89,11 +90,6 @@ public class signIn {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JTextArea usernameText = new JTextArea();
-		usernameText.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		usernameText.setBounds(210, 373, 194, 32);
-		frame.getContentPane().add(usernameText);
-		
 		JLabel usernameLabel = new JLabel("Username");		
 		usernameLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		usernameLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -120,7 +116,7 @@ public class signIn {
 		backButton.setBackground(Color.WHITE);
 		backButton.setForeground(new Color(0, 0, 0));
 		backButton.setFont(new Font("Tahoma", Font.BOLD, 15));		
-		backButton.setBounds(22, 662, 100, 32);
+		backButton.setBounds(42, 662, 100, 32);
 		frame.getContentPane().add(backButton);
 		
 		
@@ -159,58 +155,30 @@ public class signIn {
 
 		frame.getContentPane().add(loginButton);
 		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(548, 373, 194, 32);
-		frame.getContentPane().add(passwordField);
+		textFieldPassword = new JTextField();
+		textFieldPassword.setBounds(548, 373, 194, 32);
+		frame.getContentPane().add(textFieldPassword);
+		textFieldPassword.setColumns(10);
+		
+		textFieldUser = new JTextField();
+		textFieldUser.setBounds(220, 371, 194, 37);
+		frame.getContentPane().add(textFieldUser);
+		textFieldUser.setColumns(10);
 		
 		
 		//Checks info from user input against the database value
 		
 		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {			
-			
+				String password;
+				password = textFieldPassword.getText();
+				JOptionPane.showMessageDialog(null,textFieldPassword.getText());
+				
 				frame.dispose();
 				HomePage homeScreen=new HomePage();
 				homeScreen.setVisible(true);
 			
-				
-			/*	try {
-					String query="select * from getUserinfo where username=? and password=?"; //checks if value in database is the same
-					PreparedStatement pst=connection.prepareStatement(query);
-					pst.setString(0,passwordText.getText());
-					pst.setString(1,usernameText.getText());
-					
-					ResultSet rs=pst.executeQuery();
-					int count=0;
-					while(rs.next()){
-						count=count+1;
-						
-					}
-					if(count==1)
-					{
-						JOptionPane.showMessageDialog(null, "Username and password is correct");
-						frame.dispose();
-						HomePage homeScreen=new HomePage();
-						homeScreen.setVisible(true);
-					}
-					else if(count>1)
-					{
-						JOptionPane.showMessageDialog(null, "Duplicate Username and password ");
-					}
-					else
-					{
-						JOptionPane.showMessageDialog(null, "Username and password is not correct. try again");
-					}
-					rs.close();
-					pst.close();
-					
-				} catch (Exception e) 
-				{
-					JOptionPane.showMessageDialog(null, e);
-				
-				}
-			}}
-	*/
+			
 			}
 	});
 	}	
