@@ -59,6 +59,25 @@ public class QueryingProtocol {
 			System.out.println("Querying:");
 			System.out.println(sql);
 			
+			try
+			{
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery(sql);
+				System.out.println("Query Executed");
+				while(rs.next())
+				{
+					String brand = rs.getString("Brand");
+					String desc = rs.getString("ItemDesc");
+					String row = brand + ", " + desc;
+					resultString = row;
+					System.out.println("Row results: " + row);
+				}
+				con.close();
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+			}
 		}
 		else if(requestCode == userInfoSQL)
 		{

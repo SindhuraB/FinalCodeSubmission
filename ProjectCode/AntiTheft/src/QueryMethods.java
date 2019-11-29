@@ -2,43 +2,43 @@ import java.util.ArrayList;
 
 public class QueryMethods extends DatabaseQuerying{
 	
-	public String makeRequest(String requestSQL)
+	public static String makeRequest(String requestSQL)
 	{
 		DatabaseQuerying queryMaker = new DatabaseQuerying();
 		String results = queryMaker.run(requestSQL);
 		return results;
 	}
-	public String getNewID()
+	public static String getNewID()
 	{
 		String newID = makeRequest("4");
 		return newID;
 	}
-	public String shutdownServer()
+	public static String shutdownServer()
 	{
 		String request = "Shutdown";
 		String shutdown = makeRequest(request);
 		return shutdown;
 	}
-	public String login(String email, String pass)
+	public static String login(String email, String pass)
 	{
 		String request = "select a.AcID from ACCOUNTS a where a.Email = " + email
 				+ " and a.Password = " + pass + "0";
 		String validity = makeRequest(request);
 		return validity;
 	}
-	public String selectProducts(String accID)
+	public static String selectProducts(String accID)
 	{
-		String request = "select u.Brand, u.ItemDesc from USER_TAGS u ACCOUNTS a where u.AccountID = " + accID + "1";
+		String request = "select u.Brand, u.ItemDesc from USER_TAGS u where u.AccountID = " + accID + "1";
 		String products = makeRequest(request);
 		return products;
 	}
-	public String getUserInfo(String accID)
+	public static String getUserInfo(String accID)
 	{
 		String request = "select * from USER_INFO u where u.AccountID = " + accID + "2";
 		String userInfo = makeRequest(request);
 		return userInfo;
 	}
-	public String createUser(String email, String pass, String fName, String mInit, String lName, String street,
+	public static String createUser(String email, String pass, String fName, String mInit, String lName, String street,
 			String city, String state, String zipCode, String phone, String extension)
 	{
 		String newID = getNewID();
@@ -53,7 +53,8 @@ public class QueryMethods extends DatabaseQuerying{
 		return results;
 	}
 	public static void main(String[] args) {
-		DatabaseQuerying queryMaker = new DatabaseQuerying();
-		
+		String valid = selectProducts("1");
+		System.out.println(valid);
+		String shut = shutdownServer();
 	}
 }

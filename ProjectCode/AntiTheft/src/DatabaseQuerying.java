@@ -26,45 +26,16 @@ public class DatabaseQuerying{
 			output = new DataOutputStream(socket.getOutputStream());
 			System.out.println("Sending request: " + requestInfo);
 			
-			char requestCode = requestInfo.charAt(requestInfo.length() -1);
-			// Send server shutdown command
-			if(requestInfo.equals("Shutdown"))
+			// Send request to server
+			try
 			{
-				try
-				{
-					System.out.println("Shutting server down");
-					// Write sql string for query to output
-					output.writeUTF(requestInfo);
-				}
-				catch(IOException i)
-				{
-					System.out.println(i);
-				}
+				System.out.println("Making request");
+				// Write sql string for query to output
+				output.writeUTF(requestInfo);
 			}
-			else if(requestCode == '0')
+			catch(IOException i)
 			{
-				
-			}
-			else if(requestCode == '1')
-			{
-				
-			}
-			else if(requestCode == '2')
-			{
-				
-			}
-			else if(requestCode == '3')
-			{
-				try
-				{
-					System.out.println("Requesting create new User");
-					// Write sql string for query to output
-					output.writeUTF(requestInfo);
-				}
-				catch(IOException i)
-				{
-					System.out.println(i);
-				}
+				System.out.println(i);
 			}
 			result = input.readUTF();
 		}
@@ -91,29 +62,6 @@ public class DatabaseQuerying{
 		}
 		return result;
 	}
-	/*
-	public static Connection openCon ()
-	{
-		try {
-			//load the driver class
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			
-			String url = "jdbc:oracle:thin:@localhost:1521/orclpdb";
-			String user = "TAGCOMPDBA";
-			String pass = "minigrr1";
-			
-			//create the connection object
-			Connection con = DriverManager.getConnection(url, user, pass);
-			System.out.println("Connection made to PDB");
-			return con;
-			}
-		catch(Exception e) {
-			System.out.print(e);
-			return null;
-		}
-	}
-	*/
-	
 	/*
 	public void createNewUser(String email, String pass, String fName, String mInit, String lName, String street,
 			String city, String state, int zipCode, int phone, int extension) 
