@@ -26,6 +26,7 @@ public class DatabaseQuerying{
 			output = new DataOutputStream(socket.getOutputStream());
 			System.out.println("Sending request: " + requestInfo);
 			
+			char requestCode = requestInfo.charAt(requestInfo.length() -1);
 			// Send server shutdown command
 			if(requestInfo.equals("Shutdown"))
 			{
@@ -40,12 +41,23 @@ public class DatabaseQuerying{
 					System.out.println(i);
 				}
 			}
-			// Select last entered account ID number
-			else if(requestInfo.equals("5"))
+			else if(requestCode == '0')
+			{
+				
+			}
+			else if(requestCode == '1')
+			{
+				
+			}
+			else if(requestCode == '2')
+			{
+				
+			}
+			else if(requestCode == '3')
 			{
 				try
 				{
-					System.out.println("Creating new User");
+					System.out.println("Requesting create new User");
 					// Write sql string for query to output
 					output.writeUTF(requestInfo);
 				}

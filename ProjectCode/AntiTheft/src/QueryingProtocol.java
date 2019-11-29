@@ -4,18 +4,12 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class QueryingProtocol {
-
-	public static int waiting = 0;
-	public static int query = 1;
-
-	public String checkUserValid = "0";
-	public String productsSQL = "1";
-	public String userInfoSQL = "2";
-	public String accInfoSQL = "3";
-	public String loginSQL = "4";
-	public String createUserSQL = "5";
 	
-	public static int state = waiting;
+	public char loginSQL = '0';
+	public char productsSQL = '1';
+	public char userInfoSQL = '2';
+	public char createUserSQL = '3';
+	public char getNewID = '4';
 	
 	public Connection dbCon()
 	{
@@ -43,37 +37,42 @@ public class QueryingProtocol {
 	{
 		Connection con = dbCon();
 		String resultString = "";
+		char requestCode = sql.charAt(sql.length()-1);
+		if(!sql.equals("Shutdown") || requestCode != 4)
+		{
+			// Remove request code from end of sql string
+			sql = sql.substring(0, sql.length() - 1);
+		}
 		
 		if(sql.equals("Shutdown"))
 		{
 			resultString = "Shutdown";
-			state = waiting;
 		}
-		else if(sql.equals(checkUserValid))
+		else if(requestCode == loginSQL)
 		{
 			System.out.println("Querying:");
 			System.out.println(sql);
 			
 		}
-		else if(sql.equals(productsSQL))
+		else if(requestCode == productsSQL)
 		{
 			System.out.println("Querying:");
 			System.out.println(sql);
 			
 		}
-		else if(sql.equals(userInfoSQL))
+		else if(requestCode == userInfoSQL)
 		{
 			System.out.println("Querying:");
 			System.out.println(sql);
 			
 		}
-		else if(sql.equals(accInfoSQL))
+		else if(requestCode == createUserSQL)
 		{
 			System.out.println("Querying:");
 			System.out.println(sql);
 			
 		}
-		else if(sql.equals(createUserSQL))
+		else if(requestCode == getNewID)
 		{
 			System.out.println("Querying:");
 			System.out.println(sql);
