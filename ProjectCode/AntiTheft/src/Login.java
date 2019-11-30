@@ -6,17 +6,22 @@
  
 public class Login extends User {
 
-	  public static int login (String email, String pass){
+	  public static boolean login (String emailtest, String passtest){
 
 		
+			User one = User("pinnam@utdallas.edu", "pinnampass");
+			
+			String pass = "pinnampass";
+			String email = "pinnam@utdallas.edu";
 	
-	if (database.contains(email)) {
+	if (database.containsKey(email)) {
 		
+	
 
 		 if ( pass.equals(password.get(email)) ) {
 
 		    	System.out.println("Login successful");
-		        return 1;
+		        return true;
 		    					
 		    }
 		    			
@@ -24,7 +29,7 @@ public class Login extends User {
 
 			 System.out.print("Login is incorrect.");
 		    			      
-		     return 0;
+		     return false;
 		   }
 		    	
 		 

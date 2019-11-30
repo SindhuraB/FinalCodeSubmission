@@ -1,4 +1,6 @@
 import java.awt.EventQueue;
+import java.util.*;
+
 import javax.swing.*;
 import javax.swing.JFrame;
 import javax.swing.JButton;
@@ -176,31 +178,27 @@ public class signIn extends Login{
 				String useremail;
 				useremail = textFieldUser.getText();
 				
+				new User("pinnam@utdallas.edu", "pinnampass");
 				
-				
-				String isvalid =  Login.login(useremail,password);
+				boolean isvalid =  Login.login(useremail,password);
 				
 			
-				if (isvalid != null) {
+				if (isvalid) {
 					frame.dispose();
 					HomePage homeScreen=new HomePage();
 					homeScreen.setVisible(true);
 				}
-			//else 
+				else
 			{
 				JOptionPane.showMessageDialog(null,"The information is not valid");	
 			}
 			
-				
-				
-				
+			}
 			
-			//}
-	});
-	}	
+		});
+	}
+	
 }
-
-		
 			
 	
 		
