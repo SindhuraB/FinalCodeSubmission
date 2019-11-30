@@ -157,9 +157,6 @@ public class User {
 
 	public  String getname() {
 		
-		if (middle == '0')
-			return firstName + " " + lastName;
-		else
 			return firstName + " " + middle + ". " + lastName;
 		
 	}	

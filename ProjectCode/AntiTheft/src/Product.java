@@ -8,46 +8,25 @@ public class Product extends User{
 	static HashMap< Integer, String > products = new HashMap<>();
 
 	 
-		static public void CreateProduct (User user) {
+		static public String CreateProduct (Integer id, String brand, String descrip) {
 			
-			System.out.println("To register a new product, enter your unique user ID");
-		
-			Integer id = input.nextInt();
-			
-			
-			if (database.get(user.getemail()).intValue() == id.intValue())
-				{
-			
-					input.nextLine();
-					System.out.println("Enter the brand for the product you are registering");
-			
-					String brand = input.nextLine();
-					
-					System.out.println("Enter a short description for the product you are registering");
-					String descrip = input.nextLine();
 			
 					products.put(id, (brand + " - " + descrip));
-					user.numOfProdOwned++;
+					System.out.println("Product created");
+					//user.numOfProdOwned++;
+					
+					String display = products.get(id);
 			
-			}
-			
-			else
-				System.out.println("Your id is incorrect. Please try again");
-			
+			return display;
 			
 		}
 	
 		
-		public static void DisplayItems(User user) {
+		public static void DisplayItems(Integer id) {
 			
-			System.out.println("To view your complete list of products, enter your unique user ID");
-
-			Integer id = input.nextInt();
+		
+			System.out.println(products.get(id));
 			
-			if (database.get(user.getemail()).intValue() == id.intValue())
-				System.out.println(products.get(id));
-			else
-				System.out.println("Your id is incorrect. Please try again");
 			
 		}
 		

@@ -195,12 +195,32 @@ import java.awt.event.ActionEvent;
 			frame.setBounds(100, 100, 1056, 776);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		}
+		
 
-	
+		
+		JButton btnCreate = new JButton("Create");
+		btnCreate.setForeground(Color.BLACK);
+		btnCreate.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnCreate.setBackground(Color.WHITE);
+		btnCreate.setBounds(100, 668, 100, 32);
+		frame.getContentPane().add(btnCreate);
+		
+		
+		btnCreate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String description = textField.getText();
+				String manufacturer = textField_1.getText();
+				//testing product creation
+				String display = Product.CreateProduct(1000, manufacturer, description);
+				
+				
+			}
+		});
 
 			
 		}
+		
+	}
 	
 
 
