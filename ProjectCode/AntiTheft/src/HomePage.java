@@ -80,7 +80,7 @@ import java.awt.event.ActionEvent;
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			
 			//Creates a list for Registered item
-			JList list = new JList();
+			JList <String> list = new JList<String>();
 			list.setBounds(280, 145, 447, 171);
 			frame.getContentPane().add(list);
 			
