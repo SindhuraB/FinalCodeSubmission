@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 
 public class User{ /*start of class
+=======
+// authors Labeeba Rana & Varika Pinnam
+public class User{
+>>>>>>> refs/remotes/origin/Database_Querying
 
   Vector <Integer> numbers = new Vector();
 
