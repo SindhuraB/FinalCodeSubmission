@@ -170,30 +170,30 @@ public class signIn {
 		
 		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {			
-				String password;
-				password = textFieldPassword.getText();
+				//String password;
+				//password = textFieldPassword.getText();
 				
-				String user;
-				user = textFieldUser.getText();
-				/*
-				String isvalid =  login(user,password);
+				//String user;
+				//user = textFieldUser.getText();
+				
+				//String isvalid =  login(user,password);
 				
 			
-				if (isvalid != null) {
+				//if (isvalid != null) {
 					frame.dispose();
 					HomePage homeScreen=new HomePage();
 					homeScreen.setVisible(true);
 				}
-			else 
+			//else 
 			{
 				JOptionPane.showMessageDialog(null,"The information is not valid");	
 			}
-			*/
+			
 				
 				
 				
 			
-			}
+			//}
 	});
 	}	
 }
