@@ -19,14 +19,29 @@ public class User {
 	Integer phone;
 	Integer userID;
 	String userPassword;
-	String productList[];
     String userEmail;
     int numOfProdOwned;
 	static int count = 1000;
 	static Scanner input = new Scanner (System.in);
 	 static HashMap<String, Integer> database = new HashMap<>();
      static HashMap<String, String> password = new HashMap <>();
-	//String array
+     
+     
+     //constructor for User for Junit testing
+     
+     User (String email, String pass){
+    	 
+    	 
+    	 userEmail= email;
+    	 userPassword = pass;
+    	 userID = count;
+    	 
+    	  password.put(email,pass);
+    	  database.put(email, count);
+    	 count++;
+    	 
+    			
+     }
 	
 	/*
 	public static void main (String[] args) {
@@ -138,7 +153,7 @@ public class User {
 		        userPassword = input.next();
 		        
 		        
-		 /*       
+		      
 		        boolean valid = User.valid(userPassword);
 		        
 		        while(!valid) {
@@ -148,7 +163,7 @@ public class User {
 		        	  userPassword = input.next();
 				      valid = User.valid(userPassword);
 		        }
-		    */    	
+		       	
 
 		        //user account
 		        password.put(userEmail, userPassword);
