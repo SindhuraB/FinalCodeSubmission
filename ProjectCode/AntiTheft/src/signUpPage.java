@@ -40,15 +40,10 @@ public class signUpPage extends User {
 	private JTextField cityTextbox;
 	private JTextField stateTextbox;
 	private JTextField zipCodeTextbox;
-	private JTextField extensionTextbox;
 	private JTextField passwordTextbox1;
-	private JTextField passwordTextbox2;
 	private JButton button;
-	private JTextField textField;
 	private JButton btnSignUp;
 	private JLabel lblSighnUp;
-	private JTextField suffixTextBox;
-	private JLabel lblSuffix;
 
 	/**
 	 * Launches the application.
@@ -126,7 +121,7 @@ public class signUpPage extends User {
 		emailLabel.setForeground(SystemColor.text);
 		
 		JLabel passwordLabel = new JLabel("Password");
-		passwordLabel.setBounds(396, 523, 171, 23);
+		passwordLabel.setBounds(592, 430, 171, 23);
 		passwordLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		passwordLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		passwordLabel.setForeground(SystemColor.text);
@@ -205,33 +200,8 @@ public class signUpPage extends User {
 		zipCodeTextbox.setBounds(699, 303, 85, 32);
 		zipCodeTextbox.setColumns(10);
 		
-		JLabel extentionLabel = new JLabel("Extension");
-		extentionLabel.setBounds(592, 430, 171, 23);
-		extentionLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		extentionLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		extentionLabel.setForeground(SystemColor.text);
-		
-		extensionTextbox = new JTextField();
-		extensionTextbox.setBounds(592, 399, 126, 32);
-		extensionTextbox.setColumns(10);
-		
-		JLabel usernameLabel = new JLabel("Username");
-		usernameLabel.setBounds(196, 523, 171, 23);
-		usernameLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		usernameLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		usernameLabel.setForeground(SystemColor.text);
-		
-		JLabel confirmPasswordLabel = new JLabel("Re-type Password");
-		confirmPasswordLabel.setBounds(592, 522, 171, 23);
-		confirmPasswordLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		confirmPasswordLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		confirmPasswordLabel.setForeground(SystemColor.text);
-		
 		passwordTextbox1 = new JTextField();
-		passwordTextbox1.setBounds(396, 494, 171, 32);
-		
-		passwordTextbox2 = new JTextField();
-		passwordTextbox2.setBounds(592, 494, 171, 32);
+		passwordTextbox1.setBounds(592, 399, 171, 32);
 		
 		button = new JButton("Back");
 		button.setBounds(383, 587, 100, 32);
@@ -245,10 +215,6 @@ public class signUpPage extends User {
 		button.setForeground(Color.BLACK);
 		button.setFont(new Font("Tahoma", Font.BOLD, 15));
 		button.setBackground(Color.WHITE);
-		
-		textField = new JTextField();
-		textField.setBounds(196, 494, 171, 32);
-		textField.setColumns(10);
 		
 		btnSignUp = new JButton("Sign up");
 		btnSignUp.setBounds(513, 587, 100, 32);
@@ -284,16 +250,6 @@ public class signUpPage extends User {
 		lblSighnUp.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSighnUp.setForeground(Color.WHITE);
 		lblSighnUp.setFont(new Font("Impact", Font.PLAIN, 50));
-		
-		suffixTextBox = new JTextField();
-		suffixTextBox.setBounds(653, 205, 131, 32);
-		suffixTextBox.setColumns(10);
-		
-		lblSuffix = new JLabel("Suffix");
-		lblSuffix.setBounds(653, 238, 131, 23);
-		lblSuffix.setHorizontalAlignment(SwingConstants.LEFT);
-		lblSuffix.setForeground(Color.WHITE);
-		lblSuffix.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().add(firstNameTextbox);
 		frame.getContentPane().add(phoneTextbox);
@@ -314,17 +270,9 @@ public class signUpPage extends User {
 		frame.getContentPane().add(stateTextbox);
 		frame.getContentPane().add(zipCodeLabel);
 		frame.getContentPane().add(zipCodeTextbox);
-		frame.getContentPane().add(extentionLabel);
-		frame.getContentPane().add(extensionTextbox);
-		frame.getContentPane().add(usernameLabel);
-		frame.getContentPane().add(confirmPasswordLabel);
 		frame.getContentPane().add(passwordTextbox1);
-		frame.getContentPane().add(passwordTextbox2);
 		frame.getContentPane().add(button);
-		frame.getContentPane().add(textField);
 		frame.getContentPane().add(btnSignUp);
 		frame.getContentPane().add(lblSighnUp);
-		frame.getContentPane().add(suffixTextBox);
-		frame.getContentPane().add(lblSuffix);
 	}
 }

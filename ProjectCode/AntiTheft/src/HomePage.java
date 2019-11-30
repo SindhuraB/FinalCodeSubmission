@@ -121,45 +121,25 @@ import java.awt.event.ActionEvent;
 			label.setBounds(359, 378, 320, 43);
 			frame.getContentPane().add(label);
 			
-			//Creates a place for user input item description 
-			JList list_1 = new JList();
-			list_1.setBounds(453, 485, 274, 138);
-			frame.getContentPane().add(list_1);
-			
 			//Manufacturer name label
 			JLabel label_1 = new JLabel("Manufacturer");
 			label_1.setForeground(Color.WHITE);
 			label_1.setFont(new Font("Tahoma", Font.BOLD, 15));
 			label_1.setBackground(Color.WHITE);
-			label_1.setBounds(280, 569, 130, 17);
+			label_1.setBounds(280, 457, 130, 17);
 			frame.getContentPane().add(label_1);
-			
-			//Item name label for UN-registered products 
-			JLabel label_2 = new JLabel("Item ");
-			label_2.setForeground(Color.WHITE);
-			label_2.setFont(new Font("Tahoma", Font.BOLD, 15));
-			label_2.setBackground(Color.WHITE);
-			label_2.setBounds(280, 463, 102, 17);
-			frame.getContentPane().add(label_2);
 			
 			//User input field for manufacture 
 			textField = new JTextField();
 			textField.setColumns(10);
-			textField.setBounds(280, 485, 140, 26);
+			textField.setBounds(539, 485, 188, 113);
 			frame.getContentPane().add(textField);
 			
 			//User input field for UN-registered products 
 			textField_1 = new JTextField();
 			textField_1.setColumns(10);
-			textField_1.setBounds(280, 597, 140, 26);
+			textField_1.setBounds(280, 485, 140, 26);
 			frame.getContentPane().add(textField_1);
-			
-			//Scroll bar for the UN-registered products
-			JScrollBar scrollBar_1 = new JScrollBar();
-			scrollBar_1.setForeground(new Color(153, 255, 102));
-			scrollBar_1.setBackground(Color.LIGHT_GRAY);
-			scrollBar_1.setBounds(726, 485, 17, 138);
-			frame.getContentPane().add(scrollBar_1);
 			
 			//Item description label for UN-registered products
 			JLabel lblItemDescription_1 = new JLabel("Item Description");
@@ -175,7 +155,7 @@ import java.awt.event.ActionEvent;
 			btnSignOut.setForeground(Color.BLACK);
 			btnSignOut.setFont(new Font("Tahoma", Font.BOLD, 15));
 			btnSignOut.setBackground(Color.WHITE);
-			btnSignOut.setBounds(10, 668, 100, 32);
+			btnSignOut.setBounds(347, 628, 100, 32);
 			frame.getContentPane().add(btnSignOut);
 			
 			//If Sign out button is clicked then take the user to opening page
@@ -202,7 +182,7 @@ import java.awt.event.ActionEvent;
 		btnCreate.setForeground(Color.BLACK);
 		btnCreate.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnCreate.setBackground(Color.WHITE);
-		btnCreate.setBounds(100, 668, 100, 32);
+		btnCreate.setBounds(752, 644, 100, 32);
 		frame.getContentPane().add(btnCreate);
 		
 		
