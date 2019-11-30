@@ -29,6 +29,11 @@ public class User {
      
      //constructor for User for Junit testing
      
+     
+     User (){
+    	 
+    	 
+     }
      User (String email, String pass){
     	 
     	 

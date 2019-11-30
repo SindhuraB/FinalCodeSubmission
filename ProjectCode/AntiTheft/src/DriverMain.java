@@ -24,8 +24,8 @@ public class DriverMain extends User {
 			Login.login();
 			
 			
-			Product.CreateProduct(one.getemail());
-			Product.DisplayItems(one.getemail());
+			Product.CreateProduct(one);
+			Product.DisplayItems(one);
 			
 			
 			
