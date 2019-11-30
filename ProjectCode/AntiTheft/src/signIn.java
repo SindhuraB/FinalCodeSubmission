@@ -175,6 +175,7 @@ public class signIn {
 				
 				String user;
 				user = textFieldUser.getText();
+				/*
 				String isvalid =  login(user,password);
 				
 			
@@ -187,6 +188,7 @@ public class signIn {
 			{
 				JOptionPane.showMessageDialog(null,"The information is not valid");	
 			}
+			*/
 				
 				
 				
