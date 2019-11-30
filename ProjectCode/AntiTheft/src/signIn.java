@@ -26,7 +26,7 @@ import javax.swing.*;
 *@authors Gentry Jenkins / Sindhura Boppudi / Noman Syed
 *@version 2.2.0
 */ 
-public class signIn {
+public class signIn extends Login{
 
 	private JFrame frame;
 	private JTextField textFieldPassword;
@@ -170,16 +170,18 @@ public class signIn {
 		
 		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {			
-				//String password;
-				//password = textFieldPassword.getText();
+				String password;
+				password = textFieldPassword.getText();
 				
-				//String user;
-				//user = textFieldUser.getText();
+				String useremail;
+				useremail = textFieldUser.getText();
 				
-				//String isvalid =  login(user,password);
+				
+				
+				String isvalid =  Login.login(useremail,password);
 				
 			
-				//if (isvalid != null) {
+				if (isvalid != null) {
 					frame.dispose();
 					HomePage homeScreen=new HomePage();
 					homeScreen.setVisible(true);
