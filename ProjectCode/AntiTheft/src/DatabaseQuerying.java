@@ -20,9 +20,9 @@ public class DatabaseQuerying{
 		try
 		{
 			// Connect to database server and setup input/output streams
-			InetAddress serverAddress = InetAddress.getByName("serverConnection.dynu.net");
-			socket = new Socket(serverAddress.getHostAddress(), 80);
-			System.out.println("Connected: " + serverAddress);
+			System.out.println("Connecting to: serverConnection.dynu.net");
+			socket = new Socket("serverConnection.dynu.net", 80);
+			System.out.println("Connected");
 			input = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
 			output = new DataOutputStream(socket.getOutputStream());
 			System.out.println("Sending request: " + requestInfo);
@@ -30,16 +30,17 @@ public class DatabaseQuerying{
 			// Send request to server
 			try
 			{
-				System.out.println("Making request");
 				// Write sql string for query to output
 				output.writeUTF(requestInfo);
 				output.flush();
+				System.out.println("Request sent");
 			}
 			catch(IOException i)
 			{
 				System.out.println(i);
 			}
 			result = input.readUTF();
+			System.out.println("Results received");
 		}
 		catch(UnknownHostException u)
 		{
