@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JPanel;
 
 /**
 *Description: The home page of the GUI. input or look up products
@@ -79,17 +80,6 @@ import java.awt.event.ActionEvent;
 			frame.getContentPane().setLayout(null);
 			frame.setBounds(1000, 600, 1000, 750);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			
-			//Creates a list for Registered item
-			JList <String> list = new JList<String>();
-			list.setBounds(280, 145, 447, 171);
-			frame.getContentPane().add(list);
-			
-			//Scroll bar for Registered item list
-			JScrollBar scrollBar = new JScrollBar();
-			scrollBar.setBackground(Color.LIGHT_GRAY);
-			scrollBar.setBounds(726, 145, 17, 171);
-			frame.getContentPane().add(scrollBar);
 			
 			//Item name label for Registered products
 			JLabel lblNewLabel = new JLabel("Item Name");
@@ -186,6 +176,10 @@ import java.awt.event.ActionEvent;
 		btnCreate.setBounds(752, 644, 100, 32);
 		frame.getContentPane().add(btnCreate);
 		
+		JPanel list = new JPanel();
+		list.setBounds(280, 145, 447, 144);
+		frame.getContentPane().add(list);
+		
 		
 		btnCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -204,7 +198,6 @@ import java.awt.event.ActionEvent;
 
 			
 		}
-		
 	}
 	
 
