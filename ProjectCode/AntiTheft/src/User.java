@@ -11,12 +11,12 @@ public class User {
 	
 	String lastName;
 	String firstName;
-	Character middle;
+	String middle;
 	String street;
 	String city;
 	String state;
-	Integer zip;
-	Integer phone;
+	String zip;
+	String phone;
 	Integer userID;
 	String userPassword;
     String userEmail;
@@ -29,11 +29,13 @@ public class User {
      
      //constructor for User for Junit testing
      
-     
+     //defining default constructor
      User (){
     	 
     	 
      }
+     
+     //mini constructor to test things
      User (String email, String pass){
     	 
     	 
@@ -48,88 +50,47 @@ public class User {
     			
      }
 	
-	/*
-	public static void main (String[] args) {
-		
-		// User
-		System.out.println("");		
-		String input1 = JOptionPane.showInputDialog("Username:"); 
-			userName = input1;
-		String input2 = JOptionPane.showInputDialog("userPassword");
-		userPassword = input2;
-		
-		JOptionPane.showMessageDialog(null, "Welcome");
-		
-			//JOptionPane.showMessageDialog(null, userName);
-			 * 
-			 * 	System.out.println("");		
-		String input1 = JOptionPane.showInputDialog("Last Name"); 
-			lastName = input1;
-		String input2 = JOptionPane.showInputDialog("First Name");
-			firstName = input2;
-		String input3 = JOptionPane.showInputDialog("Middle Name");
-			middleName = input3;
-		String input4 = JOptionPane.showInputDialog("User Address");
-			userAddress = input4;
-			
-		
-	}
 	
-	*/
 	//Partners: Varika & Labeeba
-	  
-     public void createAccount() {
+	 
+     //constructor creating new account based on linking to signin page
+     User (String first, String last, String mid, String streetad, String cityname, String zipcode, String phonenum, String pass, String email, String statename) {
     	 
+    	 lastName = last;
+    	 firstName = first;
+    	 middle = mid;
+    	 street = streetad;
+    	 city = cityname;
+    	 state = statename;
+    	 zip = zipcode;
+    	 phone = phonenum;
+    	 userID = count;
+    	 userPassword = pass;
+    	 userEmail = email;
+    	 
+    	 //user account
+	        password.put(userEmail, userPassword);
 
+	        //user ID
+	        database.put(userEmail, userID);
 
-		        System.out.println("To create an account, enter your email");
+	        System.out.println("Account creation successful. Your unique ID number is " + count);
+	        
 
-		        userEmail = input.next();
+	        count++;
+
+		     
 		        
-		        if (database.containsKey(userEmail)) {
+		       /* if (database.containsKey(userEmail)) {
 		        	
 		           	 System.out.println("You already have an account! Please try logging in.");
 		           	 Login.login();
 		        }
-		        	
-		        
-		        System.out.println ("Please enter your first name");
-		        
-		        firstName = input.next();
-		        
- 
-		        System.out.println ("Please enter your last name");
-		        
-		        lastName = input.next();
-		        
-		      
-		        System.out.println("Please enter your middle initial or the number 0 if you do not have one");
-		        
-		        middle = input.next().charAt(0);
-		        
-		        while (!(Character.isLetter(middle) || middle == '0')){
-		        	System.out.println("Invalid. Please try again by entering your middle initial or 0 if you don't have one");
-		        	middle = input.next().charAt(0);
-		        }
-		        
-		       input.nextLine();
-		        System.out.println("Street Address");
-		        
-		        street = input.nextLine();
-		        
-		        System.out.println("City");
-		        
+		        */	
 		       
-		        
-		        city = input.next();
-		        
-		        System.out.println("State");
-		        
-		        state = input.next();
-		      
-		        System.out.println("Zip");
-		        
-		        
+		       
+		       
+		     /* 
 		        try {
 		        	zip = input.nextInt();
 		        }
@@ -151,14 +112,11 @@ public class User {
 		        	phone = input.nextInt();
 		        }
 		          
-		          
-		        
-		        System.out.print("Enter a password for your account");
-
-		        userPassword = input.next();
-		        
+		        */
 		        
 		      
+		        
+		      /*
 		        boolean valid = User.valid(userPassword);
 		        
 		        while(!valid) {
@@ -169,18 +127,8 @@ public class User {
 				      valid = User.valid(userPassword);
 		        }
 		       	
-
-		        //user account
-		        password.put(userEmail, userPassword);
-
-		        //user ID
-		        userID = count;
-		        database.put(userEmail, userID);
-
-		        System.out.println("Your unique ID number is " + count);
-		        
-
-		        count++;
+*/
+		       
 		  }
 	
 
@@ -228,6 +176,8 @@ public class User {
 	}
 	
 	//validation for password - contains number, upper case, lower case, no spaces
+	
+	/*
 	public static boolean valid (String pass){
 		
 		
@@ -239,7 +189,7 @@ public class User {
 		return false;
 	}
 	
-	
+	*/
 
 }
 

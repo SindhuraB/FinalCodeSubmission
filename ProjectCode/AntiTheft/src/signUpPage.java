@@ -28,7 +28,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 *@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed
 *@version 2.2.0
 */ 
-public class signUpPage {
+public class signUpPage extends User {
 
 	private JFrame frame;
 	private JTextField firstNameTextbox;
@@ -41,8 +41,8 @@ public class signUpPage {
 	private JTextField stateTextbox;
 	private JTextField zipCodeTextbox;
 	private JTextField extensionTextbox;
-	private JPasswordField passwordField_1;
-	private JPasswordField passwordField_2;
+	private JTextField passwordTextbox1;
+	private JTextField passwordTextbox2;
 	private JButton button;
 	private JTextField textField;
 	private JButton btnSignUp;
@@ -227,11 +227,11 @@ public class signUpPage {
 		confirmPasswordLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		confirmPasswordLabel.setForeground(SystemColor.text);
 		
-		passwordField_1 = new JPasswordField();
-		passwordField_1.setBounds(396, 494, 171, 32);
+		passwordTextbox1 = new JTextField();
+		passwordTextbox1.setBounds(396, 494, 171, 32);
 		
-		passwordField_2 = new JPasswordField();
-		passwordField_2.setBounds(592, 494, 171, 32);
+		passwordTextbox2 = new JTextField();
+		passwordTextbox2.setBounds(592, 494, 171, 32);
 		
 		button = new JButton("Back");
 		button.setBounds(383, 587, 100, 32);
@@ -254,6 +254,21 @@ public class signUpPage {
 		btnSignUp.setBounds(513, 587, 100, 32);
 		btnSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				//getting info out of boxes
+				String first = firstNameTextbox.getText();
+				String mid = txtA.getText();
+				String last = lastNameTextbox.getText();
+				String phone = phoneTextbox.getText();
+				String email = emailTextbox.getText();
+				String street = streetAddressTexBox.getText();
+				String city = cityTextbox.getText();
+				String state = stateTextbox.getText();
+				String zip = zipCodeTextbox.getText();
+				String pass = passwordTextbox1.getText();
+				
+				//sending information to test create new account
+				new User(first, last, mid, street, city,zip, phone,pass, email, state);
 				frame.dispose();
 				HomePage homeScreen=new HomePage();
 				homeScreen.setVisible(true);
@@ -303,8 +318,8 @@ public class signUpPage {
 		frame.getContentPane().add(extensionTextbox);
 		frame.getContentPane().add(usernameLabel);
 		frame.getContentPane().add(confirmPasswordLabel);
-		frame.getContentPane().add(passwordField_1);
-		frame.getContentPane().add(passwordField_2);
+		frame.getContentPane().add(passwordTextbox1);
+		frame.getContentPane().add(passwordTextbox2);
 		frame.getContentPane().add(button);
 		frame.getContentPane().add(textField);
 		frame.getContentPane().add(btnSignUp);

@@ -178,6 +178,7 @@ public class signIn extends Login{
 				String useremail;
 				useremail = textFieldUser.getText();
 				
+				//fake user to test linking
 				new User("pinnam@utdallas.edu", "pinnampass");
 				
 				boolean isvalid =  Login.login(useremail,password);
