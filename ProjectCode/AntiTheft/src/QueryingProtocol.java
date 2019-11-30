@@ -248,6 +248,10 @@ public class QueryingProtocol {
 					resultString = Integer.toString(newID);
 					System.out.println("Row results: " + resultString);
 				}
+				else
+				{
+					resultString = "1";
+				}
 				con.close();
 			}
 			catch(Exception e)
