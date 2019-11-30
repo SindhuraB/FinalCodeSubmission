@@ -8,6 +8,7 @@ import javax.swing.JScrollBar;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
@@ -192,6 +193,10 @@ import java.awt.event.ActionEvent;
 				String manufacturer = textField_1.getText();
 				//testing product creation
 				String display = Product.CreateProduct(1000, manufacturer, description);
+				DefaultListModel<String> model = new DefaultListModel<String> ();
+				model.addElement(display);
+				list.action(null, model);
+				
 				
 				
 			}
