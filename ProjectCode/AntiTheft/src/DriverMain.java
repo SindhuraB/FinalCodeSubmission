@@ -6,36 +6,36 @@
 
 public class DriverMain extends User {
 		public static void main (String[] args) {
-			
-			
-			
+
+
+
 			//create new user for each person
 			User one = new User();
-			
-			
-			
+
+
+
 			//making an account
 			one.createAccount();
 			//test displaying account info
 			one.getname();
 			one.getAddress();
-			
+
 			//log person in
 			Login.login();
-			
-			
+
+
 			Product.CreateProduct(one);
 			Product.DisplayItems(one);
-			
-			
-			
+
+
+
 			//allow them to add item
-			
+
 			//or track
-			
-			
-			
-	
+
+
+
+
 		}
 
 }
