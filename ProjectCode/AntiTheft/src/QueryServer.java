@@ -66,6 +66,7 @@ public class QueryServer implements Runnable{
 	    
 	    outputLine = QP.processInput(sql);
 		output.writeUTF(outputLine);
+		output.flush();
 		
 		output.close();
 		input.close();
@@ -102,7 +103,7 @@ public class QueryServer implements Runnable{
     	}
     	catch(IOException e)
     	{
-    		throw new RuntimeException("Cannot open port 5000", e);
+    		throw new RuntimeException("Cannot open port 80", e);
     	}
     }
 	public static void main(String[] args)
