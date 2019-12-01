@@ -30,27 +30,7 @@ public class Product extends User{
 			
 		}
 		
-		/*
-		public static void RemoveProduct (User user) {
-			
-			System.out.println("To remove a product from your account, enter your unique user ID");
-			
-			Integer id = input.nextInt();
-			
-			if (products.containsKey(id)) {
-				//logically, user would click on the item in the GUI but for back-end, it's like entering it/choosing it?
-				
-			
-			}
-			
-			if (!(products.get(id).equals(product))) {
-	            throw new NoSuchElementException();
-	        }
-			else
-				products.remove(id,product);
-			
-		}
-		*/
+		
 		
 		
 		

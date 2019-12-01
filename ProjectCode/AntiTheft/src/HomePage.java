@@ -186,9 +186,9 @@ import javax.swing.JPanel;
 		frame.getContentPane().add(list);
 		*/
 		
-		DefaultListModel <String> model = new DefaultListModel <String> ();
+		
 
-		JList <String>list = new JList<String>(model);
+		JTextArea list = new JTextArea ();
 		list.setBounds(280, 145, 447, 144);
 		frame.getContentPane().add(list);
 		
@@ -202,7 +202,7 @@ import javax.swing.JPanel;
 				//testing product creation
 				String display = Product.CreateProduct(1000, manufacturer, description);
 				
-				model.addElement(display);
+				list.setText(display);
 				System.out.println("List displayed");
 				
 				
