@@ -176,6 +176,10 @@ import javax.swing.JPanel;
 		btnCreate.setBounds(752, 644, 100, 32);
 		frame.getContentPane().add(btnCreate);
 		
+		JPanel panel = new JPanel();
+		panel.setBounds(277, 145, 450, 128);
+		frame.getContentPane().add(panel);
+		
 		/*
 		JPanel list = new JPanel();
 		list.setBounds(280, 145, 447, 144);
