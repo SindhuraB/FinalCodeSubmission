@@ -1,11 +1,12 @@
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import java.awt.GridLayout;
+import java.awt.Toolkit;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
@@ -67,17 +68,20 @@ public class openingPage {
 	
 	 void initialize() {
 		frame = new JFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setFont(new Font("Tahoma", Font.PLAIN, 11));
 		frame.setBackground(new Color(240, 240, 240));
-
-		frame.getContentPane().setBackground(new Color(0, 0, 51));
+		frame.getContentPane().setBackground(new Color(0, 0, 51));		
 		frame.setBounds(1001, 600, 1000, 750);
-
+		
+	
+		//Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		//int height = screenSize.height;
+		//int width = screenSize.width;
+		//frame.setSize(width, height);
+		frame.setLocationRelativeTo(null);
 		frame.getContentPane().setBackground(new Color(47, 79, 79));
-		frame.setBounds(1000, 600, 1000, 750);
-
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		frame.setLocationRelativeTo(null);
 		
 		
 		//Creates the Sign In button
