@@ -187,7 +187,7 @@ public class signIn extends Login{
 					frame.dispose();
 					//passing account id to homepage
 					HomePage homeScreen=new HomePage(isvalid);
-					homeScreen.setVisible(true);
+					homeScreen.setVisible(true, isvalid);
 				}
 				else
 			{

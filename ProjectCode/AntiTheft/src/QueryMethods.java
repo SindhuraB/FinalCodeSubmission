@@ -111,10 +111,14 @@ public class QueryMethods extends DatabaseQuerying{
 		String takenInfo = createUser("Cool@cool.com", "Cool123", "Chris", "J", "Guerra", "123 Cool Street", 
 				"CoolTown", "TX", "123456", "1234567890", "1");
 		System.out.println(takenInfo);
+		
+		System.out.println(createUser("vpinnam@gmail.com", "vp7273", "Varika", "R", "Pinnam", "2200 Waterview", 
+				"Richardson", "TX", "75080", "1234567890", "1"));
+		
 		// If both items of the user sign-in info are unique then the user will be created
 		// Shutdown server
-		String shut = shutdownServer();
-		System.out.println("Server shutdown: " + shut);
+		//String shut = shutdownServer();
+		//System.out.println("Server shutdown: " + shut);
 	}
 	*/
 }

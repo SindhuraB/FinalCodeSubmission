@@ -37,11 +37,11 @@ import javax.swing.JPanel;
 		 * @throws not implemented
 		 */
 		
-		public void setVisible(boolean b) {
+		public void setVisible(boolean b, String id) {
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						HomePage window = new HomePage();
+						HomePage window = new HomePage(id);
 						window.frame.setVisible(true);
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -58,6 +58,8 @@ import javax.swing.JPanel;
 		 * @throws not implemented
 		 */
 	
+	
+		}
 		public HomePage(String id) {
 			accID = id;
 			initialize();
