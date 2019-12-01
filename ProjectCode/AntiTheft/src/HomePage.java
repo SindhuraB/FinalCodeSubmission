@@ -3,12 +3,10 @@
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import java.awt.Color;
-import javax.swing.JList;
-import javax.swing.JScrollBar;
+import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
-import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
