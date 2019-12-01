@@ -59,7 +59,7 @@ import javax.swing.JPanel;
 		 */
 	
 	
-		}
+		
 		public HomePage(String id) {
 			accID = id;
 			initialize();
