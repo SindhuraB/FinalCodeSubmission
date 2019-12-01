@@ -21,7 +21,7 @@ import javax.swing.JPanel;
 * Assignment: Group Project
 * Title: Anti-Theft Project
 * Date: 11/28/2019
-*@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed
+*@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed 
 *@version 2.2.0
 */ 
 
@@ -176,10 +176,14 @@ import javax.swing.JPanel;
 		btnCreate.setBounds(752, 644, 100, 32);
 		frame.getContentPane().add(btnCreate);
 		
+		/*
 		JPanel list = new JPanel();
 		list.setBounds(280, 145, 447, 144);
 		frame.getContentPane().add(list);
+		*/
 		
+		
+	
 		
 		btnCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -187,9 +191,13 @@ import javax.swing.JPanel;
 				String manufacturer = textField_1.getText();
 				//testing product creation
 				String display = Product.CreateProduct(1000, manufacturer, description);
-				DefaultListModel<String> model = new DefaultListModel<String> ();
+				DefaultListModel <String> model = new DefaultListModel <String> ();
+
+				JList <String>list = new JList<String>(model);
 				model.addElement(display);
-				list.action(null, model);
+				list.setBounds(280, 145, 447, 144);
+				frame.getContentPane().add(list);
+				
 				
 				
 				
