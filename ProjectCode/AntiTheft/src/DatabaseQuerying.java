@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.net.*;
 import java.io.*;
 
@@ -11,9 +10,6 @@ public class DatabaseQuerying{
 	private DataInputStream input = null;
 	private DataOutputStream output = null;
 	
-	static int accColChanged; // Number of columns changed from updating ACCOUNT table
-	static int userColChanged; // Number of columns changed from updating TAGUSER table
-	
 	public String run(String requestInfo)
 	{
 		String result = "";
@@ -22,9 +18,10 @@ public class DatabaseQuerying{
 			// Connect to database server and setup input/output streams
 			System.out.println("Connecting to: serverConnection.dynu.net");
 			socket = new Socket("serverConnection.dynu.net", 80);
+			socket.setSoTimeout(10000);
 			System.out.println("Connected");
 			input = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
-			output = new DataOutputStream(socket.getOutputStream());
+			output = new DataOutputStream(new BufferedOutputStream(socket.getOutputStream()));
 			System.out.println("Sending request: " + requestInfo);
 			
 			// Send request to server
