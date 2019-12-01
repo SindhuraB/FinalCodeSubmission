@@ -67,6 +67,10 @@ public class QueryingProtocol {
 					resultString = rs.getString("AcID");
 					System.out.println("Row results: " + resultString);
 				}
+				else
+				{
+					resultString = "Invalid login info";
+				}
 				con.close();
 			}
 			catch(Exception e)
