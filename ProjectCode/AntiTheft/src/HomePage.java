@@ -194,9 +194,10 @@ import javax.swing.JPanel;
 				DefaultListModel <String> model = new DefaultListModel <String> ();
 
 				JList <String>list = new JList<String>(model);
-				model.addElement(display);
 				list.setBounds(280, 145, 447, 144);
 				frame.getContentPane().add(list);
+				model.addElement(display);
+				System.out.println("List displayed");
 				
 				
 				
