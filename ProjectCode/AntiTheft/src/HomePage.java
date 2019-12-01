@@ -85,7 +85,7 @@ import javax.swing.JPanel;
 			JLabel lblNewLabel = new JLabel("Item Name");
 			lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
 			lblNewLabel.setForeground(Color.WHITE);
-			lblNewLabel.setBounds(280, 108, 130, 26);
+			lblNewLabel.setBounds(393, 108, 130, 26);
 			frame.getContentPane().add(lblNewLabel);
 			
 			//Item description label for Registered products
@@ -175,6 +175,10 @@ import javax.swing.JPanel;
 		btnCreate.setBackground(Color.WHITE);
 		btnCreate.setBounds(752, 644, 100, 32);
 		frame.getContentPane().add(btnCreate);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(393, 145, 334, 128);
+		frame.getContentPane().add(panel);
 		
 		/*
 		JPanel list = new JPanel();
