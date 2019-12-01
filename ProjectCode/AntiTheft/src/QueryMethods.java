@@ -21,12 +21,15 @@ public class QueryMethods extends DatabaseQuerying{
 		return shutdown;
 	}
 	
-	public static String login(String email, String pass)
+	public static boolean login(String email, String pass)
 	{
 		String request = "select a.AcID from ACCOUNTS a where a.Email = '" + email
 				+ "' and a.Password = '" + pass + "'0";
 		String validity = makeRequest(request);
-		return validity;
+		if(!validity.equals("Invalid login info"))
+			return true;
+		else
+			return false;
 	}
 	
 	public static String selectProducts(String accID)
