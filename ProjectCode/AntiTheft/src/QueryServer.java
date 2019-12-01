@@ -30,12 +30,8 @@ public class QueryServer implements Runnable{
     		{
     			System.out.println("Waiting for connection...");
     			clientSocket = this.serverSocket.accept();
-    			
-    			input = new DataInputStream(new BufferedInputStream(clientSocket.getInputStream()));
-        		output = new DataOutputStream(clientSocket.getOutputStream());
-        		sql = input.readUTF();
-        		System.out.println(sql);
-        		stop();
+    			System.out.println("Just connected to "
+    	                  + clientSocket.getRemoteSocketAddress());
     		}
     		catch(IOException e)
     		{
@@ -61,6 +57,13 @@ public class QueryServer implements Runnable{
     
     private void processQueryRequest(Socket clientSocket) throws Exception
     {
+    	input = new DataInputStream(new BufferedInputStream(clientSocket.getInputStream()));
+		output = new DataOutputStream(new BufferedOutputStream(clientSocket.getOutputStream()));
+		sql = input.readUTF();
+		System.out.println(sql);
+		
+		stop(); // Check for stop command
+    	
 		String outputLine;
     	QueryingProtocol QP = new QueryingProtocol();
 	    
@@ -70,6 +73,7 @@ public class QueryServer implements Runnable{
 		
 		output.close();
 		input.close();
+		System.out.println("Request processed");
     }
     
     private synchronized boolean isStopped()
@@ -110,14 +114,5 @@ public class QueryServer implements Runnable{
 	{
 		QueryServer server = new QueryServer(80);
 		new Thread(server).start();
-		
-		try
-		{
-			Thread.sleep(10*1000);
-		}
-		catch(InterruptedException e)
-		{
-			e.printStackTrace();
-		}
 	}
 }

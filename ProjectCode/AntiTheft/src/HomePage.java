@@ -187,6 +187,12 @@ import javax.swing.JPanel;
 		*/
 		
 		
+
+		JTextArea list = new JTextArea ();
+		list.setBounds(280, 145, 447, 144);
+		frame.getContentPane().add(list);
+		
+		
 	
 		
 		btnCreate.addActionListener(new ActionListener() {
@@ -195,12 +201,8 @@ import javax.swing.JPanel;
 				String manufacturer = textField_1.getText();
 				//testing product creation
 				String display = Product.CreateProduct(1000, manufacturer, description);
-				DefaultListModel <String> model = new DefaultListModel <String> ();
-
-				JList <String>list = new JList<String>(model);
-				list.setBounds(280, 145, 447, 144);
-				frame.getContentPane().add(list);
-				model.addElement(display);
+				
+				list.setText(display);
 				System.out.println("List displayed");
 				
 				

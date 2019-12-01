@@ -178,7 +178,7 @@ public class User {
 	public static boolean valid (String pass){
 		
 		
-	String pattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$)";
+	String pattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=|\\S+$)";
 	if (pass.matches(pattern))
 		return true;
 		
