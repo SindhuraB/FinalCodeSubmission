@@ -83,9 +83,10 @@ public class QueryMethods extends DatabaseQuerying{
 		String results = makeRequest(request);
 		return results;
 	}
+	
+	/*
 	// Example stuff, comment out if hooking up to methods
 	public static void main(String[] args) {
-		/*
 		// Get new account ID number
 		String newID = getNewID();
 		System.out.println(newID);
@@ -114,6 +115,6 @@ public class QueryMethods extends DatabaseQuerying{
 		// Shutdown server
 		String shut = shutdownServer();
 		System.out.println("Server shutdown: " + shut);
-		*/
 	}
+	*/
 }
