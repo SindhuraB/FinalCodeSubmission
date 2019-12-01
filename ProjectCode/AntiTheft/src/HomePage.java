@@ -30,6 +30,7 @@ import javax.swing.JPanel;
 		private JFrame frame;
 		private JTextField textField;
 		private JTextField textField_1;
+		private String accID;
 
 		/**
 		 * Launches the application.
@@ -59,7 +60,8 @@ import javax.swing.JPanel;
 		 * @throws not implemented
 		 */
 	
-		public HomePage() {
+		public HomePage(String id) {
+			accID = id;
 			initialize();
 		}
 		
@@ -199,8 +201,9 @@ import javax.swing.JPanel;
 			public void actionPerformed(ActionEvent e) {
 				String description = textField.getText();
 				String manufacturer = textField_1.getText();
-				//testing product creation
-				String display = Product.CreateProduct(1000, manufacturer, description);
+				
+				QueryMethods.addProduct(accID, manufacturer, description);
+				String display = QueryMethods.selectProducts(accID);
 				
 				list.setText(display);
 				System.out.println("List displayed");

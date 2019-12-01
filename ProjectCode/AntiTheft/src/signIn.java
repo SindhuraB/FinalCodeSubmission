@@ -34,6 +34,7 @@ public class signIn extends Login{
 	private JTextField textFieldPassword;
 	private JTextField textFieldUser;
 
+
 	/**
 	 * Launches the application.
 	 * @param args as String[]
@@ -179,12 +180,13 @@ public class signIn extends Login{
 				useremail = textFieldUser.getText();
 			
 				
-				boolean isvalid =  QueryMethods.login(useremail,password);
+				String isvalid =  QueryMethods.login(useremail,password);
 				
 			
-				if (isvalid) {
+				if (!(isvalid.equals("Invalid login info"))) {
 					frame.dispose();
-					HomePage homeScreen=new HomePage();
+					//passing account id to homepage
+					HomePage homeScreen=new HomePage(isvalid);
 					homeScreen.setVisible(true);
 				}
 				else
