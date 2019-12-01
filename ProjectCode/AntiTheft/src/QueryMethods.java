@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 public class QueryMethods extends DatabaseQuerying{
 	
@@ -84,6 +83,8 @@ public class QueryMethods extends DatabaseQuerying{
 		String results = makeRequest(request);
 		return results;
 	}
+	
+	/*
 	// Example stuff, comment out if hooking up to methods
 	public static void main(String[] args) {
 		// Get new account ID number
@@ -113,6 +114,7 @@ public class QueryMethods extends DatabaseQuerying{
 		// If both items of the user sign-in info are unique then the user will be created
 		// Shutdown server
 		String shut = shutdownServer();
-		System.out.println("Server shutdown");
+		System.out.println("Server shutdown: " + shut);
 	}
+	*/
 }

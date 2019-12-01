@@ -40,7 +40,7 @@ public class QueryingProtocol {
 		Connection con = dbCon();
 		String resultString = "";
 		char requestCode = sql.charAt(sql.length()-1);
-		if(!sql.equals("Shutdown") || requestCode != 4)
+		if(!sql.equals("Shutdown") && requestCode != '4')
 		{
 			// Remove request code from end of sql string
 			sql = sql.substring(0, sql.length() - 1);
@@ -232,12 +232,12 @@ public class QueryingProtocol {
 		else if(requestCode == getNewID)
 		{
 			System.out.println("Querying:");
-			System.out.println(sql);
 			
 			// Get new ID for account creation
 			try
 			{
 				sql = "select * from ACCOUNTS where AcID = (select max(AcID) from ACCOUNTS)";
+				System.out.println(sql);
 				//create the statement object
 				Statement stmt = con.createStatement();
 				ResultSet rs = stmt.executeQuery(sql);
