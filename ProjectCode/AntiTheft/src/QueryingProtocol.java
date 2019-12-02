@@ -197,14 +197,16 @@ public class QueryingProtocol {
 				System.out.println("Query Executed");
 				if(rsOpen.next())
 					uniqueInfo = rsOpen.getString("AcID");
+				System.out.println("Null if unique: " + uniqueInfo);
 			}
 			catch(Exception e)
 			{
 				System.out.println(e);
 			}
 			
-			if(!uniqueInfo.equals(null))
+			if(!uniqueInfo.equals(""))
 			{
+				System.out.println("Not unique");
 				resultString = "Username or password is taken";
 			}
 			else
