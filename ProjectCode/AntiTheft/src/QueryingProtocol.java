@@ -184,7 +184,7 @@ public class QueryingProtocol {
 			int previousSubstringEnd = 0;
 			int count = 0;
 			// Parse query request into separate queries
-			for(int i = 0; i < sql.length() - 1; i++)
+			for(int i = 0; i <= sql.length() - 1; i++)
 			{
 				if(sql.charAt(i) == '|')
 				{
