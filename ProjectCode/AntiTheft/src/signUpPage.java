@@ -235,10 +235,10 @@ public class signUpPage extends User {
 				
 				
 				//sending information to test create new account
-				QueryMethods.createUser(email, pass, first, mid, last, street, city, state, zip, phone, extension);
+				QueryMethods.createUser(email, pass, first, mid, last, street, city, state, zip, phone, phone);
 				frame.dispose();
-				HomePage homeScreen=new HomePage();
-				homeScreen.setVisible(true);
+				Login homeScreen=new Login();
+				//homeScreen.setVisible(true);
 				JOptionPane.showMessageDialog(null, "Welcome Please register any new products");
 				
 			}
