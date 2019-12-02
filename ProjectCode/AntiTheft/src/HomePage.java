@@ -1,17 +1,16 @@
-
-
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JList;
-import javax.swing.JScrollBar;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JPanel;
 
 /**
 *Description: The home page of the GUI. input or look up products
@@ -19,7 +18,7 @@ import java.awt.event.ActionEvent;
 * Assignment: Group Project
 * Title: Anti-Theft Project
 * Date: 11/28/2019
-*@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed
+*@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed 
 *@version 2.2.0
 */ 
 
@@ -79,22 +78,11 @@ import java.awt.event.ActionEvent;
 			frame.setBounds(1000, 600, 1000, 750);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			
-			//Creates a list for Registered item
-			JList list = new JList();
-			list.setBounds(280, 145, 447, 171);
-			frame.getContentPane().add(list);
-			
-			//Scroll bar for Registered item list
-			JScrollBar scrollBar = new JScrollBar();
-			scrollBar.setBackground(Color.LIGHT_GRAY);
-			scrollBar.setBounds(726, 145, 17, 171);
-			frame.getContentPane().add(scrollBar);
-			
 			//Item name label for Registered products
 			JLabel lblNewLabel = new JLabel("Item Name");
 			lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
 			lblNewLabel.setForeground(Color.WHITE);
-			lblNewLabel.setBounds(280, 108, 130, 26);
+			lblNewLabel.setBounds(393, 108, 130, 26);
 			frame.getContentPane().add(lblNewLabel);
 			
 			//Item description label for Registered products
@@ -121,45 +109,25 @@ import java.awt.event.ActionEvent;
 			label.setBounds(359, 378, 320, 43);
 			frame.getContentPane().add(label);
 			
-			//Creates a place for user input item description 
-			JList list_1 = new JList();
-			list_1.setBounds(453, 485, 274, 138);
-			frame.getContentPane().add(list_1);
-			
 			//Manufacturer name label
 			JLabel label_1 = new JLabel("Manufacturer");
 			label_1.setForeground(Color.WHITE);
 			label_1.setFont(new Font("Tahoma", Font.BOLD, 15));
 			label_1.setBackground(Color.WHITE);
-			label_1.setBounds(280, 569, 130, 17);
+			label_1.setBounds(280, 457, 130, 17);
 			frame.getContentPane().add(label_1);
-			
-			//Item name label for UN-registered products 
-			JLabel label_2 = new JLabel("Item ");
-			label_2.setForeground(Color.WHITE);
-			label_2.setFont(new Font("Tahoma", Font.BOLD, 15));
-			label_2.setBackground(Color.WHITE);
-			label_2.setBounds(280, 463, 102, 17);
-			frame.getContentPane().add(label_2);
 			
 			//User input field for manufacture 
 			textField = new JTextField();
 			textField.setColumns(10);
-			textField.setBounds(280, 485, 140, 26);
+			textField.setBounds(539, 485, 188, 113);
 			frame.getContentPane().add(textField);
 			
 			//User input field for UN-registered products 
 			textField_1 = new JTextField();
 			textField_1.setColumns(10);
-			textField_1.setBounds(280, 597, 140, 26);
+			textField_1.setBounds(280, 485, 140, 26);
 			frame.getContentPane().add(textField_1);
-			
-			//Scroll bar for the UN-registered products
-			JScrollBar scrollBar_1 = new JScrollBar();
-			scrollBar_1.setForeground(new Color(153, 255, 102));
-			scrollBar_1.setBackground(Color.LIGHT_GRAY);
-			scrollBar_1.setBounds(726, 485, 17, 138);
-			frame.getContentPane().add(scrollBar_1);
 			
 			//Item description label for UN-registered products
 			JLabel lblItemDescription_1 = new JLabel("Item Description");
@@ -175,7 +143,7 @@ import java.awt.event.ActionEvent;
 			btnSignOut.setForeground(Color.BLACK);
 			btnSignOut.setFont(new Font("Tahoma", Font.BOLD, 15));
 			btnSignOut.setBackground(Color.WHITE);
-			btnSignOut.setBounds(10, 668, 100, 32);
+			btnSignOut.setBounds(347, 628, 100, 32);
 			frame.getContentPane().add(btnSignOut);
 			
 			//If Sign out button is clicked then take the user to opening page
@@ -195,12 +163,50 @@ import java.awt.event.ActionEvent;
 			frame.setBounds(100, 100, 1056, 776);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		}
+		
 
+		
+		JButton btnCreate = new JButton("Create");
+		btnCreate.setForeground(Color.BLACK);
+		btnCreate.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnCreate.setBackground(Color.WHITE);
+		btnCreate.setBounds(752, 644, 100, 32);
+		frame.getContentPane().add(btnCreate);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(393, 145, 334, 128);
+		frame.getContentPane().add(panel);
+		
+		/*
+		JPanel list = new JPanel();
+		list.setBounds(280, 145, 447, 144);
+		frame.getContentPane().add(list);
+		*/
+		
+		
 	
+		
+		btnCreate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String description = textField.getText();
+				String manufacturer = textField_1.getText();
+				//testing product creation
+				String display = Product.CreateProduct(1000, manufacturer, description);
+				DefaultListModel <String> model = new DefaultListModel <String> ();
+
+				JList <String>list = new JList<String>(model);
+				list.setBounds(280, 145, 447, 144);
+				frame.getContentPane().add(list);
+				model.addElement(display);
+				System.out.println("List displayed");
+				
+				
+				
+				
+			}
+		});
 
 			
 		}
+	}
 	
-
-

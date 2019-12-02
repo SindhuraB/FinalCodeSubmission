@@ -1,7 +1,5 @@
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
-import java.awt.GridLayout;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;

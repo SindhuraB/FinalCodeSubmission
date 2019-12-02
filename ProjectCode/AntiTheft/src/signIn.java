@@ -1,9 +1,7 @@
 import java.awt.EventQueue;
-import javax.swing.*;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import java.awt.Color;
@@ -12,11 +10,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 import java.awt.SystemColor;
-import javax.swing.JPasswordField;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.sql.*;
-import javax.swing.*;
+
 /**
 *Description: The sign in GUI page for registered users 
 * Class: Fall - SE 3354.502 
@@ -26,7 +20,7 @@ import javax.swing.*;
 *@authors Gentry Jenkins / Sindhura Boppudi / Noman Syed
 *@version 2.2.0
 */ 
-public class signIn {
+public class signIn extends Login{
 
 	private JFrame frame;
 	private JTextField textFieldPassword;
@@ -173,33 +167,33 @@ public class signIn {
 				String password;
 				password = textFieldPassword.getText();
 				
-				String user;
-				user = textFieldUser.getText();
-				/*
-				String isvalid =  login(user,password);
+				String useremail;
+				useremail = textFieldUser.getText();
+				
+				//fake user to test linking
+				new User("p", "p");
+				
+				boolean isvalid =  Login.login(useremail,password);
 				
 			
-				if (isvalid != null) {
+				if (isvalid) {
 					frame.dispose();
 					HomePage homeScreen=new HomePage();
 					homeScreen.setVisible(true);
 				}
-			else 
+				else
 			{
 				JOptionPane.showMessageDialog(null,"The information is not valid");	
 			}
-			*/
-				
-				
-				
 			
 			}
-	});
-	}	
-}
-
-		
 			
+		});
+	}
+	
+}
+			
+	
 	
 		
 		
