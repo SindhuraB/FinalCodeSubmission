@@ -89,7 +89,7 @@ public class signIn extends Login{
 		EmailLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
 		EmailLabel.setForeground(new Color(255, 255, 255));
 		EmailLabel.setBackground(new Color(255, 255, 255));
-		EmailLabel.setBounds(210, 325, 194, 37);
+		EmailLabel.setBounds(220, 325, 194, 37);
 		frame.getContentPane().add(EmailLabel);
 		
 		//password label
