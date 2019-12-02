@@ -17,7 +17,7 @@ public class DatabaseQuerying{
 		{
 			// Connect to database server and setup input/output streams
 			System.out.println("Connecting to: serverConnection.dynu.net");
-			socket = new Socket("serverConnection.dynu.net", 5000);
+			socket = new Socket("serverConnection.dynu.net", 80);
 			socket.setSoTimeout(10000);
 			System.out.println("Connected");
 			input = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
