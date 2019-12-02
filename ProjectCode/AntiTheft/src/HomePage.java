@@ -76,7 +76,13 @@ import javax.swing.JPanel;
 		
 		private void initialize() {
 			frame = new JFrame();
-
+			JTextArea list = new JTextArea ();
+			list.setBounds(280, 145, 447, 144);
+			frame.getContentPane().add(list);
+			String display = QueryMethods.selectProducts(accID);
+			list.setText(display);
+			System.out.println("List displayed");
+			
 			frame.getContentPane().setBackground(new Color(0, 0, 51));
 			frame.getContentPane().setFont(new Font("Tahoma", Font.PLAIN, 11));
 			frame.getContentPane().setBackground(new Color(47, 79, 79));
@@ -192,9 +198,7 @@ import javax.swing.JPanel;
 		
 		
 
-		JTextArea list = new JTextArea ();
-		list.setBounds(280, 145, 447, 144);
-		frame.getContentPane().add(list);
+		
 		
 		
 	
