@@ -1,11 +1,7 @@
 import java.awt.EventQueue;
-import java.util.*;
-
-import javax.swing.*;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import java.awt.Color;
@@ -14,18 +10,14 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 import java.awt.SystemColor;
-import javax.swing.JPasswordField;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.sql.*;
-import javax.swing.*;
+
 /**
 *Description: The sign in GUI page for registered users 
 * Class: Fall - SE 3354.502 
 * Assignment: Group Project
 * Title: Anti-Theft Project
 * Date: 11/28/2019
-*@authors Gentry Jenkins / Sindhura Boppudi / Noman Syed
+*@authors Gentry Jenkins / Sindhura Boppudi / Noman Syed / Junior 
 *@version 2.2.0
 */ 
 public class signIn extends Login{
@@ -78,21 +70,20 @@ public class signIn extends Login{
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	// main frame all others will be on
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setForeground(Color.WHITE);
 		frame.setResizable(false);
 		frame.getContentPane().setFont(new Font("Tahoma", Font.PLAIN, 19));
-
 		frame.getContentPane().setBackground(new Color(0, 0, 51));
 		frame.setBounds(1001, 600, 1000, 750);
-
 		frame.getContentPane().setBackground(new Color(47, 79, 79));
 		frame.setBounds(1000, 600, 1000, 750);
-
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		//Username label
 		JLabel usernameLabel = new JLabel("Username");		
 		usernameLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		usernameLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -101,6 +92,7 @@ public class signIn extends Login{
 		usernameLabel.setBounds(210, 325, 194, 37);
 		frame.getContentPane().add(usernameLabel);
 		
+		//password label
 		JLabel passwordLabel = new JLabel("Password");		
 		passwordLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		passwordLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -108,6 +100,7 @@ public class signIn extends Login{
 		passwordLabel.setBounds(548, 325, 194, 37);
 		frame.getContentPane().add(passwordLabel);	
 		
+		//log in label
 		JLabel loginLabel = new JLabel("Log In");
 		loginLabel.setFont(new Font("Impact", Font.PLAIN, 50));
 		loginLabel.setForeground(SystemColor.text);
@@ -115,6 +108,7 @@ public class signIn extends Login{
 		loginLabel.setBounds(381, 205, 152, 62);
 		frame.getContentPane().add(loginLabel);
 		
+		//back button label
 		JButton backButton = new JButton("Back");		
 		backButton.setBackground(Color.WHITE);
 		backButton.setForeground(new Color(0, 0, 0));
@@ -122,10 +116,9 @@ public class signIn extends Login{
 		backButton.setBounds(42, 662, 100, 32);
 		frame.getContentPane().add(backButton);
 		
-		
+		//when back button is pushed user goes back to opening screen
 		backButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
+			public void actionPerformed(ActionEvent e) {				
 				frame.dispose();
 				openingPage openingScreen=new openingPage();
 				openingScreen.setVisible(true);	
@@ -134,35 +127,28 @@ public class signIn extends Login{
 		
 					
 		
-
+		//back  button action
 		backButton.setBackground(Color.WHITE);
 		backButton.setForeground(new Color(0, 0, 0));
 		backButton.setFont(new Font("Tahoma", Font.BOLD, 15));		
 		backButton.setBounds(430, 538, 81, 32);
 		frame.getContentPane().add(backButton);
-
-		
-
-		
 	
 			
 					
-					
+		//log in label			
 		JButton loginButton = new JButton("Log In");	
 		loginButton.setBackground(Color.WHITE);
 		loginButton.setFont(new Font("Tahoma", Font.BOLD, 15));
-
 		loginButton.setBounds(430, 483, 81, 32);
-
 		loginButton.setBounds(864, 662, 100, 32);
-
-		frame.getContentPane().add(loginButton);
 		
+		//log in button
+		frame.getContentPane().add(loginButton);		
 		textFieldPassword = new JTextField();
 		textFieldPassword.setBounds(548, 373, 194, 32);
 		frame.getContentPane().add(textFieldPassword);
-		textFieldPassword.setColumns(10);
-		
+		textFieldPassword.setColumns(10);		
 		textFieldUser = new JTextField();
 		textFieldUser.setBounds(220, 371, 194, 37);
 		frame.getContentPane().add(textFieldUser);
@@ -170,19 +156,15 @@ public class signIn extends Login{
 		
 		
 		//Checks info from user input against the database value
-		
 		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {			
 				String password;
-				password = textFieldPassword.getText();
-				
+				password = textFieldPassword.getText();				
 				String useremail;
 				useremail = textFieldUser.getText();
 			
 				
-				String isvalid =  QueryMethods.login(useremail,password);
-				
-			
+				String isvalid =  QueryMethods.login(useremail,password);							
 				if (!(isvalid.equals("Invalid login info"))) {
 					frame.dispose();
 					//passing account id to homepage
@@ -190,9 +172,9 @@ public class signIn extends Login{
 					homeScreen.setVisible(true, isvalid);
 				}
 				else
-			{
+				{
 				JOptionPane.showMessageDialog(null,"The information is not valid");	
-			}
+				}
 			
 			}
 			

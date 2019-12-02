@@ -1,5 +1,3 @@
-
-
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import java.awt.Color;
@@ -21,7 +19,7 @@ import javax.swing.JPanel;
 * Date: 11/28/2019
 * Revisions 12/1/2019
 * This is me pushing 
-*@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed 
+*@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed /Junior
 *@version 2.2.0
 */ 
 
@@ -167,7 +165,7 @@ import javax.swing.JPanel;
 					openingScreen.setVisible(true);	
 				}
 			});
-
+			//sign out label
 			btnSignOut.setForeground(Color.BLACK);
 			btnSignOut.setFont(new Font("Tahoma", Font.BOLD, 15));
 			btnSignOut.setBackground(Color.WHITE);
@@ -178,31 +176,18 @@ import javax.swing.JPanel;
 
 		
 
-		
+		//create button 
 		JButton btnCreate = new JButton("Create");
 		btnCreate.setForeground(Color.BLACK);
 		btnCreate.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnCreate.setBackground(Color.WHITE);
 		btnCreate.setBounds(752, 644, 100, 32);
-		frame.getContentPane().add(btnCreate);
-		
+		frame.getContentPane().add(btnCreate);		
 		JPanel panel = new JPanel();
 		panel.setBounds(393, 145, 334, 128);
 		frame.getContentPane().add(panel);
 		
-		/*
-		JPanel list = new JPanel();
-		list.setBounds(280, 145, 447, 144);
-		frame.getContentPane().add(list);
-		*/
-		
-		
-
-		
-		
-		
-	
-		
+		//when "create" is clicked the info goes to query methods		
 		btnCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String description = textField.getText();
