@@ -17,7 +17,7 @@ import java.awt.event.ActionEvent;
 * Assignment: Group Project
 * Title: Anti-Theft Project
 * Date: 11/28/2019
-*@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed /Junior
+*@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed /Junior Ikamba
 *@version 2.2.0
 */ 
 public class signUpPage extends User {
@@ -78,13 +78,10 @@ public class signUpPage extends User {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-
 		frame.getContentPane().setBackground(new Color(0, 0, 51));
 		frame.setBounds(1001, 600, 1000, 750);
-
 		frame.getContentPane().setBackground(new Color(47, 79, 79));
 		frame.setBounds(1000, 600, 1000, 750);
-
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		firstNameTextbox = new JTextField();
