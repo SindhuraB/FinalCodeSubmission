@@ -14,7 +14,7 @@ class productjunit {
 		
 		User one = new User ("pinnam@utdallas.edu", "pinnampass");
 		int prodold = one.numOfProdOwned;
-		Product.CreateProduct(one);
+		Product.CreateProduct(1, "Mac", "laptop");
 		int prodnew = one.numOfProdOwned;
 		assertEquals(prodold +1, prodnew);
 		
