@@ -171,7 +171,7 @@ public class signIn extends Login{
 					HomePage homeScreen=new HomePage(isvalid);
 					homeScreen.setVisible(true, isvalid);
 				}
-				else
+				else 
 				{
 				JOptionPane.showMessageDialog(null,"The information is not valid");	
 				}

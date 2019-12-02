@@ -19,7 +19,7 @@ import javax.swing.JPanel;
 * Date: 11/28/2019
 * Revisions 12/1/2019
 * This is me pushing 
-*@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed /Junior
+*@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed /Junior...
 *@version 2.2.0
 */ 
 
