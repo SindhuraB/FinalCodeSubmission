@@ -6,9 +6,11 @@ class RowsUpdated {
 
 	@Test
 	void test() {
-		DatabaseQuerying dbqTest = new DatabaseQuerying();
-		int rows = dbqTest.accColChanged;
-		assertEquals(3, rows);
+		QueryMethods queryTest = new QueryMethods();
+		String id = queryTest.getNewID();
+		int rows = Integer.parseInt(id);
+		assertEquals(2, id);
+		//System.out.println(rows);
 	}
 
 }
