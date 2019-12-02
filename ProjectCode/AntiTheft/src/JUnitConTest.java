@@ -14,7 +14,7 @@ class JUnitConTest {
 			// Connect to database server and setup input/output streams
 			System.out.println("Connecting to: serverConnection.dynu.net");
 			socket = new Socket("serverConnection.dynu.net", 80);
-			assertNull(socket.getRemoteSocketAddress());	
+			assertNotNull(socket.getRemoteSocketAddress());	
 		}
 		catch(IOException i)
 		{
