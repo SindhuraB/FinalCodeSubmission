@@ -36,7 +36,7 @@ public class DatabaseQuerying{
 			{
 				System.out.println(i);
 			}
-			result = input.readUTF();
+			result = input.readUTF(); // Read in result
 			System.out.println("Results received");
 		}
 		catch(UnknownHostException u)
@@ -60,6 +60,6 @@ public class DatabaseQuerying{
 		{
 			System.out.println(i);
 		}
-		return result;
+		return result; // return result from server
 	}
 }
