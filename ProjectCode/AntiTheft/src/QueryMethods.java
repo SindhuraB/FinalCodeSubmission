@@ -72,7 +72,7 @@ public class QueryMethods extends DatabaseQuerying{
 				+ "values ('" + newID + "', '" + email + "', '" + pass + "')" + "|"
 				+"insert into TAGUSER ("+ columns + ") "
 				+ "values ('" + fName + "', '" + mInit + "', '" + lName + "', '" + street + "', '" + city 
-				+ "', '" + state + "', '" + zipCode + "', '" + phone + "', '" + extension + "', '" + newID + "')3";
+				+ "', '" + state + "', '" + zipCode + "', '" + phone + "', '" + extension + "', '" + newID + "')|3";
 		String results = makeRequest(request);
 		return results;
 	}
