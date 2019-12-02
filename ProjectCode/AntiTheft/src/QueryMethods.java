@@ -83,12 +83,11 @@ public class QueryMethods extends DatabaseQuerying{
 		String results = makeRequest(request);
 		return results;
 	}
-	// Example stuff, comment out if hooking up to methods
+	
 	public static void main(String[] args) {
+		// Example code for method calls
+		
 		/*
-		// Get new account ID number
-		String newID = getNewID();
-		System.out.println(newID);
 		// Example return of valid login
 		String validLogin = login("Cool@cool.com", "Cool123");
 		System.out.println("Valid login: " + validLogin);
