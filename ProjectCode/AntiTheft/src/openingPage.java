@@ -72,16 +72,9 @@ public class openingPage {
 		frame.getContentPane().setFont(new Font("Tahoma", Font.PLAIN, 11));
 		frame.setBackground(new Color(240, 240, 240));
 		frame.getContentPane().setBackground(new Color(0, 0, 51));		
-		frame.setBounds(1001, 600, 1000, 750);
-		
-	
-		//Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		//int height = screenSize.height;
-		//int width = screenSize.width;
-		//frame.setSize(width, height);
-		frame.setLocationRelativeTo(null);
+		frame.setBounds(1001, 600, 1000, 750);	
 		frame.getContentPane().setBackground(new Color(47, 79, 79));
-		frame.setLocationRelativeTo(null);
+		frame.getContentPane().setLayout(null);
 		
 		
 		//Creates the Sign In button
