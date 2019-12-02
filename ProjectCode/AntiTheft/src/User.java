@@ -172,21 +172,7 @@ public class User {
 		return street + " " + city + ", " + state + " " + zip.toString();
 	}
 	
-	//validation for password - contains number, upper case, lower case, no spaces
 	
-	/*
-	public static boolean valid (String pass){
-		
-		
-	String pattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=|\\S+$)";
-	if (pass.matches(pattern))
-		return true;
-		
-	else
-		return false;
-	}
-	
-	*/
 
 }
 
