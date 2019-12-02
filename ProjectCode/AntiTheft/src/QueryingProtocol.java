@@ -15,6 +15,7 @@ public class QueryingProtocol {
 	
 	public Connection dbCon()
 	{
+		// Attempt to connect to database on server computer
 		try 
 		{
 			//load the driver class
@@ -40,22 +41,24 @@ public class QueryingProtocol {
 		Connection con = dbCon();
 		String resultString = "";
 		char requestCode = sql.charAt(sql.length()-1);
+		// Only remove last charter if request is not shutdown or get new id command
 		if(!sql.equals("Shutdown") && requestCode != '4')
 		{
 			// Remove request code from end of sql string
 			sql = sql.substring(0, sql.length() - 1);
 		}
 		
-		if(sql.equals("Shutdown"))
+		if(sql.equals("Shutdown")) // Shutdown command received
 		{
 			resultString = "Shutdown";
 		}
+		// Send account number back for login if login is valid
 		else if(requestCode == loginSQL)
 		{
 			System.out.println("Querying:");
 			System.out.println(sql);
 			
-			// Get ID from account relating to email and password
+			// Get ID from account relating to unique email and password
 			try
 			{
 				//create the statement object
@@ -67,7 +70,7 @@ public class QueryingProtocol {
 					resultString = rs.getString("AcID");
 					System.out.println("Row results: " + resultString);
 				}
-				else
+				else // If no email and password associated to sent email and password then return invalid
 				{
 					resultString = "Invalid login info";
 				}
@@ -78,6 +81,7 @@ public class QueryingProtocol {
 				System.out.println(e);
 			}
 		}
+		// Get all products associated with account number
 		else if(requestCode == productsSQL)
 		{
 			System.out.println("Querying:");
@@ -110,6 +114,8 @@ public class QueryingProtocol {
 			
 			String userInfoSQL = "";
 			String accInfoSQL = "";
+			
+			// Parse received queries into separate queries
 			for(int i = 0; i < sql.length() - 1; i++)
 			{
 				if(sql.charAt(i) == '|')
@@ -139,7 +145,7 @@ public class QueryingProtocol {
 				String extension = "";
 				String email = "";
 				String pass = "";
-				if(rs.next())
+				if(rs.next()) // Get all user info associated with account number
 				{
 					fName = rs.getString("Fname");
 					mInit = rs.getString("Minit");
@@ -153,7 +159,7 @@ public class QueryingProtocol {
 				}
 				rs = stmt.executeQuery(accInfoSQL);
 				System.out.println("Account Query Executed");
-				if(rs.next())
+				if(rs.next()) // Get user account information
 				{
 					email = rs.getString("Email");
 					pass = rs.getString("Password");
@@ -177,7 +183,7 @@ public class QueryingProtocol {
 			String uniqueInfo = "";
 			int previousSubstringEnd = 0;
 			int count = 0;
-			
+			// Parse query request into separate queries
 			for(int i = 0; i < sql.length() - 1; i++)
 			{
 				if(sql.charAt(i) == '|')
@@ -254,7 +260,7 @@ public class QueryingProtocol {
 					resultString = Integer.toString(newID);
 					System.out.println("Row results: " + resultString);
 				}
-				else
+				else // If no current entries in database for accounts, then return value of 1
 				{
 					resultString = "1";
 				}

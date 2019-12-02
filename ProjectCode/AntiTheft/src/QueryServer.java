@@ -3,12 +3,12 @@ import java.io.*;
 
 public class QueryServer implements Runnable{
 	
-	protected String sql = "";
+	protected String sql = ""; // Received sql query
 	protected int serverPort = 80;
 	protected ServerSocket serverSocket = null;
     protected boolean isStopped = false;
-    protected Thread runningThread = null;
-    
+    protected Thread runningThread = null; // Thread for server
+    // Input / output streams for data sent / received
     DataInputStream input = null;
 	DataOutputStream output = null;
     
@@ -16,13 +16,13 @@ public class QueryServer implements Runnable{
     {
     	this.serverPort = port;
     }
-    
+    // Run server
     public void run()
     {
     	synchronized(this) 
     	{this.runningThread = Thread.currentThread();}
     	openServerSocket();
-    	
+    	// run until server stop command is sent
     	while(!isStopped())
     	{
     		Socket clientSocket = null;
@@ -55,6 +55,7 @@ public class QueryServer implements Runnable{
     	System.out.println("Server Stopped");
     }
     
+    // Receive input and process, the nreturn results
     private void processQueryRequest(Socket clientSocket) throws Exception
     {
     	input = new DataInputStream(new BufferedInputStream(clientSocket.getInputStream()));
@@ -80,7 +81,7 @@ public class QueryServer implements Runnable{
     {
     	return this.isStopped;
     }
-    
+    // Check for server shutdown command, if received then close serve socket to shutdown
     public synchronized void stop()
     {
     	System.out.println("Checking for server shutdown command");
@@ -98,7 +99,7 @@ public class QueryServer implements Runnable{
         	System.out.println("Server shutdown");
 	    }
     }
-    
+    // Open server socket for client connections
     private void openServerSocket()
     {
     	try
@@ -110,6 +111,7 @@ public class QueryServer implements Runnable{
     		throw new RuntimeException("Cannot open port 80", e);
     	}
     }
+    // Start server thread
 	public static void main(String[] args)
 	{
 		QueryServer server = new QueryServer(80);
