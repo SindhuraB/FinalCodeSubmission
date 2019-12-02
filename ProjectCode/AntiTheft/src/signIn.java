@@ -85,35 +85,35 @@ public class signIn extends Login{
 		
 		//Username label
 		JLabel EmailLabel = new JLabel("Email");		
+		EmailLabel.setBounds(220, 325, 194, 37);
 		EmailLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		EmailLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
 		EmailLabel.setForeground(new Color(255, 255, 255));
 		EmailLabel.setBackground(new Color(255, 255, 255));
-		EmailLabel.setBounds(220, 325, 194, 37);
 		frame.getContentPane().add(EmailLabel);
 		
 		//password label
 		JLabel passwordLabel = new JLabel("Password");		
+		passwordLabel.setBounds(548, 325, 194, 37);
 		passwordLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		passwordLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
 		passwordLabel.setForeground(new Color(255, 255, 255));
-		passwordLabel.setBounds(548, 325, 194, 37);
 		frame.getContentPane().add(passwordLabel);	
 		
 		//log in label
 		JLabel loginLabel = new JLabel("Log In");
+		loginLabel.setBounds(381, 205, 152, 62);
 		loginLabel.setFont(new Font("Impact", Font.PLAIN, 50));
 		loginLabel.setForeground(SystemColor.text);
 		loginLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		loginLabel.setBounds(381, 205, 152, 62);
 		frame.getContentPane().add(loginLabel);
 		
 		//back button label
 		JButton backButton = new JButton("Back");		
+		backButton.setBounds(220, 535, 100, 32);
 		backButton.setBackground(Color.WHITE);
 		backButton.setForeground(new Color(0, 0, 0));
-		backButton.setFont(new Font("Tahoma", Font.BOLD, 15));		
-		backButton.setBounds(42, 662, 100, 32);
+		backButton.setFont(new Font("Tahoma", Font.BOLD, 15));
 		frame.getContentPane().add(backButton);
 		
 		//when back button is pushed user goes back to opening screen
@@ -130,18 +130,16 @@ public class signIn extends Login{
 		//back  button action
 		backButton.setBackground(Color.WHITE);
 		backButton.setForeground(new Color(0, 0, 0));
-		backButton.setFont(new Font("Tahoma", Font.BOLD, 15));		
-		backButton.setBounds(430, 538, 81, 32);
+		backButton.setFont(new Font("Tahoma", Font.BOLD, 15));
 		frame.getContentPane().add(backButton);
 	
 			
 					
 		//log in label			
 		JButton loginButton = new JButton("Log In");	
+		loginButton.setBounds(642, 535, 100, 32);
 		loginButton.setBackground(Color.WHITE);
 		loginButton.setFont(new Font("Tahoma", Font.BOLD, 15));
-		loginButton.setBounds(430, 483, 81, 32);
-		loginButton.setBounds(864, 662, 100, 32);
 		
 		//log in button
 		frame.getContentPane().add(loginButton);		
