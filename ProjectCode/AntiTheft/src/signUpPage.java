@@ -17,7 +17,7 @@ import java.awt.event.ActionEvent;
 * Assignment: Group Project
 * Title: Anti-Theft Project
 * Date: 11/28/2019
-*@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed /Junior
+*@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed /Junior Ikamba
 *@version 2.2.0
 */ 
 public class signUpPage extends User {

@@ -17,7 +17,7 @@ import java.awt.SystemColor;
 * Assignment: Group Project
 * Title: Anti-Theft Project
 * Date: 11/28/2019
-*@authors Gentry Jenkins / Sindhura Boppudi / Noman Syed / Junior 
+*@authors Gentry Jenkins / Sindhura Boppudi / Noman Syed / Junior Ikamba
 *@version 2.2.0
 */ 
 public class signIn extends Login{
@@ -84,13 +84,13 @@ public class signIn extends Login{
 		frame.getContentPane().setLayout(null);
 		
 		//Username label
-		JLabel usernameLabel = new JLabel("Username");		
-		usernameLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		usernameLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
-		usernameLabel.setForeground(new Color(255, 255, 255));
-		usernameLabel.setBackground(new Color(255, 255, 255));
-		usernameLabel.setBounds(210, 325, 194, 37);
-		frame.getContentPane().add(usernameLabel);
+		JLabel EmailLabel = new JLabel("Email");		
+		EmailLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		EmailLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
+		EmailLabel.setForeground(new Color(255, 255, 255));
+		EmailLabel.setBackground(new Color(255, 255, 255));
+		EmailLabel.setBounds(210, 325, 194, 37);
+		frame.getContentPane().add(EmailLabel);
 		
 		//password label
 		JLabel passwordLabel = new JLabel("Password");		
@@ -146,11 +146,11 @@ public class signIn extends Login{
 		//log in button
 		frame.getContentPane().add(loginButton);		
 		textFieldPassword = new JTextField();
-		textFieldPassword.setBounds(548, 373, 194, 32);
+		textFieldPassword.setBounds(548, 373, 194, 35);
 		frame.getContentPane().add(textFieldPassword);
 		textFieldPassword.setColumns(10);		
 		textFieldUser = new JTextField();
-		textFieldUser.setBounds(220, 371, 194, 37);
+		textFieldUser.setBounds(220, 373, 194, 35);
 		frame.getContentPane().add(textFieldUser);
 		textFieldUser.setColumns(10);
 		
