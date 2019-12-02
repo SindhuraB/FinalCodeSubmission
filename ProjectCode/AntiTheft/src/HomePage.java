@@ -19,6 +19,7 @@ import javax.swing.JPanel;
 * Assignment: Group Project
 * Title: Anti-Theft Project
 * Date: 11/28/2019
+* Revisions 12/1/2019
 *@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed 
 *@version 2.2.0
 */ 
