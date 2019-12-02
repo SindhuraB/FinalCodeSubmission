@@ -3,12 +3,10 @@
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import java.awt.Color;
-import javax.swing.JList;
-import javax.swing.JScrollBar;
+import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
-import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
@@ -21,6 +19,8 @@ import javax.swing.JPanel;
 * Assignment: Group Project
 * Title: Anti-Theft Project
 * Date: 11/28/2019
+* Revisions 12/1/2019
+* This is me pushing 
 *@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed 
 *@version 2.2.0
 */ 
@@ -30,6 +30,7 @@ import javax.swing.JPanel;
 		private JFrame frame;
 		private JTextField textField;
 		private JTextField textField_1;
+		private String accID;
 
 		/**
 		 * Launches the application.
@@ -38,11 +39,11 @@ import javax.swing.JPanel;
 		 * @throws not implemented
 		 */
 		
-		public void setVisible(boolean b) {
+		public void setVisible(boolean b, String id) {
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						HomePage window = new HomePage();
+						HomePage window = new HomePage(id);
 						window.frame.setVisible(true);
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -59,7 +60,10 @@ import javax.swing.JPanel;
 		 * @throws not implemented
 		 */
 	
-		public HomePage() {
+	
+		
+		public HomePage(String id) {
+			accID = id;
 			initialize();
 		}
 		
@@ -187,20 +191,23 @@ import javax.swing.JPanel;
 		*/
 		
 		
+
+		JTextArea list = new JTextArea ();
+		list.setBounds(280, 145, 447, 144);
+		frame.getContentPane().add(list);
+		
+		
 	
 		
 		btnCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String description = textField.getText();
 				String manufacturer = textField_1.getText();
-				//testing product creation
-				String display = Product.CreateProduct(1000, manufacturer, description);
-				DefaultListModel <String> model = new DefaultListModel <String> ();
-
-				JList <String>list = new JList<String>(model);
-				list.setBounds(280, 145, 447, 144);
-				frame.getContentPane().add(list);
-				model.addElement(display);
+				
+				QueryMethods.addProduct(accID, manufacturer, description);
+				String display = QueryMethods.selectProducts(accID);
+				
+				list.setText(display);
 				System.out.println("List displayed");
 				
 				

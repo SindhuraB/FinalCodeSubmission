@@ -233,11 +233,12 @@ public class signUpPage extends User {
 				String zip = zipCodeTextbox.getText();
 				String pass = passwordTextbox1.getText();
 				
+				
 				//sending information to test create new account
-				new User(first, last, mid, street, city,zip, phone,pass, email, state);
+				QueryMethods.createUser(email, pass, first, mid, last, street, city, state, zip, phone, phone);
 				frame.dispose();
-				HomePage homeScreen=new HomePage();
-				homeScreen.setVisible(true);
+				Login homeScreen=new Login();
+				//homeScreen.setVisible(true);
 				JOptionPane.showMessageDialog(null, "Welcome Please register any new products");
 				
 			}

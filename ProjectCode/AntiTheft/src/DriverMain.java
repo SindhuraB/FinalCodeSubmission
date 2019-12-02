@@ -8,7 +8,7 @@ public class DriverMain extends User {
 		public static void main (String[] args) {
 
 
-
+/*
 			//create new user for each person
 			User one = new User();
 
@@ -33,7 +33,7 @@ public class DriverMain extends User {
 
 			//or track
 
-
+*/
 
 
 		}
