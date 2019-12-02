@@ -1,12 +1,10 @@
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import java.awt.Toolkit;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
@@ -20,7 +18,7 @@ import javax.swing.JLabel;
 * Assignment: Group Project
 * Title: Anti-Theft Project
 * Date: 11/28/2019
-*@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed
+*@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed /Junior.
 *@version 2.2.0
 */ 
 

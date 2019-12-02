@@ -1,8 +1,5 @@
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
-import java.awt.GridBagLayout;
-import javax.swing.JTextPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
@@ -10,22 +7,17 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import java.awt.SystemColor;
-import javax.swing.JPasswordField;
 import java.awt.Font;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.LayoutStyle.ComponentPlacement;
+
 /**
 *Description: The Sign up GUI page for new users 
 * Class: Fall - SE 3354.502 
 * Assignment: Group Project
 * Title: Anti-Theft Project
 * Date: 11/28/2019
-*@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed
+*@authors Gentry Jenkins / Sindhura Boppudi / Norman Syed /Junior
 *@version 2.2.0
 */ 
 public class signUpPage extends User {
