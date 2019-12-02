@@ -285,7 +285,7 @@ public class QueryingProtocol {
 				System.out.println(e);
 			}
 		}
-		System.out.println("Returning results");
+		System.out.println("Returning results: " + resultString);
 		return resultString;
 	}
 }
